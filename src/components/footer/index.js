@@ -20,7 +20,7 @@ const Footer = (props) =>{
                     <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
                         <div className="widget about-widget">
                             <div className="logo widget-title">
-                                <img src={Logo} alt="logo"/>
+                                {/* <img src={Logo} alt="logo"/> */}
                             </div>
                             <p>Build and Earn with your online store with lots of cool and exclusive features </p>
                             <ul>
@@ -54,7 +54,7 @@ const Footer = (props) =>{
                                 <h3>Services </h3>
                             </div>
                             <ul>
-                                {Services.slice(1, 5).map((service, Sitem) => (
+                                {Services.slice(1, 2).map((service, Sitem) => (
                                     <li key={Sitem}><Link onClick={ClickHandler} to={`/service-single/${service.Id}`}>{service.sTitle}</Link></li>
                                 ))}
                             </ul>

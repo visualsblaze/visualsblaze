@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import himg from '../../images/slider/right-img.png'
+import him from '../../images/asset1.png'
+import hi from '../../images/asset2.png'
+
 
 const Hero =() => {
     return (
@@ -22,6 +25,11 @@ const Hero =() => {
             <div className="right-vec">
                 <div className="right-img">
                     <img src={himg} alt=""/>
+                </div>
+                <div className="asset1-img">
+                    <img src={him} alt=""/>
+                </div><div className="asset2-img">
+                    <img src={hi} alt=""/>
                 </div>
                 <div className="round-1"></div>
                 <div className="round-2"></div>
