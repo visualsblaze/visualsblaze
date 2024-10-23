@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import himg from '../../images/slider/right-img.png';
-import him from '../../images/asset1.png';
-import hi from '../../images/asset2.png';
-import h from '../../images/typography.png';
-import { FaFacebook, FaLinkedin, FaInstagram, FaBehance, FaArrowDown } from 'react-icons/fa'; // Import icons
+import { Link } from "react-router-dom";
+import himg from "../../images/slider/right-img.png";
+import him from "../../images/asset1.png";
+import hi from "../../images/asset2.png";
+import h from "../../images/typography.png";
+import { FaFacebook, FaLinkedin, FaInstagram, FaBehance, FaArrowDown } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -12,16 +12,14 @@ const Hero = () => {
       <div className="container">
         <div className="row">
           <div className="col col-xs-12 col-lg-6">
-            {/* Added Text */}
             <div className="hero-text">
               <h1>
-                <span className="hello">Hello,</span> <span className="name">I’m Husnain M.</span>
+              Hello, I’m Husnain M.
               </h1>
               <h2>Motion Graphic Artist</h2>
               <p>CEO of Visuals Blaze</p>
-              {/* Updated Button with Down Arrow */}
               <Link to="/" className="hero-button">
-               <FaArrowDown style={{ marginLeft: '0px' }} />  BROCHURE
+                <FaArrowDown style={{ marginLeft: "0px" }} /> BROCHURE
               </Link>
             </div>
           </div>
@@ -56,12 +54,12 @@ const Hero = () => {
           </li>
           <li>
             <Link to="/">
-              <FaFacebook />
+              <FaLinkedin />
             </Link>
           </li>
           <li>
             <Link to="/">
-              <FaLinkedin />
+              <FaFacebook />
             </Link>
           </li>
           <li>
