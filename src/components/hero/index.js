@@ -44,7 +44,7 @@ const Hero = () => {
         <div className="round-3"></div>
         <div className="round-4"></div>
       </div>
-
+{/* 
       <div className="social">
         <ul>
           <li>
@@ -68,7 +68,7 @@ const Hero = () => {
             </Link>
           </li>
         </ul>
-      </div>
+      </div> */}
     </section>
   );
 };
