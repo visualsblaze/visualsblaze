@@ -13,14 +13,14 @@ const Hero = () => {
         <div className="row">
           <div className="col col-xs-12 col-lg-6">
             <div className="hero-text">
-              <h1>
+              {/* <h1>
               Hello, I’m Husnain M.
               </h1>
               <h2>Motion Graphic Artist</h2>
-              <p>CEO of Visuals Blaze</p>
-              <Link to="/" className="hero-button">
-                <FaArrowDown style={{ marginLeft: "0px" }} /> BROCHURE
-              </Link>
+              <p>CEO of Visuals Blaze</p> */}
+              {/* <Link to="/" className="hero-button"> */}
+                {/* <FaArrowDown style={{ marginLeft: "0px" }} /> BROCHURE */}
+              {/* </Link> */}
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@ const Hero = () => {
         <div className="right-img">
           <img src={himg} alt="" />
         </div>
-        <div className="asset1-img">
+        {/* <div className="asset1-img">
           <img src={him} alt="" />
         </div>
         <div className="asset2-img">
@@ -38,7 +38,7 @@ const Hero = () => {
         </div>
         <div className="asset3-img">
           <img src={h} alt="" />
-        </div>
+        </div> */}
         <div className="round-1"></div>
         <div className="round-2"></div>
         <div className="round-3"></div>
