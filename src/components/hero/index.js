@@ -20,6 +20,9 @@ const Hero = () => {
               <p>CEO of Visuals Blaze</p>
               
             </div>
+            <Link to="/" className="hero-button"> 
+                <FaArrowDown style={{ marginLeft: "0px" }} /> BROCHURE 
+              </Link>
           </div>
         </div>
       </div>
