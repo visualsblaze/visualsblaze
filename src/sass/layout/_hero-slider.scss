@@ -1044,15 +1044,7 @@
 }
 
 .social ul {
-    display: flex;
-    flex-direction: column; /* Vertical alignment */
-    gap: 10px; /* Space between icons */
-    padding: 0;
-    list-style: none;
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50px; /* Adjust left spacing */
-    transform: translateY(-20%); /* Center properly */
+   
 }
 
 .social ul li {
@@ -1075,6 +1067,19 @@
 .social ul li a:hover {
     color: #ffcc33;
     background: #c82d2d;
+}
+@media (max-width: 1920px) {
+    .social ul {
+        display: flex;
+    flex-direction: column; /* Vertical alignment */
+    gap: 10px; /* Space between icons */
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 45%; /* Center vertically */
+    left: 50px; /* Adjust left spacing */
+    transform: translateY(-20%); /* Center properly */
+    }
 }
 @media (max-width: 1200px) {
     .social ul {
