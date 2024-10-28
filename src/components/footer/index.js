@@ -3,7 +3,7 @@ import {Link}  from 'react-router-dom'
 import Logo from '../../images/logo-2.png'
 import Services from '../../api/service';
 import Project from '../../api/project';
-
+import { FaInstagram, FaBehance } from "react-icons/fa";
 
 
 const Footer = (props) =>{
@@ -24,26 +24,28 @@ const Footer = (props) =>{
                             </div>
                             <p>Build and Earn with your online store with lots of cool and exclusive features </p>
                             <ul>
+                            <li>
+                                    <Link onClick={ClickHandler} to="https://www.behance.net/discovervisualsblaze">
+                                    <FaBehance />
+                                    </Link>
+                                </li>
+                               
                                 <li>
-                                    <Link onClick={ClickHandler} to="/">
+                                    <Link onClick={ClickHandler} to="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQGbnzD-UmxR1AAAAZLU1jyYe4dKmgOQyUAZn7M3kGdf_eFpF8Id1Ie6_RJiQoR4e3mOKrOlS5mw5s4M26_nu88QhudqpC8cWphSiFDQ5rYNHPK5m0uNnpxUB0m5nCfLxEEIw4c=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fhusnain-manzoor-910581120%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dios_app">
+                                        <i className="ti-linkedin"></i>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link onClick={ClickHandler} to="https://www.facebook.com/people/Visuals-Blaze/61557573718174/?mibextid=LQQJ4d">
                                         <i className="ti-facebook"></i>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link onClick={ClickHandler} to="/">
-                                        <i className="ti-twitter-alt"></i>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link onClick={ClickHandler} to="/">
+                                    <Link onClick={ClickHandler} to="https://www.instagram.com/visualsblaze/profilecard/?igsh=dDVkcGhkZTA1dnhy">
                                         <i className="ti-instagram"></i>
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link onClick={ClickHandler} to="/">
-                                        <i className="ti-google"></i>
-                                    </Link>
-                                </li>
+                               
                             </ul>
                         </div>
                     </div>
@@ -79,13 +81,13 @@ const Footer = (props) =>{
                     <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
                         <div className="widget instagram">
                             <div className="widget-title">
-                                <h3>Projects</h3>
+                                {/* <h3>Projects</h3> */}
                             </div>
-                            <ul className="d-flex">
+                            {/* <ul className="d-flex">
                                 {Project.slice(0, 6).map((project, Pitem) => (
                                     <li key={Pitem}><Link onClick={ClickHandler} to={`/project-single/${project.Id}`}><img src={project.pImg} alt="" /></Link></li>
                                 ))}
-                            </ul>
+                            </ul> */}
                         </div>
                     </div>
                 </div>
@@ -95,7 +97,7 @@ const Footer = (props) =>{
             <div className="container">
                 <div className="row">
                     <div className="col col-xs-12">
-                        <p className="copyright"> Copyright &copy; 2021 anur by <Link onClick={ClickHandler} to="/">wpOceans</Link>.
+                        <p className="copyright"> Copyright &copy; 2024 Visualsblaze by <Link onClick={ClickHandler} to="/">Hamza Manzoor</Link>.
                             All Rights Reserved.</p>
                     </div>
                 </div>

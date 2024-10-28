@@ -13,9 +13,9 @@ const Hero = () => {
         <div className="row">
           <div className="col col-xs-12 col-lg-6">
             <div className="hero-text">
-              <h1>
-              Hello, I’m Husnain M.
-              </h1>
+            <h1>
+  <span style={{ color: "#ffcc00" }}>Hello</span>, I’m Husnain M.
+</h1>
               <h2>Motion Graphic Artist</h2>
               <p>CEO of Visuals Blaze</p>
               
