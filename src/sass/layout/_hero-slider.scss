@@ -182,16 +182,18 @@
 				
 			img{
 				// animation: bounce 3s linear infinite;
+				@media(max-width:1920px){
+					width: 130%;
+					margin-top: 18%;
+				}
+				
 				@media(max-width:1500px){
 					width: 100%;
 					margin-top: 4%;
 				}
-				@media(max-width:1920px){
-					width: 133%;
-					margin-top: 14.4%;
-				}
 				
 			}
+			
 		}
 		
 
