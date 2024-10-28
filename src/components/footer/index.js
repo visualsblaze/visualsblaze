@@ -69,10 +69,10 @@ const Footer = (props) =>{
                             </div>
                             <div className="contact-ft">
                                 <ul>
-                                    <li><i className="fi flaticon-placeholder"></i>7 Green Lake Street Crawfordsville, IN
-                                        47933</li>
-                                    <li><i className="fi flaticon-phone-call"></i>+1 800 123 456 789</li>
-                                    <li><i className="fi flaticon-email"></i>anur@gmail.com</li>
+                                    <li><i className="fi flaticon-placeholder"></i>Jeddah
+                                        </li>
+                                    <li><i className="fi flaticon-phone-call"></i>+966 50 887 5968</li>
+                                    <li><i className="fi flaticon-email"></i>visualsblaze@gmail.com</li>
                                 </ul>
                             </div>
                         </div>
