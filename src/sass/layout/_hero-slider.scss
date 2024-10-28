@@ -195,74 +195,11 @@
 			}
 			
 		}
+	}
+
 		
 
-		.round-1{
-			width: 754px;
-			height: 754px;
-			border: 1px dashed rgba(255,255,255,.2);
-			border-radius: 50%;
-			position: absolute;
-			left: -80px;
-			top: 0;
-			z-index: -1;
-			animation: circle 60s linear infinite;
-
-			@media(max-width:1500px){
-				width: 554px;
-				height: 554px;
-				left: 5px;
-			}
-		}
-		.round-2{
-			width: 634px;
-			height: 634px;
-			border: 1px solid rgba(255,255,255,.2);
-			border-radius: 50%;
-			position: absolute;
-			left: -20px;
-			top: 65px;
-			z-index: -1;
-			animation: circle 60s linear infinite;
-
-			@media(max-width:1500px){
-				width: 434px;
-				height: 434px;
-				left: 65px;
-			}
-		}
-		.round-3{
-			width: 535px;
-			height: 535px;
-			border: 1px dashed rgba(255,255,255,.2);
-			border-radius: 50%;
-			position: absolute;
-			left: 30px;
-    		top: 115px;
-			z-index: -1;
-			animation: circle 60s linear infinite;
-			@media(max-width:1500px){
-				width: 335px;
-				height: 335px;
-				left: 115px;
-			}
-		}
-		.round-4{
-			width: 424px;
-			height: 424px;
-			border: 1px solid rgba(255,255,255,.2);
-			border-radius: 50%;
-			position: absolute;
-			left: 85px;
-    		top: 165px;
-			z-index: -1;
-			animation: circle 60s linear infinite;
-			@media(max-width:1500px){
-				display: none;
-			}
-		}
-
-	}
+		
 
 	.social-link{
 		position: absolute;
@@ -313,9 +250,179 @@
 		}
 	}
   }
-
-
-
+/* Make asset1-img responsive and allow free movement */
+/* Align asset1-img to the right and make it responsive */
+/* General styles for asset1-img */
+.asset1-img {
+	position: absolute; /* Free positioning */
+	z-index: 10; /* Keep above other elements */
+	transition: transform 0.3s ease-in-out; /* Smooth movement effect */
+  }
+  
+  /* Image responsiveness */
+  .asset1-img img {
+	width: 100%; /* Scale the image */
+	height: auto; /* Maintain aspect ratio */
+	display: block; /* Remove gaps below image */
+  }
+  
+  /* Desktop (large screens) */
+  @media (max-width: 1920px) {
+	.asset1-img {
+	  top: 32%; /* Center vertically */
+	  right: 0; /* Align to the right */
+	  transform: translateY(-50%); /* Vertically center */
+	  max-width: 25%; /* Control size */
+	  
+	}
+  }
+  @media (max-width: 1500px) {
+	.asset1-img {
+	  top: 35%; /* Center vertically */
+	  right: 0; /* Align to the right */
+	  transform: translateY(-50%); /* Vertically center */
+	  max-width: 10%; /* Control size */
+	}
+  }
+  
+  /* Tablet (medium screens) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+	.asset1-img {
+	  top: 10%; /* Slightly lower */
+	  right: 10px; /* Give space from right edge */
+	  max-width: 35%; /* Adjust size for tablets */
+	}
+  }
+  
+  /* Mobile (small screens) */
+  @media (max-width: 768px) {
+	.asset1-img {
+	  display: none; /* Hide on mobile */
+	}
+  }
+   /* Social Icons */
+   .social ul {
+	position: absolute;
+	top: 40%;
+	left: 50px;
+	list-style: none;
+	padding: 0;
+  }
+  
+  .social ul li {
+	margin: 10px 0;
+  }
+  
+  .social ul li a {
+	color: white;
+	background: linear-gradient(to right, #c23c3c, #c05252);
+	font-size: 1.5rem;
+	transition: color 0.3s;
+  
+	/* Circle Styling */
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	line-height: 50px; /* Align text vertically */
+	text-align: center; /* Align text horizontally */
+	border-radius: 50%; /* Make it a circle */
+  }
+  
+  .social ul li a:hover {
+	color: #ffcc33;
+  }
+.asset2-img {
+	position: absolute; /* Free positioning */
+	z-index: 10; /* Keep above other elements */
+	transition: transform 0.3s ease-in-out; /* Smooth movement effect */
+ }
+  
+  /* Image responsiveness */
+  .asset2-img img {
+	width: 130%; /* Scale the image */
+	height: auto; /* Maintain aspect ratio */
+	display: block; /* Remove gaps below image */
+  }
+  
+  /* Desktop (large screens) */
+  @media (max-width: 1920px) {
+	.asset2-img {
+	  top: 85%; /* Center vertically */
+	  right: 27%; /* Align to the right */
+	  transform: translateY(-50%); /* Vertically center */
+	  max-width: 30%; /* Control size */
+	}
+  }
+  @media (max-width: 1500px) {
+	.asset2-img {
+	  top: 85%; /* Center vertically */
+	  right: 27%; /* Align to the right */
+	  transform: translateY(-50%); /* Vertically center */
+	  max-width: 10%; /* Control size */
+	}
+  }
+  
+  /* Tablet (medium screens) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+	.asset2-img {
+	  top: 10%; /* Slightly lower */
+	  right: 10px; /* Give space from right edge */
+	  max-width: 35%; /* Adjust size for tablets */
+	}
+  }
+  
+  /* Mobile (small screens) */
+  @media (max-width: 768px) {
+	.asset2-img {
+	  display: none; /* Hide on mobile */
+	}
+  }
+  .asset3-img {
+	position: absolute; /* Free positioning */
+	z-index: 10; /* Keep above other elements */
+	transition: transform 0.3s ease-in-out; /* Smooth movement effect */
+ }
+  
+  /* Image responsiveness */
+  .asset3-img img {
+	width: 130%; /* Scale the image */
+	height: auto; /* Maintain aspect ratio */
+	display: block; /* Remove gaps below image */
+  }
+  
+  /* Desktop (large screens) */
+  @media (max-width: 1920px) {
+	.asset3-img {
+	  top: 70%; /* Center vertically */
+	  left: 10%; /* Align to the right */
+	  transform: translateY(-50%); /* Vertically center */
+	  max-width: 30%; /* Control size */
+	}
+  }
+  @media (max-width: 1500px) {
+	.asset3-img {
+	  top: 85%; /* Center vertically */
+	  right: 27%; /* Align to the right */
+	  transform: translateY(-50%); /* Vertically center */
+	  max-width: 10%; /* Control size */
+	}
+  }
+  
+  /* Tablet (medium screens) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+	.asset3-img {
+	  top: 10%; /* Slightly lower */
+	  right: 10px; /* Give space from right edge */
+	  max-width: 35%; /* Adjust size for tablets */
+	}
+  }
+  
+  /* Mobile (small screens) */
+  @media (max-width: 768px) {
+	.asset3-img {
+	  display: none; /* Hide on mobile */
+	}
+  }  
   @-webkit-keyframes circle {
     0% {
         -webkit-transform: rotate(0deg);
@@ -976,32 +1083,35 @@
 // 	justify-content: center;
 //   }
   
-//   /* Text Section Styling */
-//   .hero-text {
-// 	position: relative;
-// 	z-index: 2;
-// 	margin-bottom: 60%;
-// 	color: white;
-// 	font-family: 'Poppins', sans-serif;
-// 	text-align: center;  /* Center text */
-// 	margin-top: 30%;
+  /* Text Section Styling */
+/* General styling for hero-text container */
+.hero-text {
+    position: absolute; /* Allows positioning based on the nearest positioned ancestor */
+    left: 20px; /* Distance from the left of the screen */
+    top: 50px; /* Distance from the top of the screen */
+    transform: translateY(70%); /* Centers it vertically, adjust as needed */
+	margin-left: 10%;
+    text-align: left; /* Left aligns the text within the div */
+    color: #fff; /* Optional: Change text color */
+}
 
-//   }
-  
-//   .hero-text h1 {
-// 	font-size: 3rem;
-// 	font-weight: 700;
-//   }
-  
-//   .hero-text h2 {
-// 	font-size: 2rem;
-//   }
-  
-//   .hero-text p {
-// 	font-size: 1.2rem;
-// 	font-weight: 500;
-// 	margin-bottom: 10%;
-//   }
+.hero-text h1 {
+    color: #ffffff; /* White color for h1 */
+    font-size: 2.5rem; /* Increase font size for h1 */
+    font-weight: bold; /* Bold weight for h1 */
+}
+
+.hero-text h2 {
+    color: #ffffff; /* Yellow color for h2 */
+    font-size: 2rem; /* Increase font size for h2 */
+    font-weight: 600; /* Semi-bold weight for h2 */
+}
+
+.hero-text p {
+    color: #ffcc00; /* White color for p */
+    font-size: 1.5rem; /* Increase font size for p */
+    font-weight: normal; /* Normal weight for p */
+}
   
 //   /* Button Styling */
 //   .hero-button {
@@ -1011,6 +1121,9 @@
 // 	color: #ffffff;
 // 	font-weight: 600;
 // 	font-size: 30px;
+// 	justify-content: top;
+// 	margin-left: 10%;
+
 // 	border-radius: 50px;
 // 	text-decoration: none;
 // 	transition: background-color 0.3s;
@@ -1087,37 +1200,7 @@
 // 	z-index: 1000;
 //   }
   
-//   /* Social Icons */
-//   .social ul {
-// 	position: absolute;
-// 	top: 40%;
-// 	left: 50px;
-// 	list-style: none;
-// 	padding: 0;
-//   }
-  
-//   .social ul li {
-// 	margin: 10px 0;
-//   }
-  
-//   .social ul li a {
-// 	color: white;
-// 	background: linear-gradient(to right, #c23c3c, #c05252);
-// 	font-size: 1.5rem;
-// 	transition: color 0.3s;
-  
-// 	/* Circle Styling */
-// 	display: inline-block;
-// 	width: 50px;
-// 	height: 50px;
-// 	line-height: 50px; /* Align text vertically */
-// 	text-align: center; /* Align text horizontally */
-// 	border-radius: 50%; /* Make it a circle */
-//   }
-  
-//   .social ul li a:hover {
-// 	color: #ffcc33;
-//   }
+ 
   
 //   /* Media Queries for Responsiveness */
 //   @media (max-width: 1920px) {
