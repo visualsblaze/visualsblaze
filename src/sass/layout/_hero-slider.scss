@@ -1077,6 +1077,19 @@
     list-style: none;
     position: absolute;
     top: 45%; /* Center vertically */
+    left: 65px; /* Adjust left spacing */
+    transform: translateY(-20%); /* Center properly */
+    }
+}
+@media (max-width: 1500px) {
+     .social ul {
+        display: flex;
+    flex-direction: column; /* Vertical alignment */
+    gap: 10px; /* Space between icons */
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 45%; /* Center vertically */
     left: 50px; /* Adjust left spacing */
     transform: translateY(-20%); /* Center properly */
     }
@@ -1139,6 +1152,7 @@
     text-decoration: none;
     transition: background-color 0.3s;
     margin-top: 10px;
+	margin-left: 20%;
 }
 
 .hero-button:hover {
