@@ -1077,7 +1077,7 @@
     list-style: none;
     position: absolute;
     top: 45%; /* Center vertically */
-    left: 65px; /* Adjust left spacing */
+    left: 70px; /* Adjust left spacing */
     transform: translateY(-20%); /* Center properly */
     }
 }
@@ -1127,22 +1127,22 @@
     color: #ffffff;
     font-size: 4.5rem; 
     font-weight: bold;
-	margin-bottom: -0.5rem; /* Adjust spacing below h1 */
+	margin-bottom: -1rem; /* Adjust spacing below h1 */
 }
 
 .hero-text h2 {
     color: #ffffff;
     font-size: 3rem;
     font-weight: 600;
-	margin-top: 0.2rem; /* Reduce space above h2 */
-    margin-bottom: -0.2rem; /* Reduce space below h2 */
+	margin-top: 0.1rem; /* Reduce space above h2 */
+    margin-bottom: -0.5rem; /* Reduce space below h2 */
 }
 
 .hero-text p {
     color: #ffcc00;
     font-size: 1.5rem;
     font-weight: normal;
-	margin-top: 0.2rem; /* Reduce space above p */
+	margin-top: 0.1rem; /* Reduce space above p */
 }
 
 /* Button Styling */
@@ -1163,7 +1163,12 @@
 .hero-button:hover {
     background-color: #ffb300;
 }
+/* General Button Styles */
+/* Container must be relatively positioned to contain absolutely positioned elements */
+/* Button aligned to the top-right of the screen */
 
+  
+  
 /* Responsive Styling */
 @media (max-width: 1500px) {
     .hero-text {

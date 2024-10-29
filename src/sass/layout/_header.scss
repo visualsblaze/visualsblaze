@@ -1217,7 +1217,36 @@
 	}
 }
 
-
+.download-btn {
+	position: fixed;
+	top: 20px;   /* Distance from the top */
+	right: 20px; /* Distance from the right */
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background-color: #ffcc00;
+	color: #ffffff;
+	border: none;
+	padding: 12px 20px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 25px;
+	transition: all 0.3s ease;
+	z-index: 1000; /* Ensure the button is always on top */
+  }
+  
+  /* Hover Effect */
+  .download-btn:hover {
+	background-color: #ff9900;
+	color: #fff;
+	transform: scale(1.05);
+  }
+  
+  /* Download Icon Size */
+  .download-icon {
+	font-size: 18px;
+  }
 // .wpo-site-header.wpo-header-style-5
 
 .wpo-site-header.wpo-header-style-5 .header-right .search-toggle-btn .fi:before{

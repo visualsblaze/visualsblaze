@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import MobileMenu from '../../components/MobileMenu'
+import { FaFacebook, FaLinkedin, FaInstagram, FaBehance, FaArrowDown } from "react-icons/fa";
 
 
 export default class Header extends Component {
+    
 
     state = {
         isSearchShow: false,
@@ -27,6 +29,12 @@ export default class Header extends Component {
         const ClickHandler = () => {
             window.scrollTo(10, 0);
         }
+        const handleDownload = () => {
+            const link = document.createElement('a');
+            link.href = "../../images/visuals.pdf"; // Update with your PDF path
+            link.download = "visualsblaze.pdf"; // Set the downloaded filename
+            link.click();
+          };
         return (
             <header id="header" className={this.props.topbarNone}>
                 <div className={`wpo-site-header ${this.props.hclass}`}>
@@ -102,26 +110,13 @@ export default class Header extends Component {
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-2 col-2">
-                                    <div className="header-right">
-                                        <div className="header-search-form-wrapper">
-                                            <div className="cart-search-contact">
-                                                <button onClick={this.searchHandler} className="search-toggle-btn"><i
-                                                    className={`${isSearchShow ? 'fi ti-close' : 'fi ti-search'}`}></i></button>
-                                                <div className={`header-search-form ${isSearchShow ? 'header-search-content-toggle' : ''}`}>
-                                                    <form onSubmit={SubmitHandler}>
-                                                        <div>
-                                                            <input type="text" className="form-control"
-                                                                placeholder="Search here..." />
-                                                            <button type="submit"><i
-                                                                className="fi flaticon-loupe"></i></button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
+                                        {/* Freely Positioned Download Button */}
+                                        <button onClick={handleDownload} className="button download-btn">
+                                                    <FaArrowDown className="download-icon" /> Download PDF
+                                                    </button>
+                                                
                                         </div>
-                                    </div>
                                 </div>
-                            </div>
                         </div>
                     </nav>
                 </div>
