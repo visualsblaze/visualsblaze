@@ -105,14 +105,14 @@ export default class Header extends Component {
                                                     </li>
                                                 </ul> */}
                                             </li>
-                                            {/* <li><Link onClick={ClickHandler} to="/contact">Contact</Link></li> */}
+                                            <li><Link onClick={ClickHandler} to="/contact">Contact</Link></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="col-lg-3 col-md-2 col-2">
+                                <div className="col-lg-3 col-2 col-2">
                                         {/* Freely Positioned Download Button */}
                                         <button onClick={handleDownload} className="button download-btn">
-                                                    <FaArrowDown className="download-icon" /> Download PDF
+                                                    <FaArrowDown className="download-icon" /> BROCHURE
                                                     </button>
                                                 
                                         </div>

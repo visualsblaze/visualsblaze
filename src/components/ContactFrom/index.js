@@ -102,14 +102,14 @@ class ContactForm extends Component {
                     </div>
                     <div className="col-lg-6 col-md-6 col-12">
                         <div className="form-field">
-                            <select className="form-control" onChange={this.changeHandler} value={subject} type="text" name="subject">
+                            {/* <select className="form-control" onChange={this.changeHandler} value={subject} type="text" name="subject">
                                 <option >Subject</option>
                                 <option>Family Law</option>
                                 <option>Personal Injury</option>
                                 <option>Criminal Law</option>
                                 <option>Education Law</option>
                                 <option>Business Law</option>
-                            </select>
+                            </select> */}
                             <p>{error.subject ? error.subject : ''}</p>
                         </div>
                     </div>

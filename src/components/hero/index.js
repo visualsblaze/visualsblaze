@@ -7,35 +7,41 @@ import h from "../../images/typography.png";
 import { FaFacebook, FaLinkedin, FaInstagram, FaBehance, FaArrowDown } from "react-icons/fa";
 
 const Hero = () => {
- 
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = "../../images/visuals.pdf"; // Update with your PDF path
+    link.download = "visualsblaze.pdf"; // Set the downloaded filename
+    link.click();
+  };
+
   return (
     <section className="wpo-hero-section-1">
       <div className="container">
         <div className="row">
           <div className="col col-xs-12 col-lg-6">
             <div className="hero-text">
-            <h1>
-  <span style={{ color: "#ffcc00" }}>Hello</span>, I’m Husnain M.
-</h1>
+              <h1>
+                <span style={{ color: "#ffcc00" }}>Hello</span>, I’m Husnain M.
+              </h1>
               <h2>Motion Graphic Artist</h2>
               <p>CEO OF VISUALS BLAZE</p>
-              
+
+              {/* Freely Positioned Download Button */}
+              <button onClick={handleDownload} className="button download">
+                <FaArrowDown className="download-icon" /> BROCHURE
+              </button>
             </div>
-         
           </div>
         </div>
-        
       </div>
 
       <div className="right-vec">
         <div className="right-img">
           <img src={himg} alt="" />
         </div>
-     
-       
       </div>
+
       <div className="stone-vec">
-       
         <div className="asset1-img">
           <img src={him} alt="" />
         </div>
@@ -44,14 +50,11 @@ const Hero = () => {
         </div>
         <div className="asset3-img">
           <img src={h} alt="" />
-        </div> 
-       
+        </div>
       </div>
 
       <div className="social">
-        
         <ul>
-       
           <li>
             <Link to="https://www.behance.net/discovervisualsblaze">
               <FaBehance />
@@ -73,9 +76,7 @@ const Hero = () => {
             </Link>
           </li>
         </ul>
-        
       </div>
-      
     </section>
   );
 };

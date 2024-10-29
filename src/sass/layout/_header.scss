@@ -10,7 +10,7 @@
 	/* style for navigation less than 992px */
 	/*navbar collaps less then 992px*/
 	/*** cart-search-contact ***/
-	background-color: #fff;
+	background-color: #bc1e2d;
   }
   
   .wpo-site-header .navigation {
@@ -537,7 +537,7 @@
   .wpo-site-header {
 
 	.navigation {
-		background-color: $white;
+		background-color: #bc1e2d;
 		margin-bottom: 0;
 		padding: 0;
 		border: 0;
@@ -571,7 +571,7 @@
 				font-size: 20px;
 				padding: 35px 20px;
 				display: block;
-				color: #232f4b;
+				color: #ffffff;
 				font-family: 'Futura PT';
 				font-weight: 500;
 				position: relative;
@@ -1210,17 +1210,36 @@
 		top: 0;
 	}
 }
+@media(max-width:1920px){
+	.navbar-brand{
+		img{
+			max-width: 350px;
+			margin-left: 50px;
+		}
+	}
+}
 
-.navbar-brand{
-	img{
-		max-width: 350px;
+@media(max-width:1500px){
+	.navbar-brand{
+		img{
+			max-width: 350px;
+			margin-left: 20px;
+		}
+	}
+}
+@media(max-width:1500px){
+	.navbar-brand{
+		img{
+			max-width: 350px;
+			margin-left: 20px;
+		}
 	}
 }
 
 .download-btn {
 	position: fixed;
-	top: 20px;   /* Distance from the top */
-	right: 20px; /* Distance from the right */
+	top: 20px;
+	right: 20px;
 	display: flex;
 	align-items: center;
 	gap: 8px;
@@ -1247,6 +1266,16 @@
   .download-icon {
 	font-size: 18px;
   }
+  
+  /* Remove fixed position on mobile screens */
+  @media (max-width: 767px) {
+	.download-btn {
+	 
+	  display: none; /* Ensure it takes up the full width */
+	}
+  }
+  
+ 
 // .wpo-site-header.wpo-header-style-5
 
 .wpo-site-header.wpo-header-style-5 .header-right .search-toggle-btn .fi:before{
@@ -1266,7 +1295,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: $white;
+    background: #bc1e2d;
     border: none;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, .1);
       -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, .1);
