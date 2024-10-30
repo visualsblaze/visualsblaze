@@ -28,7 +28,7 @@
 
                 h2{
                     font-size: 33px;
-                    font-family: $heading-font;
+                    font-family: 'Helica', sans-serif;
                     margin-bottom: 30px;
                     font-weight: 700;
 
@@ -69,7 +69,7 @@
         .wpo-related-section{
             h2{
                 font-size: 30px;
-                font-family: $heading-font;
+                font-family: 'Helica', sans-serif;
                 margin-bottom: 30px;
                 font-weight: 700;
 
@@ -133,7 +133,7 @@
     
             h2{
                 font-size: 30px;
-                font-family: $heading-font;
+                font-family: 'Helica', sans-serif;
                 margin-bottom: 30px;
                 font-weight: 700;
             }
@@ -160,12 +160,12 @@
                     font-size: 20px;
                     color: $heading-color;
                     text-align: left;
-                    font-family: $base-font;
+                    font-family: 'Helica', sans-serif;
                     font-weight: 600;
 
                     &::after{
                         background: none;
-                        font-family: "themify";
+                        font-family: 'Helica', sans-serif;
                         content: "\e622";
                         font-size: 15px;
                         transform: rotate(0deg);
@@ -282,7 +282,7 @@
 
         h2{
            font-size: 25px;
-           font-family: $heading-font;
+           font-family: 'Helica', sans-serif;
            padding-bottom: 20px;
            position: relative;
            font-weight: 700;
@@ -324,7 +324,7 @@
                       position: absolute;
                       left: 0;
                       top: 15px;
-                      font-family: "themify";
+                      font-family: 'Helica', sans-serif;
                       content: "\e649";
                       font-size: 14px;
                       color: $theme-primary-color;
@@ -469,7 +469,7 @@
             margin-top: 10px;
 
             &::before{
-                font-family: "themify";
+                font-family: 'Helica', sans-serif;
                 content: "\e628";
                 font-size: 18px;
                 position: absolute;

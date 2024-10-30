@@ -25,7 +25,7 @@
 			margin: 0 0 1.3em;
 			position: relative;
 			text-transform: capitalize;
-			font-family: $heading-font-sub;
+			font-family: 'Helica', sans-serif;
 			padding-bottom: 20px;
 
 			&:before {
@@ -162,7 +162,7 @@
 		}
 
 		a {
-			font-family: $heading-font;
+			font-family: 'Helica', sans-serif;
 			font-size: 14px;
 			font-size: calc-rem-value(14);
 			color: $heading-color;
@@ -205,7 +205,7 @@
 		ul a {
 			display: block;
 			color: #474f62;
-			font-family: $heading-font-sub;
+			font-family: 'Helica', sans-serif;
 
 
 			span{
@@ -267,7 +267,7 @@
 			font-weight: 500;
 			line-height: 1.3em;
 			margin: 0 0 0.3em;
-			font-family: $heading-font-sub;
+			font-family: 'Helica', sans-serif;
 
 			@include media-query(1199px) {
 				margin: 0;
@@ -398,7 +398,7 @@
 			margin-top: 10px;
 	
 			&::before{
-				font-family: "themify";
+				font-family: 'Helica', sans-serif;
 				content: "\e628";
 				font-size: 18px;
 				position: absolute;

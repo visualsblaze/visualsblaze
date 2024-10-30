@@ -6,7 +6,7 @@ html {
     scroll-behavior: unset;
 }
 body {
-    font-family: $base-font;
+    font-family: 'Helica', sans-serif;
     color:$body-color;
     background-color: $body-bg-color;
     font-size: 16px;
@@ -30,7 +30,7 @@ h4,
 h5,
 h6 {
     color: $heading-color;
-    font-family: $heading-font;
+    font-family: 'Helica', sans-serif;
 }
 
 ul {

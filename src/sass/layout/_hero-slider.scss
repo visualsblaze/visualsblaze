@@ -116,7 +116,7 @@
 			color: $theme-primary-color;
 			position: relative;
 			font-size: 25px;
-			font-family: $heading-font;
+			font-family: 'Helica', sans-serif;
 			padding-left: 120px;
 			
 			&:before{
@@ -1092,13 +1092,23 @@
 	transition: transform 0.3s;
 }
 
-/* Circular gradient backgrounds */
+/* Linear gradient backgrounds */
 .social li:nth-child(1) a,
 .social li:nth-child(2) a,
 .social li:nth-child(3) a,
 .social li:nth-child(4) a {
-	background: radial-gradient(circle, #aa2135, #ff4856);
+  background: linear-gradient(45deg, #aa2135, #ff4856);
+  color: white; /* Optional: Ensures text visibility */
+  display: inline-block;
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%; /* Makes it circular */
+  text-align: center;
+  line-height: 50px;
+  transition: 0.3s ease-in-out;
 }
+
+
 
 /* Hover effect for animation */
 .social a:hover {
@@ -1111,7 +1121,7 @@
 		flex-direction: row; /* Change to horizontal on mobile */
 		justify-content: flex-start; /* Align to the left */
 		gap: 15px; /* Adjust spacing between icons */
-		margin-top: 80%;
+		margin-top: 90%;
 		margin-left: 28%;
 	}
 

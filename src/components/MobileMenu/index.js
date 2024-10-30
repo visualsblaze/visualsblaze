@@ -8,11 +8,56 @@ const menus = [
         id: 1,
         title: 'Home',
         link: '/home',
-       
+        submenu: [
+            {
+                id: 11,
+                title: 'Home style 1',
+                link: '/home'
+            },
+            {
+                id: 12,
+                title: 'Home style 2',
+                link: '/home2'
+            },
+            {
+                id: 13,
+                title: 'Home style 3',
+                link: '/home3'
+            },
+            {
+                id: 14,
+                title: 'Home style 4',
+                link: '/home4'
+            },
+        ]
+    },
 
+    {
+        id: 2,
+        title: 'About',
+        link: '/about',
+    },
+
+   
+
+        {
+            id: 42,
+            title: 'Portfolio',
+            link: '/portfolio-grid-s2'
+        },
+   
+    {
+        id: 31,
+        title: 'Service',
+        link: '/service'
+    },
+   
+    {
+        id: 88,
+        title: 'Contact',
+        link: '/contact',
     }
-
-  
+    
     
 ]
 
