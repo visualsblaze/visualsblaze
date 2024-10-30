@@ -24,7 +24,7 @@
                 width:100px;
                 height: 100px;
                 line-height: 100px;
-                background: $theme-primary-color;
+                background: #aa2135;
                 border-radius: 50%; 
                 text-align: center;
                 position: absolute;
@@ -81,7 +81,7 @@
                     top: auto;
                     right: 15px;
                     bottom: 15px;
-                    background-color: #004585;
+                    background-color: #aa2135;
                 }
                 .wpo-work-icon-thumb{
                     left: 30px;
@@ -186,7 +186,7 @@
             left: -70px;
             top: 58%;
             padding: 15px 25px;
-            background-color: #004585;
+            background-color: #aa2135;
             z-index: 11;
             font-size: 22px;
             font-size: calc-rem-value(22);
@@ -351,7 +351,7 @@
 
 .wpo-fun-fact-section,.wpo-fun-fact-section-s2,.wpo-fun-fact-section-s3{
 	text-align: center;
-    background: #24243e;
+    background: #aa2135;
     padding: 100px 0;
 
 	@include media-query(767px) {
@@ -398,7 +398,7 @@
             font-size: 100px;
             font-size: calc-rem-value(100);
             font-weight: 900;
-            color: $theme-primary-color;
+            color: aa2135;
             font-family: 'Helica', sans-serif;
             display: flex;
             align-items: center;
@@ -407,9 +407,9 @@
             margin-right: 20px;
             margin-bottom: 0;
 
-            -webkit-text-fill-color: #24243e;
+            -webkit-text-fill-color: #ffffff;
             -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: #c4c4c4;
+            -webkit-text-stroke-color: #ffffff;
 
             .odometer-inside{
                 display: flex;

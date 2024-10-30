@@ -12,7 +12,7 @@
     overflow-y: scroll;
 }
 .responsivemenu .card-body{
-    background: #243352;
+    background: linear-gradient(45deg, #aa2135, #ff4856);
 }
 .mobileMenu h2{
     padding-left: 20px;
@@ -60,7 +60,7 @@
 }
 
 .responsivemenu .card-body li {
-    background: #243352;
+    background: linear-gradient(45deg, #aa2135, #ff4856);
 }
 
 .responsivemenu li a{
