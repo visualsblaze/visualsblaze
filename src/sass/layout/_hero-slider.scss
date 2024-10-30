@@ -187,11 +187,15 @@
 					margin-top: 18%;
 				}
 				
-				@media(max-width:1500px){
-					width: 100%;
-					margin-top: 4%;
-				}
 				
+				@media(max-width:1600px){
+					width: 100%;
+					margin-top: 56%;
+				}
+				@media(max-width:1400px){
+					width: 100%;
+					margin-top: 4.5%;
+				}
 			}
 			
 		}
@@ -277,16 +281,24 @@
 	  
 	}
   }
-  @media (max-width: 1500px) {
+  @media (max-width: 1600px) {
 	.asset1-img {
 
-	  top: 19%; /* Center vertically */
+	  top: 29%; /* Center vertically */
 	  right: 0; /* Align to the right */
 	  transform: translateY(-50%); /* Vertically center */
 	  max-width: 10%; /* Control size */
 	}
   }
-  
+  @media (max-width: 1400px) {
+	.asset1-img {
+
+	  top: 20%; /* Center vertically */
+	  right: 0; /* Align to the right */
+	  transform: translateY(-50%); /* Vertically center */
+	  max-width: 10%; /* Control size */
+	}
+  }
   /* Tablet (medium screens) */
   @media (min-width: 769px) and (max-width: 1024px) {
 	.asset1-img {
@@ -327,15 +339,22 @@
 	  max-width: 30%; /* Control size */
 	}
   }
-  @media (max-width: 1500px) {
+  @media (max-width: 1600px) {
 	.asset2-img {
-	  top: 69%; /* Center vertically */
+	  top: 75%; /* Center vertically */
 	  right: 27%; /* Align to the right */
 	  transform: translateY(-50%); /* Vertically center */
 	  max-width: 10%; /* Control size */
 	}
   }
-  
+    @media (max-width: 1400px) {
+	.asset2-img {
+	  top: 70%; /* Center vertically */
+	  right: 27%; /* Align to the right */
+	  transform: translateY(-50%); /* Vertically center */
+	  max-width: 10%; /* Control size */
+	}
+  }
   /* Tablet (medium screens) */
   @media (min-width: 769px) and (max-width: 1024px) {
 	.asset2-img {
@@ -1093,7 +1112,7 @@
 		justify-content: flex-start; /* Align to the left */
 		gap: 15px; /* Adjust spacing between icons */
 		margin-top: 80%;
-		margin-left: 22%;
+		margin-left: 28%;
 	}
 
 	.social ul {
@@ -1171,7 +1190,8 @@
 	
 .download {
 	display: flex;
-	margin-left: 21%;
+	margin-left: 30%;
+	margin-top: 10%;
 	align-items: center;
 	gap: 8px;
 	background-color: #ffcc00;

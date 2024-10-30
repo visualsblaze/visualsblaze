@@ -65,26 +65,27 @@ export default class Header extends Component {
                                                     <li><Link onClick={ClickHandler} to="/home4">Home style 4</Link></li>
                                                 </ul> */}
                                             </li>
-                                            {/* <li><Link onClick={ClickHandler} to="/about">About</Link></li> */}
-                                            {/* <li className="menu-item-has-children">
-                                                <Link onClick={ClickHandler} to="/portfolio-grid">Portfolio</Link>
-                                                <ul className="sub-menu">
-                                                    <li><Link onClick={ClickHandler} to="/portfolio-grid">Portfolio Grid</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/portfolio-grid-s2">Portfolio Grid S2</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/portfolio-grid-s3">Portfolio Grid S3</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/portfolio-slide">Portfolio Slide</Link></li>
-                                                </ul>
-                                            </li> */}
+                                            <li><Link onClick={ClickHandler} to="/about">About</Link></li>
+                                            <li><Link onClick={ClickHandler} to="/portfolio-grid-s2">Portfolio</Link></li>
+                                            <li><Link onClick={ClickHandler} to="/service">Service</Link></li>
+
+                                             {/* <li className="menu-item-has-children"> */}
+                                                {/* <Link onClick={ClickHandler} to="/portfolio-grid">Portfolio</Link> */}
+                                                {/* <ul className="sub-menu"> */}
+                                                    {/* <li><Link onClick={ClickHandler} to="/portfolio-grid">Portfolio Grid</Link></li> */}
+                                                    {/* <li><Link onClick={ClickHandler} to="/portfolio-grid-s3">Portfolio Grid S3</Link></li> */}
+                                                    {/* <li><Link onClick={ClickHandler} to="/portfolio-slide">Portfolio Slide</Link></li> */}
+                                                {/* </ul> */}
+                                            {/* </li>  */}
                                             <li className="menu-item-has-children">
-                                                {/* <Link onClick={ClickHandler} to="/service">Pages</Link> */}
-                                                {/* <ul className="sub-menu">
-                                                    <li><Link onClick={ClickHandler} to="/service">Service</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/service-single/1">Service Single</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/project-single/1">Project Single</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/404">Error 404</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/login">Login</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/register">Register</Link></li>
-                                                </ul> */}
+                                                 {/* <Link onClick={ClickHandler} to="/service">Pages</Link>  */}
+                                                 <ul className="sub-menu">
+                                                    {/* <li><Link onClick={ClickHandler} to="/service-single/1">Service Single</Link></li> */}
+                                                    {/* <li><Link onClick={ClickHandler} to="/project-single/1">Project Single</Link></li> */}
+                                                    {/* <li><Link onClick={ClickHandler} to="/404">Error 404</Link></li> */}
+                                                    {/* <li><Link onClick={ClickHandler} to="/login">Login</Link></li> */}
+                                                    {/* <li><Link onClick={ClickHandler} to="/register">Register</Link></li> */}
+                                                </ul> 
                                             </li>
                                             <li>
                                                 {/* <Link onClick={ClickHandler} to="/blog">Blog</Link> */}
