@@ -93,7 +93,7 @@
             max-width: 180px;
         }
     }
-
+    
     .about-widget {
         p{
             margin-bottom: 0.8em;
@@ -105,6 +105,7 @@
                 margin-bottom: 0;
             }
         }
+   
 
         ul{
             overflow: hidden;
@@ -117,10 +118,9 @@
                 a{
                     color: $white;
                     width: 36px;
-                    height: 36px;
+                    height: 38px;
                     line-height: 40px;
                     background: linear-gradient(45deg, #ff4856, #aa2135);
-
                     display: block;
                     text-align: center;
                     @include rounded-border(50%);

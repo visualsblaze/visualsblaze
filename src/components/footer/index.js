@@ -33,19 +33,19 @@ const Footer = (props) =>{
               <FaBehance />
             </Link>
                                 </li><li>
-                                    <Link onClick={ClickHandler} to="/">
-                                        <i className="ti-linkedin"></i>
-                                    </Link>
+                                <Link to="https://www.behance.net/discovervisualsblaze">
+              <FaLinkedin />
+            </Link>
                                 </li>
                                 <li>
-                                    <Link onClick={ClickHandler} to="/">
-                                        <i className="ti-facebook"></i>
-                                    </Link>
+                                <Link to="https://www.behance.net/discovervisualsblaze">
+              <FaFacebook />
+            </Link>
                                 </li>
                                 <li>
-                                    <Link onClick={ClickHandler} to="/">
-                                        <i className="ti-instagram"></i>
-                                    </Link>
+                                <Link to="https://www.behance.net/discovervisualsblaze">
+              <FaInstagram />
+            </Link>
                                 </li>
                                 
                             </ul>
@@ -90,7 +90,7 @@ const Footer = (props) =>{
                             </div>
                             <div className="contact-ft">
                                 <ul>
-                                <li><i className="fi flaticon-placeholder"></i>Al-Andalus District,Jeddah KSA</li>
+                                <li><i className=""></i>Al-Andalus District,Jeddah KSA</li>
                                     <li><i className="fi flaticon-phone-call"></i>+966 50 887 5968</li>
                                     <li><i className="fi flaticon-email"></i>isualsblaze@gmail.com</li>
                                 </ul>

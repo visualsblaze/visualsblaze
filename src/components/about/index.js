@@ -18,7 +18,7 @@ const About = (props) => {
                             <img src={abimg} alt=""/>
                             <div className="shape-1"></div>
                             <div className="shape-2"></div>
-                            <span className="ab-btn">7 Years Experience</span>
+                            <span className="ab-btn">5 Years Experience</span>
                         </div>
                     </div>
                     <div className="col-lg-6">
@@ -26,7 +26,7 @@ const About = (props) => {
                             <div className="section-title">
                                 <span>ABOUT US</span>
                                 <h2>We are more than just a
-                                    <span>digital agency.</span>
+                                    <span> digital agency.</span>
                                 </h2>
                                 <div className="transparent-text">About</div>
                             </div>

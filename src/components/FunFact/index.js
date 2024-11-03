@@ -5,21 +5,18 @@ const FunFact = (props) => {
 
     const funfact = [
         {
-            title: '82',
+            title: '16',
             subTitle: 'Successful Projects',
         },
         {
-            title: '45',
+            title: '15',
             subTitle: 'Satisfied Clients',
         },
         {
-            title: '15',
+            title: '5',
             subTitle: 'Years of Experience',
         },
-        {
-            title: '37',
-            subTitle: 'Award Winning',
-        },
+        
 
 
     ]
