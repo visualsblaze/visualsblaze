@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link}  from 'react-router-dom'
-import Logo from '../../images/log-2.png'
+import Logo from '../../images/footer-logo.png'
 import Services from '../../api/service';
 import Project from '../../api/project';
 import { FaFacebook, FaLinkedin, FaInstagram, FaBehance, FaArrowDown } from "react-icons/fa";
