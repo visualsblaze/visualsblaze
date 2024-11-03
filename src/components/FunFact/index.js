@@ -16,7 +16,10 @@ const FunFact = (props) => {
             title: '5',
             subTitle: 'Years of Experience',
         },
-        
+        {
+            title: '20',
+            subTitle: 'Services Experience',
+        },
 
 
     ]
