@@ -2,7 +2,8 @@
 4. wpo-footer
 --------------------------------------------------------------*/
 .wpo-site-footer {
-    background: #bc1e2d;
+    background: linear-gradient(45deg, #b81029, #ff4856) ;
+
     position: relative;
     font-size: 15px;
     overflow: hidden;
@@ -69,19 +70,22 @@
 
 
     .widget-title{
-        h3{
-            font-size: 20px;
-            color: $white;
-            margin: 0;
-            text-transform: uppercase;
-            position: relative;
-            font-family: 'Helica', sans-serif;
+       h3 {
+  font-size: 23px;
+  color: #ffcc00;
+  margin: 0;
+  text-transform: uppercase;
+  position: relative;
+  font-family: 'Helica', sans-serif;
+  font-weight: 600; /* Add font-weight here */
 
-            @media (max-width: 991px) {
-                font-size: 20px;
-                font-size: 1.25rem;
-            }
-        }
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 991px) {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+}
+
     }
     
     .about-widget {
@@ -94,6 +98,8 @@
         p{
             margin-bottom: 0.8em;
             line-height: 1.9em;
+            text-align: center;
+            margin-right: 30px;
 
             &:last-child{
                 margin-bottom: 0;
@@ -113,7 +119,8 @@
                     width: 36px;
                     height: 36px;
                     line-height: 40px;
-                    background: rgba($color: $white, $alpha: 0.1);
+                    background: linear-gradient(45deg, #ff4856, #aa2135);
+
                     display: block;
                     text-align: center;
                     @include rounded-border(50%);
@@ -176,7 +183,7 @@
                 }
             }
             li+li{
-              padding-top: 15px;
+              padding-top: 4px;
             }
         }
     }
@@ -208,14 +215,15 @@
     }
     
     
-
+  
     .wpo-lower-footer{
         text-align: center;
         position: relative;
-        background: #bc1e2d;
+        background: linear-gradient(45deg, #b81029, #ff4856) ;
+
+
     
         .row{
-            padding: 20px 0;
             position: relative;
         }
     
