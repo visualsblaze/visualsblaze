@@ -182,6 +182,8 @@
         } 
 
         .ab-btn{
+				animation: bounce 3s linear infinite;
+
             position: absolute;
             left: -70px;
             top: 58%;
@@ -439,7 +441,7 @@
 		font-size: 25px;
 		font-size: calc-rem-value(25);
 		margin: 0;
-        color: #c4c4c4;
+        color: #ffb100;
         font-family: 'Helica', sans-serif;
         line-height: 35px;
         text-align: left;

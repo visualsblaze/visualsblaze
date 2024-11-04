@@ -99,9 +99,9 @@
     .about-widget {
         p{
             margin-bottom: 0.8em;
-            line-height: 1.9em;
+            line-height: 1.3em;
             text-align: center;
-            margin-right: 30px;
+            margin-right: 3px;
 
             &:last-child{
                 margin-bottom: 0;
@@ -112,6 +112,7 @@
         ul{
             overflow: hidden;
             padding-top: 10px;
+            margin-left: 24px;
 
             li{
                 font-size: 22px;
@@ -136,7 +137,7 @@
             }
 
             li+li{
-                margin-left: 25px;
+                margin-left: 20px;
 
                 @media(max-width:1200px){
                     margin-left: 20px;
@@ -196,10 +197,10 @@
 
         ul {
             li {
-                padding-bottom: 15px;
+                padding-bottom: 2px;
                 position: relative;
                 padding-left: 35px;
-                color: #e5e3e3;
+                color: #ffffff;
                 font-size: 17px;
 
                 i{
@@ -207,11 +208,16 @@
                     left: 0;
                     top: 0;
                 }
-
+               
                 .fi:before{
                     font-size: 20px;
                     margin-right: 15px;
                 }
+            }
+            p{
+                text-align: left;
+                font-size: 16px;  
+                margin-bottom: 10px;
             }
         }
     }

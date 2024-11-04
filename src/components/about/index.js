@@ -30,7 +30,13 @@ const About = (props) => {
                                 </h2>
                                 <div className="transparent-text">About</div>
                             </div>
-                            <p>Welcome to the vibrant world of graphic design, where creativity knows no bounds and imagination is our playground. We're  here to weave visuals that tell stories, evoke emotions, and captivate audiences. Let’s embark on a journey where every pixel holds a purpose, and every stroke of the brush paints a masterpiece. Together, let’s bring your visions to life through the power of design. </p>
+                            <p style={{ textAlign: 'left' }}>
+  Welcome to the vibrant world of graphic design, where creativity knows no bounds and imagination is our playground.
+  We're here<br /> to weave visuals that tell stories, evoke emotions, and captivate audiences.
+  Let’s embark on a journey where every pixel holds a purpose, and every stroke of the brush paints a masterpiece.
+  Together, let’s bring your visions to life through the power of<br /> design.
+</p>
+
                             <p>
       Although we are unsure of what will ultimately<span style={{ color: '#aa2135' }}> save the world</span>, we do know that it must be{' '}
       <span style={{ color: '#aa2135' }}>perfectly designed</span>. Whether it is graphics, ads layout, 

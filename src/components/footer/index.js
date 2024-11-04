@@ -90,7 +90,7 @@ const Footer = (props) =>{
                             </div>
                             <div className="contact-ft">
                                 <ul>
-                                <li><i className=""></i>Al-Andalus District,Jeddah KSA</li>
+                                <p>Al-Andalus District,Jeddah KSA</p>
                                     <li><i className="fi flaticon-phone-call"></i>+966 50 887 5968</li>
                                     <li><i className="fi flaticon-email"></i>isualsblaze@gmail.com</li>
                                 </ul>
@@ -117,8 +117,7 @@ const Footer = (props) =>{
             <div className="container">
                 <div className="row">
                     <div className="col col-xs-12">
-                        <p className="copyright"> Copyright &copy; 2021 anur by <Link onClick={ClickHandler} to="/">wpOceans</Link>.
-                            All Rights Reserved.</p>
+                        <p className="copyright"> © Visuals Blaze | Designed and Developed By Hamza Manzoor.All Rights Reserved</p>
                     </div>
                 </div>
             </div>

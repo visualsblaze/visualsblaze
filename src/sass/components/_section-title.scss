@@ -16,16 +16,16 @@
   }
   
   .section-title > span, .section-title-s4 > span {
+	font-family: 'Helica', sans-serif;
 	font-size: 16px;
 	font-size: 1.06667rem;
 	font-weight: 500;
-	color: #004585;
+	color: #ffb100;
 	position: relative;
 	margin-top: -0.31em;
 	display: inline-block;
 	margin-top: 50px;
 	text-transform: uppercase;
-	font-family: 'Helica', sans-serif;
 
 	&:before{
 		content: "";
