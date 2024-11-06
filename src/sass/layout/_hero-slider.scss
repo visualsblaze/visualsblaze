@@ -1122,12 +1122,14 @@
 		justify-content: flex-start; /* Align to the left */
 		gap: 15px; /* Adjust spacing between icons */
 		margin-top: 80%;
-		margin-left: 26%;
+		margin-left: 23%;
+		
 	}
 
 	.social ul {
 		flex-direction: row; /* Horizontal layout */
 		align-items: center;
+		gap: 10px;
 	}
 }
 

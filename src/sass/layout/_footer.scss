@@ -87,63 +87,144 @@
 }
 
     }
-    .logo{
-        width: 250px;
-    }
+    @media (max-width: 1920px) {
+        .logo{
+            width: 250px;
+        }
+      }
+      @media (max-width: 480px) {
+        .logo{
+            width: 150px;
+        }
+      }
     .about-widget {
         .logo {
             max-width: 180px;
         }
     }
-    
-    .about-widget {
-        p{
+    @media (max-width: 1920px) {
+        .p-text{
             margin-bottom: 0.8em;
             line-height: 1.3em;
             text-align: center;
-            margin-right: 3px;
-
+            margin-right: 36px;
+    
             &:last-child{
                 margin-bottom: 0;
             }
+            }
+      }
+      @media (max-width: 1400px) {
+        .p-text{
+            margin-bottom: 0.8em;
+            line-height: 1.3em;
+            text-align: center;
+            margin-right: 4px;
+    
+            &:last-child{
+                margin-bottom: 0;
+            }
+            }
+      }
+      @media (max-width: 480px) {
+        .p-text{
+            margin-bottom: 0.8em;
+            line-height: 1.3em;
+            text-align: left;
+            margin-right: 50px;
+            font-size: 20px;
+    
+            &:last-child{
+                margin-bottom: 0;
+            }
+            }
+      }
+        
+    .about-widget {
+        p{
+            
         }
    
-
-        ul{
-            overflow: hidden;
-            padding-top: 10px;
-            margin-left: 24px;
-
-            li{
-                font-size: 22px;
-                float: left;
-
-                a{
-                    color: $white;
-                    width: 36px;
-                    height: 36px;
-                    line-height: 37px;
-                    background: linear-gradient(45deg, #ff4856, #aa2135);
-                    display: block;
-                    text-align: center;
-                    @include rounded-border(50%);
-                    font-size: 18px;
-
-                    &:hover{
-                        color:$dark-gray;
-                        background: $white;
+        @media (max-width: 1920px) {
+            ul{
+                overflow: hidden;
+                padding-top: 10px;
+                margin-left: 30px;
+    
+                li{
+                    font-size: 22px;
+                    float: left;
+    
+                    a{
+                        
+                        color: $white;
+                        width: 36px;
+                        height: 36px;
+                        line-height: 37px;
+                        background: linear-gradient(45deg, #ff4856, #aa2135);
+                        display: block;
+                        text-align: center;
+                        @include rounded-border(50%);
+                        font-size: 18px;
+                        gap: 102px;
+    
+    
+                        &:hover{
+                            color:$dark-gray;
+                            background: $white;
+                        }
+                    }
+                }
+    
+                li+li{
+                    margin-left: 20px;
+    
+                    @media(max-width:1200px){
+                        margin-left: 9px;
                     }
                 }
             }
-
-            li+li{
-                margin-left: 20px;
-
-                @media(max-width:1200px){
+          }
+          @media (max-width: 1200px) {
+            ul{
+                overflow: hidden;
+                padding-top: 10px;
+                margin-left: 2px;
+    
+                li{
+                    font-size: 22px;
+                    float: left;
+    
+                    a{
+                        
+                        color: $white;
+                        width: 36px;
+                        height: 36px;
+                        line-height: 37px;
+                        background: linear-gradient(45deg, #ff4856, #aa2135);
+                        display: block;
+                        text-align: center;
+                        @include rounded-border(50%);
+                        font-size: 18px;
+                        gap: 102px;
+    
+    
+                        &:hover{
+                            color:$dark-gray;
+                            background: $white;
+                        }
+                    }
+                }
+    
+                li+li{
                     margin-left: 20px;
+    
+                    @media(max-width:1200px){
+                        margin-left: 9px;
+                    }
                 }
             }
-        }
+          }
     }
     .wpo-service-link-widget{
         padding-left: 30px;

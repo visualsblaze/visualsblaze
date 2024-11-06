@@ -25,7 +25,7 @@ const Footer = (props) =>{
                         <div className="widget about-widget">
                             <div className="logo widget-title">
                             </div>
-                            <p>BLAZE FOR THE PEOPLE WHO
+                            <p className='p-text'>BLAZE FOR THE PEOPLE WHO
                             WANT MORE </p>
                             <ul>
                                 <li>
