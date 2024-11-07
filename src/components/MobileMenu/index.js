@@ -8,28 +8,28 @@ const menus = [
         id: 1,
         title: 'Home',
         link: '/home',
-        submenu: [
-            {
-                id: 11,
-                title: 'Home style 1',
-                link: '/home'
-            },
-            {
-                id: 12,
-                title: 'Home style 2',
-                link: '/home2'
-            },
-            {
-                id: 13,
-                title: 'Home style 3',
-                link: '/home3'
-            },
-            {
-                id: 14,
-                title: 'Home style 4',
-                link: '/home4'
-            },
-        ]
+        // submenu: [
+        //     // {
+        //     //     id: 11,
+        //     //     title: 'Home style 1',
+        //     //     link: '/home'
+        //     // },
+        //     // {
+        //     //     id: 12,
+        //     //     title: 'Home style 2',
+        //     //     link: '/home2'
+        //     // },
+        //     // {
+        //     //     id: 13,
+        //     //     title: 'Home style 3',
+        //     //     link: '/home3'
+        //     // },
+        //     // {
+        //     //     id: 14,
+        //     //     title: 'Home style 4',
+        //     //     link: '/home4'
+        //     // },
+        // ]
     },
 
     {
