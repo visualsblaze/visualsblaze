@@ -429,8 +429,10 @@
             }
     
             @include media-query(767px) {
+                margin-top: -110px;
+                margin-bottom: -90px;
                 font-size: 35px;
-                font-size: calc-rem-value(35);
+                font-size: calc-rem-value(75);
             }
         }
     }
@@ -465,8 +467,8 @@
 }
 @media(max-width:480px){
     .grid h3 + p {
-		font-size: 25px;
-		font-size: calc-rem-value(25);
+		font-size: 55px;
+		font-size: calc-rem-value(55);
 		margin: 0;
         color: #ffb100;
         font-family: 'Helica', sans-serif;
@@ -485,6 +487,7 @@
 		@include media-query(991px) {
 			font-size: 16px;
 			font-size: calc-rem-value(16);
+            margin-bottom: 10px;
 		}
 	}
 }

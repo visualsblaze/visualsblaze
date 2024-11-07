@@ -130,10 +130,11 @@
       }
       @media (max-width: 480px) {
         .p-text {
-            text-align: left;
+            text-align: center;
             margin-right: 0px;
             font-size: 13px;
             margin-left: 2px;
+            margin-right: 165px;
             word-break: break-word; /* Break long words if needed */
             white-space: normal;    /* Allow text to wrap to the next line */
             overflow-wrap: break-word; /* Ensures words break within boundaries */
@@ -194,7 +195,7 @@
             ul{
                 overflow: hidden;
                 padding-top: 10px;
-                margin-left: 2px;
+                margin-left: 12px;
     
                 li{
                     font-size: 22px;
