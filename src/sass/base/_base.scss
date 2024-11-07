@@ -58,7 +58,7 @@ a:hover {
 /* Adjustments for mobile screens */
 @media (max-width: 480px) {
     .welcome-container p {
-        max-width: 100%;     /* Utilize full width on small screens */
+        max-width: 90%;     /* Utilize full width on small screens */
         font-size: 16px;     /* Slightly reduce font size for readability */
         line-height: 1.4;    /* Compact line height to fit more text on screen */
         margin: 0 0px;      /* Add horizontal padding to prevent text from touching screen edges */
