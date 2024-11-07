@@ -33,7 +33,7 @@ const FunFact = (props) => {
                                 <div className="grid" key={fitem}>
                                     <div className="info">
                                         <h3>{funfact.title}</h3>
-                                        <p>{funfact.subTitle}</p>
+                                        <p className='p-text'>{funfact.subTitle}</p>
                                     </div>
                                 </div>
                             ))}
