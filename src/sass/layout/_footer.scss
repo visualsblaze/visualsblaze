@@ -96,6 +96,7 @@
       @media (max-width: 480px) {
         .logo{
             width: 200px;
+            margin-left: -5px;
         }
       }
     .about-widget {
@@ -129,11 +130,10 @@
       }
       @media (max-width: 480px) {
         .p-text {
-            margin-bottom: 0.8em;
-            line-height: 1.4em;
             text-align: left;
-            margin-right: 150px;
+            margin-right: 0px;
             font-size: 13px;
+            margin-left: 2px;
             word-break: break-word; /* Break long words if needed */
             white-space: normal;    /* Allow text to wrap to the next line */
             overflow-wrap: break-word; /* Ensures words break within boundaries */

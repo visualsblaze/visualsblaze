@@ -47,14 +47,25 @@ a:hover {
     text-decoration: none;
 }
 
-  
-  .welcome-container p {
+ /* Default styles */
+.welcome-container p {
     max-width: 88%;
     margin: 0;
     line-height: 1.6;
     text-align: justify; /* Justified alignment */
-  }
-  
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 480px) {
+    .welcome-container p {
+        max-width: 100%;     /* Utilize full width on small screens */
+        font-size: 16px;     /* Slightly reduce font size for readability */
+        line-height: 1.4;    /* Compact line height to fit more text on screen */
+        margin: 0 10px;      /* Add horizontal padding to prevent text from touching screen edges */
+        text-align: left;    /* Consider left alignment for better readability on narrow screens */
+    }
+}
+
   
 
 
