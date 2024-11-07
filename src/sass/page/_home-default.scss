@@ -46,7 +46,7 @@
                 z-index: -1;
 
                 span{
-                    font-family: "themify";
+                    font-family: 'Helica', sans-serif;
                     font-size: 40px;
                     font-size: calc-rem-value(40);
                     font-weight: 900;
@@ -193,7 +193,7 @@
             z-index: 11;
             font-size: 22px;
             font-size: calc-rem-value(22);
-            font-family: "themify";
+            font-family: 'Helica', sans-serif;
             color: #fff;
             @media screen and (min-width: 991px) and (max-width: 1299px) {
                 left: -30px;
@@ -399,16 +399,15 @@
         }
 
         h3 {
-            font-size: 100px;
-            font-size: calc-rem-value(100);
+            font-size: 140px;
             font-weight: 900;
             color: aa2135;
-            font-family: "themify";
+            font-family: 'Helica', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
             float: center;
-            margin-right: 20px;
+            margin-right: 10px;
             margin-bottom: 0;
             margin-left: 10px;
             -webkit-text-fill-color: #ffffff;
@@ -446,7 +445,7 @@
 		font-size: calc-rem-value(25);
 		margin: 0;
         color: #ffb100;
-        font-family: "themify";
+        font-family: 'Helica', sans-serif;
         line-height: 35px;
         text-align: center;
         max-width: 120px;
@@ -471,7 +470,7 @@
 		font-size: calc-rem-value(25);
 		margin: 0;
         color: #ffb100;
-        font-family: "themify";
+        font-family: 'Helica', sans-serif;
         line-height: 35px;
         text-align: center;
         max-width: 120px;
@@ -522,7 +521,7 @@
        span{
            font-size: 20px;
            color: $theme-primary-color-s2;
-           font-family: "themify";
+           font-family: 'Helica', sans-serif;
            font-weight: 500;
        }
 
@@ -583,7 +582,7 @@
             z-index: 11;
             span{
                 font-size: 55px;
-                font-family: "themify";
+                font-family: 'Helica', sans-serif;
                 font-weight: 500;
             }
         }
@@ -662,7 +661,7 @@
         right: 0;
 
         &:before{
-            font-family: "themify";
+            font-family: 'Helica', sans-serif;
             content: "\e628";
             color: $theme-primary-color;
         }
@@ -682,7 +681,7 @@
             border-bottom:3px solid $theme-primary-color;
         }
         &:before{
-            font-family: "themify";
+            font-family: 'Helica', sans-serif;
             content: "\e629";
             color: $theme-primary-color;
         }
@@ -723,7 +722,7 @@
             margin-top: -0.31em;
             display: inline-block;
             text-transform: uppercase;
-            font-family: "themify";
+            font-family: 'Helica', sans-serif;
             margin-bottom: 10px;
 
             &:before{
@@ -783,7 +782,7 @@
                     right: 30px;
                     top: 20px;
                     content: "\f10b";
-                    font-family: "themify";
+                    font-family: 'Helica', sans-serif;
                     font-size: 50px;
                     color: #f1f1f1;
                     z-index: -1;
@@ -1013,7 +1012,7 @@
             a.theme-btn-s2{
                 color: #282828;
                 font-size: 14px;
-                font-family: "themify";
+                font-family: 'Helica', sans-serif;
                 font-weight: 600;
                 padding: 15px 25px;
                 border-radius: 3px;

@@ -126,7 +126,7 @@
 	  position: relative;
 	}
 	.wpo-site-header #navbar > ul > li > .sub-menu > .menu-item-has-children > a:before {
-		font-family: "themify";
+		font-family: 'Helica', sans-serif;
 	  content: "\e649";
 	  font-size: 11px;
 	  font-size: 0.73333rem;
@@ -572,7 +572,7 @@
 				padding: 35px 20px;
 				display: block;
 				color: #ffffff;
-				font-family: 'Futura PT';
+				font-family: 'Helica', sans-serif;
 				font-weight: 500;
 				position: relative;
 			}
@@ -600,7 +600,7 @@
 				position: relative;
 				overflow: hidden;
 				font-weight: 500;
-				font-family: $heading-font;
+				font-family: 'Helica', sans-serif;
 
 				&:after{
 					position: absolute;
@@ -634,7 +634,7 @@
 				position: relative;
 
 				&:before {
-					font-family: "themify";
+					font-family: 'Helica', sans-serif;
 					content: "\e649";
 					font-size: 11px;
 					font-size: calc-rem-value(11);
@@ -695,7 +695,7 @@
 				}
 
 				&:before {
-					font-family: "themify";
+					font-family: 'Helica', sans-serif;
 					content: "\e649";
 					font-size: 11px;
 					font-size: calc-rem-value(11);
