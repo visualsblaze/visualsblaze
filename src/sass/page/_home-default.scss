@@ -413,7 +413,6 @@
             -webkit-text-fill-color: #ffffff;
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: #ffffff;
-
             .odometer-inside{
                 display: flex;
             }
@@ -433,6 +432,7 @@
                 margin-bottom: -90px;
                 font-size: 35px;
                 font-size: calc-rem-value(75);
+
             }
         }
     }
