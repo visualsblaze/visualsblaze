@@ -113,7 +113,7 @@ export default class Header extends Component {
                                 <div className="col-lg-3 col-2 col-2">
                                         {/* Freely Positioned Download Button */}
                                         <button onClick={handleDownload} className="button download-btn">
-                                                    <FaArrowDown className="download-icon" /> PROFILES
+                                                    <FaArrowDown className="download-icon" /> PROFILE
                                                     </button>
                                                 
                                         </div>
