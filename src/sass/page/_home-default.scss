@@ -462,35 +462,11 @@
 		@include media-query(991px) {
 			font-size: 16px;
 			font-size: calc-rem-value(16);
+            margin-right: 382px;
 		}
 	}
 }
-@media(max-width:480px){
-    .grid h3 + p {
-		font-size: 55px;
-		font-size: calc-rem-value(55);
-		margin: 0;
-        color: #ffb100;
-        font-family: 'Helica', sans-serif;
-        line-height: 35px;
-        text-align: center;
-        max-width: 120px;
-        margin-right: 350px;
 
-		@include media-query(1200px) {
-			font-size: 20px;
-			font-size: calc-rem-value(20);
-            max-width: 90px;
-            line-height: 22px;
-		}
-
-		@include media-query(991px) {
-			font-size: 16px;
-			font-size: calc-rem-value(16);
-            margin-bottom: 10px;
-		}
-	}
-}
 /* 3.6 wpo-project-section */
 
 .wpo-project-section{

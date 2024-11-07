@@ -27,6 +27,8 @@ const Footer = (props) =>{
                             </div>
                             <p className='p-text'>BLAZE FOR THE PEOPLE WHO <br/> 
                             WANT MORE </p>
+                            <p className='follow'>Follow us on<br/> 
+                    </p>
                             <ul>
                                 <li>
                                 <Link to="https://www.behance.net/discovervisualsblaze">

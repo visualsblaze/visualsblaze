@@ -95,7 +95,7 @@
       }
       @media (max-width: 480px) {
         .logo{
-            width: 200px;
+            width: 250px;
             margin-left: -5px;
         }
       }
@@ -132,9 +132,9 @@
         .p-text {
             text-align: center;
             margin-right: 0px;
-            font-size: 13px;
+            font-size: 15px;
             margin-left: 2px;
-            margin-right: 165px;
+            margin-right: 125px;
             word-break: break-word; /* Break long words if needed */
             white-space: normal;    /* Allow text to wrap to the next line */
             overflow-wrap: break-word; /* Ensures words break within boundaries */
@@ -144,7 +144,46 @@
             }
         }
     }
+    @media (max-width: 1920px) {
+        .follow{
+            margin-bottom: 0.8em;
+            line-height: 1.3em;
+            text-align: center;
+            margin-left: -145px;
     
+            &:last-child{
+                margin-bottom: 0;
+            }
+            }
+      }
+      @media (max-width: 1400px) {
+        .follow{
+            margin-bottom: 0.8em;
+            line-height: 1.3em;
+            text-align: center;
+            margin-right: 4px;
+    
+            &:last-child{
+                margin-bottom: 0;
+            }
+            }
+      }
+      @media (max-width: 480px) {
+        .follow {
+            text-align: center;
+            margin-right: 0px;
+            font-size: 15px;
+            margin-left: 2px;
+            margin-right: 125px;
+            word-break: break-word; /* Break long words if needed */
+            white-space: normal;    /* Allow text to wrap to the next line */
+            overflow-wrap: break-word; /* Ensures words break within boundaries */
+    
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
         
     .about-widget {
         p{
@@ -195,7 +234,7 @@
             ul{
                 overflow: hidden;
                 padding-top: 10px;
-                margin-left: 12px;
+                margin-left: 35px;
     
                 li{
                     font-size: 22px;
