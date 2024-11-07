@@ -3,10 +3,10 @@ import { FiGlobe, FiSmile, FiCheckCircle, FiPackage } from 'react-icons/fi'; // 
 
 const FunFact = (props) => {
     const facts = [
-        { number: "5+", text: "years experience", icon: <FiCheckCircle /> },
-        { number: "2+", text: "countries served", icon: <FiGlobe /> },
-        { number: "100%", text: "client satisfied", icon: <FiSmile /> },
-        { number: "100%", text: "project delivered", icon: <FiPackage /> }
+        { number: "5+", text: "years<br />experience", icon: <FiCheckCircle /> },
+        { number: "2+", text: "countries<br />served", icon: <FiGlobe /> },
+        { number: "100%", text: "client<br />satisfied", icon: <FiSmile /> },
+        { number: "100%", text: "project<br />delivered", icon: <FiPackage /> }
     ];
 
     return (
@@ -21,7 +21,8 @@ const FunFact = (props) => {
                                         {fact.icon}
                                     </div>
                                     <h3 style={styles.number}>{fact.number}</h3>
-                                    <p style={styles.text}>{fact.text}</p>
+                                    {/* Using dangerouslySetInnerHTML to render the line breaks */}
+                                    <p style={styles.text} dangerouslySetInnerHTML={{ __html: fact.text }}></p>
                                 </div>
                             ))}
                         </div>
@@ -42,7 +43,7 @@ const styles = {
     factBox: {
         flex: '1 1 calc(50% - 20px)', // Two boxes per row
         padding: '20px',
-        backgroundColor: '#f8f9fa',
+        backgroundColor: '#aa2135',
         borderRadius: '10px',
         borderBottomLeftRadius: '50px',
         textAlign: 'center',
@@ -53,17 +54,18 @@ const styles = {
     },
     icon: {
         fontSize: '40px',
-        color: '#1d3162', // Updated color for a more modern look
+        color: '#ffb100', // Updated color for a more modern look
         marginBottom: '10px',
     },
     number: {
         fontSize: '24px',
         fontWeight: 'bold',
-        color: '#1d3162',
+        color: '#ffffff',
     },
     text: {
         fontSize: '16px',
-        color: '#1d3162',
+        color: '#ffffff',
+        lineHeight: '1.5', // Optional for better spacing between lines
     }
 };
 
