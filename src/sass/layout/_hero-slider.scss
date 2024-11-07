@@ -1123,7 +1123,7 @@
 		gap: 15px; /* Adjust spacing between icons */
 		margin-top: 80%;
 		margin-left: 23%;
-		
+
 	}
 
 	.social ul {
@@ -1131,6 +1131,38 @@
 		align-items: center;
 		gap: 10px;
 	}
+	
+	
+.social a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	color: white;
+	font-size: 27px;
+	text-decoration: none;
+	transition: transform 0.3s;
+	
+}
+
+/* Linear gradient backgrounds */
+.social li:nth-child(1) a,
+.social li:nth-child(2) a,
+.social li:nth-child(3) a,
+.social li:nth-child(4) a {
+  background: linear-gradient(45deg, #ff4856, #aa2135);
+  color: white; /* Optional: Ensures text visibility */
+  display: inline-block;
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%; /* Makes it circular */
+  text-align: center;
+  line-height: 46px;
+  transition: 0.3s ease-in-out;
+}
+
 }
 
 /* Hero Text */

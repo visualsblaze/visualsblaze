@@ -94,7 +94,7 @@
       }
       @media (max-width: 480px) {
         .logo{
-            width: 150px;
+            width: 200px;
         }
       }
     .about-widget {
@@ -127,18 +127,22 @@
             }
       }
       @media (max-width: 480px) {
-        .p-text{
+        .p-text {
             margin-bottom: 0.8em;
-            line-height: 1.3em;
+            line-height: 1.4em;
             text-align: left;
-            margin-right: 50px;
-            font-size: 20px;
+            margin-right: 150px;
+            font-size: 13px;
+            word-break: break-word; /* Break long words if needed */
+            white-space: normal;    /* Allow text to wrap to the next line */
+            overflow-wrap: break-word; /* Ensures words break within boundaries */
     
-            &:last-child{
+            &:last-child {
                 margin-bottom: 0;
             }
-            }
-      }
+        }
+    }
+    
         
     .about-widget {
         p{

@@ -28,7 +28,7 @@ const Hero = () => {
 
               {/* Freely Positioned Download Button */}
               <button onClick={handleDownload} className="button download">
-                <FaArrowDown className="download-icon" /> BROCHURE
+                <FaArrowDown className="download-icon" /> PROFILES
               </button>
             </div>
           </div>

@@ -92,7 +92,7 @@ const Footer = (props) =>{
                                 <ul>
                                 <p>Al-Andalus District,Jeddah KSA</p>
                                     <li><i className="fi flaticon-phone-call"></i>+966 50 887 5968</li>
-                                    <li><i className="fi flaticon-email"></i>isualsblaze@gmail.com</li>
+                                    <li><i className="fi flaticon-email"></i>Visualsblaze@gmail.com</li>
                                 </ul>
                             </div>
                         </div>
