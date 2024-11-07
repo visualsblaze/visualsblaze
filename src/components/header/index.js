@@ -67,7 +67,7 @@ export default class Header extends Component {
                                             </li>
                                             <li><Link onClick={ClickHandler} to="/about">About</Link></li>
                                             <li><Link onClick={ClickHandler} to="/portfolio-grid-s2">Portfolio</Link></li>
-                                            <li><Link onClick={ClickHandler} to="/service">Service</Link></li>
+                                            <li><Link onClick={ClickHandler} to="/service">Get Service</Link></li>
 
                                              {/* <li className="menu-item-has-children"> */}
                                                 {/* <Link onClick={ClickHandler} to="/portfolio-grid">Portfolio</Link> */}

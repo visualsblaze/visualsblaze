@@ -16,7 +16,8 @@
   }
   
   .section-title > span, .section-title-s4 > span {
-	font-family: 'Helica', sans-serif;
+	font-family: "themify";
+
 	font-size: 16px;
 	font-size: 1.06667rem;
 	font-weight: 500;
@@ -95,7 +96,8 @@
   }
   
   .section-title .transparent-text, .section-title-s4 .transparent-text {
-	font-family: 'Diexey', sans-serif;
+	font-family: "themify";
+
 	font-size: 200px;
 	font-size: calc-rem-value(200);
 	font-weight: 900;
@@ -176,8 +178,8 @@
   }
   
   .section-title-s2 .transparent-text {
-	font-family: 'Helica', sans-serif;
-	font-size: 125px;
+	font-family: "themify";
+
 	font-size: 8.33333rem;
 	font-weight: bold;
 	color: #f1f2f2;
