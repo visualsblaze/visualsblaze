@@ -48,7 +48,7 @@ const menus = [
    
     {
         id: 31,
-        title: 'Service',
+        title: 'Get Service',
         link: '/service'
     },
    

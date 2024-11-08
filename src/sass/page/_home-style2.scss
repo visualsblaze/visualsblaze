@@ -61,7 +61,7 @@
 
     .wpo-fun-fact-grids{
         padding: 80px 60px;
-        background: $dark-gray;
+        background: #aa2135;
         border-radius: 10px;
 
         @media(max-width:1400px){
@@ -72,9 +72,9 @@
         }
 
         h3 {
-            -webkit-text-fill-color: $dark-gray;
+            -webkit-text-fill-color: #ffffff;
             -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: #c4c4c4;
+            -webkit-text-stroke-color: #ffffff;
 
             @media(max-width:767px){
                 margin-right: 5px;

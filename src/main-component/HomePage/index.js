@@ -20,9 +20,9 @@ const HomePage =() => {
             <Navbar Logo={Logo} hclass={'wpo-header-style-1'}/>
             <Hero/>
             <Features/>
-            <About/>
-            <ServiceSection/>
-            <FunFact/>
+            {/* <About/> */}
+            {/* <ServiceSection/> */}
+            {/* <FunFact/> */}
             <ProjectSection/>
             <Testimonial/>
             <Support/>
