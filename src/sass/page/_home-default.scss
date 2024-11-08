@@ -878,7 +878,145 @@
     }
 }
 
+/* Style the form row to arrange fields side by side */
+.form-row {
+    display: flex;
+    gap: 20px; /* Space between fields */
+    margin-bottom: 20px;
+}
 
+/* Each form group in the form row takes up equal width */
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Style the dropdown with custom arrow */
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 25px; /* Increased border-radius for rounded corners */
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    
+    /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+
+/* Add hover and focus styles */
+.form-group select:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 4px rgba(0, 123, 255, 0.2);
+}
+
+.form-group select:hover {
+    border-color: #0056b3;
+}
+
+/* Other form styling remains the same */
+.appointment-form {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.appointment-form h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.appointment-form .form-group {
+    margin-bottom: 20px;
+}
+
+.appointment-form input,
+.appointment-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px; /* Increased border-radius for rounded corners */
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.appointment-form input:focus,
+.appointment-form textarea:focus {
+    border-color: #007bff;
+}
+
+.appointment-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.appointment-form .btn-submit {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px; /* Rounded corners for the submit button */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.appointment-form .btn-submit:hover {
+    background-color: #e0b507;
+}
+
+/* Style the Service Selection Dropdown */
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 25px; /* Increased border-radius for rounded corners */
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    appearance: none; /* Removes the default arrow styling for a custom arrow */
+}
+
+/* Add a subtle box shadow and change border color on focus */
+.form-group select:focus {
+    border-color: #ffcc00;
+    box-shadow: 0px 0px 4px rgba(0, 123, 255, 0.2);
+}
+
+/* Optional: Custom arrow icon for the dropdown */
+.form-group select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23999" d="M2 5L0 3h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+/* Adjust the disabled option color */
+.form-group select option:disabled {
+    color: #999;
+}
+
+/* Hover effect for the dropdown */
+.form-group select:hover {
+    border-color: #ffcc00;
+}
 
 /* 3.9 wpo-blog-section */
   
