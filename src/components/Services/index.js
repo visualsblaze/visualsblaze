@@ -86,7 +86,7 @@ const ServiceSection = (props) => {
                 </div>
                 
                 <div className="appointment-form">
-                    <h3>Book an Appointment</h3>
+                    <h2 className='h2-text'>We’re here for you</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="form-row">
                             <div className="form-group">

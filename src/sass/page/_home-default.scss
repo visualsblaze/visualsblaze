@@ -877,17 +877,25 @@
         }
     }
 }
-
 /* Style the form row to arrange fields side by side */
 .form-row {
     display: flex;
     gap: 20px; /* Space between fields */
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow fields to wrap on small screens */
 }
 
 /* Each form group in the form row takes up equal width */
 .form-row .form-group {
     flex: 1;
+}
+
+/* On mobile, make each form field take full width */
+@media (max-width: 767px) {
+    .form-row .form-group {
+        flex: 1 100%; /* Each form field takes up 100% of the width */
+        margin-bottom: 15px; /* Space between stacked fields */
+    }
 }
 
 /* Style the dropdown with custom arrow */
@@ -1017,7 +1025,10 @@
 .form-group select:hover {
     border-color: #ffcc00;
 }
-
+.h2-text{
+    color: #bc1e2d;
+    margin-bottom: 20px;
+}
 /* 3.9 wpo-blog-section */
   
 .wpo-blog-section{
