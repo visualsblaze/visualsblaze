@@ -44,8 +44,8 @@ const styles = {
         flex: '1 1 calc(50% - 20px)', // Two boxes per row
         padding: '20px',
         backgroundColor: '#aa2135',
-        borderRadius: '10px',
         borderBottomLeftRadius: '50px',
+        borderTopRightRadius: '50px',
         textAlign: 'center',
         boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.2)', // Enhanced shadow
         transition: 'box-shadow 0.3s ease', // Smooth transition for hover effect
@@ -63,7 +63,7 @@ const styles = {
         color: '#ffffff',
     },
     text: {
-        fontSize: '16px',
+        fontSize: '20px',
         color: '#ffffff',
         lineHeight: '1.5', // Optional for better spacing between lines
     }
