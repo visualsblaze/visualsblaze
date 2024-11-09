@@ -66,24 +66,7 @@ const ServiceSection = (props) => {
         <section className={`wpo-service-section ${props.sClass}`}>
             <div className="container">
                 <SectionTitle subTitle={'Get Services'} MainTitle={'What Can We Offer'} vTitle={'Service'} />
-                <div className="row">
-                    {Services.map((service, Sitem) => (
-                        <div className="col-lg-4 col-md-6 col-12" key={Sitem}>
-                            <div className="wpo-service-item">
-                                <div className="wpo-service-icon">
-                                    <img src={service.icon} alt="" />
-                                </div>
-                                <div className="wpo-service-text">
-                                    <h2><Link onClick={ClickHandler} to={`/service-single/${service.Id}`}>{service.sTitle}</Link></h2>
-                                    <p>{service.description}</p>
-                                </div>
-                                <div className="visible-icon">
-                                    <img src={service.icon2} alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                
                 
                 <div className="appointment-form">
                     <h2 className='h2-text'>We’re here for you</h2>

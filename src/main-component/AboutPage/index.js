@@ -17,7 +17,6 @@ const AboutPage =() => {
             <PageTitle pageTitle={'About Us'} pagesub={'About'}/> 
             <About abClass={'pt-120'}/>
             <Features wClass={'pt-0'}/>
-            <FunFact fClass={'wpo-fun-fact-section-s3'}/>
             <Testimonial/>
             <Footer/>
             <Scrollbar/>

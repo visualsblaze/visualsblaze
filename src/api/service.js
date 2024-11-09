@@ -29,18 +29,7 @@ import ins6 from '../images/instragram/18.jpg'
 
 
 const Services = [
-    {
-        Id: '1',
-        sImg:simg,
-        sTitle: 'Design & Planning',
-        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ultrices gravida.',
-        des2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        icon:sIcon,
-        icon2:svIcon2,
-        ssImg1:sSingleimg1,
-        ssImg2:sSingleimg2,
-        sinst:ins1,
-    },
+    
     {
         Id: '2',
         sImg:simg2,
