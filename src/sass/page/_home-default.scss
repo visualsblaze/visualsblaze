@@ -1030,8 +1030,8 @@
     color: #bc1e2d;
     margin-bottom: 20px;
 }
-/* 3.9 wpo-blog-section */
- /* Fun Fact Section */
+
+/* Fun Fact Section */
 .wpo-fun-fact-section {
     background-color: #ffffff;
     padding: 50px 0;
@@ -1059,11 +1059,24 @@
     margin: 10px 0;
     margin-left: 180px;
     margin-right: -100px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* Flashing animation */
+@keyframes flash {
+    0%, 100% {
+        opacity: 1; /* Fully visible at the start and end */
+    }
+    50% {
+        opacity: 0; /* Invisible at the halfway point */
+    }
+}
+
+.fun-fact-box.flash {
+    animation: flash 1s ease-in-out; /* Flash once when triggered */
 }
 
 .fun-fact-box .icon {
@@ -1087,12 +1100,9 @@
     line-height: 1;
     text-align: center;
 }
+
 /* For larger screens, e.g. desktop */
-@media (max-width: 1920px) {
-    .client-logo-slider {
-        width: 130vw; /* Ensures it spans the entire width */
-    }
-}
+
 /* Add this to your CSS file */
 /* General styling */
 .client-logo-slider {

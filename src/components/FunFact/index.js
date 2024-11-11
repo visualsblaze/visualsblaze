@@ -1,47 +1,63 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
 const FunFactSection = (props) => {
+    const boxRefs = useRef([]);
+    const [visibleBoxes, setVisibleBoxes] = useState([]);
+    // Function to handle visibility change when element is in viewport
+  const handleVisibilityChange = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setVisibleBoxes((prev) => [...prev, entry.target]);
+        observer.unobserve(entry.target); // Stop observing once the box is visible
+      }
+    });
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleVisibilityChange, {
+      threshold: 0.5, // Trigger when 50% of the element is visible
+    });
+
+    boxRefs.current.forEach((ref) => {
+      observer.observe(ref);
+    });
+
+    return () => {
+      boxRefs.current.forEach((ref) => {
+        observer.unobserve(ref);
+      });
+    };
+  }, []);
+
     return (
-        <section className={`wpo-fun-fact-section ${props.fClass}`}>
-            <div className="row">
-                <div className="col col-xs-12">
-                    <div className="wpo-fun-fact-grids">
-                        <div className="fun-fact-box">
-                            <div className="icon">
-                                <img src={`${process.env.PUBLIC_URL}/experience-icon.png`} alt="Experience Icon" />
-                            </div>
-                            <h3>5+</h3>
-                            <p>Years<br />Experience</p>
-                        </div>
-                        <div className="fun-fact-box1">
-                            <div className="icon">
-                                <img src={`${process.env.PUBLIC_URL}/map-icon.png`} alt="Map Icon" />
-                            </div>
-                            <h3>2+</h3>
-                            <p>Countries<br />Served</p>
-                        </div>
-                        <div className="fun-fact-box2">
-                            <div className="icon">
-                                <img src={`${process.env.PUBLIC_URL}/happy-icon.png`} alt="Happy Icon" />
-                            </div>
-                            <h3>100%</h3>
-                            <p>Client<br />Satisfied</p>
-                        </div>
-                        <div className="fun-fact-box3">
-                            <div className="icon">
-                                <img src={`${process.env.PUBLIC_URL}/project-icon.png`} alt="Project Icon" />
-                            </div>
-                            <h3>100%</h3>
-                            <p>Project<br />Delivered</p>
-                        </div>
-                    </div>
+     <section className={`wpo-fun-fact-section ${props.fClass}`}>
+      <div className="row">
+        <div className="col col-xs-12">
+          <div className="wpo-fun-fact-grids">
+            {['fun-fact-box', 'fun-fact-box1', 'fun-fact-box2', 'fun-fact-box3'].map((boxClass, index) => (
+              <div
+                key={index}
+                ref={(el) => (boxRefs.current[index] = el)}
+                className={`fun-fact-box ${visibleBoxes.includes(boxRefs.current[index]) ? 'flash' : ''} ${boxClass}`}
+              >
+                <div className="icon">
+                  <img
+                    src={`${process.env.PUBLIC_URL}/${boxClass.includes('box1') ? 'map' : boxClass.includes('box2') ? 'happy' : boxClass.includes('box3') ? 'project': 'experience'}-icon.png`}
+                    alt={`${boxClass} Icon`}
+                  />
                 </div>
-            </div>
-        </section>
-    );
+                <h3>{index === 0 ? '5+' : index === 1 ? '2+' : '100%'}</h3>
+                <p>{index === 0 ? 'Years Experience' : index === 1 ? 'Countries Served'  : index === 2 ?'Client Satisfied' : 'Project Delivered'}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 const ClientLogoSlider = () => {
