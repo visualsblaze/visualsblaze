@@ -1064,19 +1064,18 @@
     justify-content: center;
     align-items: center;
 }
-
-/* Flashing animation */
-@keyframes flash {
-    0%, 100% {
-        opacity: 1; /* Fully visible at the start and end */
+/* 360 Rotation animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg); /* Start at 0 degrees */
     }
-    50% {
-        opacity: 0; /* Invisible at the halfway point */
+    100% {
+        transform: rotate(360deg); /* Complete full rotation */
     }
 }
 
-.fun-fact-box.flash {
-    animation: flash 1s ease-in-out; /* Flash once when triggered */
+.fun-fact-box.rotate {
+    animation: rotate 1s ease-in-out; /* Rotate once when triggered */
 }
 
 .fun-fact-box .icon {
@@ -1085,7 +1084,7 @@
 
 .fun-fact-box .icon img {
     width: 100px;
-    height: 80px;
+    height: 70px;
 }
 
 .fun-fact-box h3 {
@@ -1133,7 +1132,7 @@
     height: 130px; /* Fixed height */
     object-fit: contain;
     background: linear-gradient(45deg, #b81029, #ff4856);
-    padding: 10px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -1321,7 +1320,7 @@
 
 .fun-fact-box2 .icon img {
     width: 80px;
-    height: 80px;
+    height: 70px;
     margin-bottom: 10%;
 }
 
