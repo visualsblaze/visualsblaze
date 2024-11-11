@@ -50,7 +50,38 @@ const FunFactSection = (props) => {
                   />
                 </div>
                 <h3>{index === 0 ? '5+' : index === 1 ? '2+' : '100%'}</h3>
-                <p>{index === 0 ? 'Years Experience' : index === 1 ? 'Countries Served'  : index === 2 ?'Client Satisfied' : 'Project Delivered'}</p>
+                <p>
+  {index === 0
+    ? 'Years\nExperience'.split('\n').map((line, i) => (
+        <span key={i}>
+          {line}
+          {i < 1 && <br />}
+        </span>
+      ))
+    : index === 1
+    ? 'Countries\nServed'.split('\n').map((line, i) => (
+        <span key={i}>
+          {line}
+          {i < 1 && <br />}
+        </span>
+      ))
+    : index === 2
+    ? 'Client\nSatisfied'.split('\n').map((line, i) => (
+        <span key={i}>
+          {line}
+          {i < 1 && <br />}
+        </span>
+      ))
+    : 'Project\nDelivered'.split('\n').map((line, i) => (
+        <span key={i}>
+          {line}
+          {i < 1 && <br />}
+        </span>
+      ))}
+</p>
+
+
+
               </div>
             ))}
           </div>
