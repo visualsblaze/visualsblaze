@@ -8,10 +8,7 @@ const PageTitle = (props) => {
                 <div className="row">
                     <div className="col-12">
                         <div className="wpo-breadcumb-wrap">
-                            <h2>{props.pageTitle}</h2>
                             <ul>
-                                <li><Link to="/home">Home</Link></li>
-                                <li><span>{props.pagesub}</span></li>
                             </ul>
                         </div>
                     </div>
