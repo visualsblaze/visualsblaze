@@ -1031,7 +1031,386 @@
     margin-bottom: 20px;
 }
 /* 3.9 wpo-blog-section */
-  
+ /* Fun Fact Section */
+.wpo-fun-fact-section {
+    background-color: #ffffff;
+    padding: 50px 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.wpo-fun-fact-grids {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 30px;
+}
+
+.fun-fact-box {
+    width: 15%;
+    height: 300px;
+    background: linear-gradient(45deg, #b81029, #ff4856);
+    border-top-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    margin-left: 140px;
+    margin-right: -50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fun-fact-box .icon {
+    margin-bottom: 10px;
+}
+
+.fun-fact-box .icon img {
+    width: 100px;
+    height: 80px;
+}
+
+.fun-fact-box h3 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ffb100;
+}
+
+.fun-fact-box p {
+    font-size: 32px;
+    color: #ffffff;
+    line-height: 1;
+    text-align: center;
+}
+/* Add this to your CSS file */
+/* General styling */
+.client-logo-slider {
+    padding: 50px 0;
+    background: linear-gradient(45deg, #b81029, #ff4856);
+    text-align: center;
+    width: 100vw; /* Full width of the viewport */
+    margin: 0; /* Remove any margin */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.client-logo-slider h2 {
+    margin-bottom: 30px;
+    font-size: 35px;
+}
+
+.logo-slide {
+    display: flex;
+    justify-content: space-evenly; /* Distribute logos evenly across the width */
+    align-items: center;
+    width: 100%; /* Ensure this container spans full width */
+    flex-wrap: nowrap; /* Prevent logos from wrapping */
+    padding: 0 20px; /* Optional: add small padding on the sides */
+}
+
+.logo-slide img {
+    width: 250px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    object-fit: contain;
+    background: linear-gradient(45deg, #b81029, #ff4856);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.logo-slide img:hover {
+    transform: scale(1.05);
+}
+
+/* Adjust the slick slider's arrows */
+.slick-prev {
+    left: -50px; /* Positioning the left arrow */
+}
+
+.slick-next {
+    right: -50px; /* Positioning the right arrow */
+}
+
+/* Add arrows using content */
+.slick-prev:before, .slick-next:before {
+    content: "";
+    color: #ffcc00;
+    font-size: 20px;
+    display: block;
+    transform: none; /* Remove default arrow styles */
+}
+
+.slick-prev:before {
+    content: "←"; /* Left arrow */
+}
+
+.slick-next:before {
+    content: "→"; /* Right arrow */
+}
+
+/* Optional: Hover effects */
+.slick-prev:hover, .slick-next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .client-logo-slider {
+        padding: 60px 0; /* Less padding on mobile */
+    }
+
+    .logo-slide {
+        flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+        justify-content: center; /* Center logos when wrapped */
+    }
+
+    .logo-slide img {
+        width: 70px; /* Smaller logo size */
+        height: 75px; /* Adjust height accordingly */
+    }
+}
+
+/* For larger screens, e.g. desktop */
+@media (min-width: 1920px) {
+    .client-logo-slider {
+        width: 100vw; /* Ensures it spans the entire width */
+    }
+}
+
+
+
+/* Responsive Styles */
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .fun-fact-box {
+        width: 45%; /* Adjust width to fit two boxes in one row */
+        margin: 0px ; /* Spacing between boxes */
+    }
+
+    .wpo-fun-fact-grids {
+        padding: 0 0px; /* Adjust padding for smaller screens */
+        justify-content: space-around; /* Center the boxes in rows */
+    }
+}
+
+/* Fun Fact Section */
+.wpo-fun-fact-section {
+    background-color: #ffffff;
+    padding: 50px 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.wpo-fun-fact-grids {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 30px;
+}
+
+.fun-fact-box1 {
+    width: 16%;
+    height: 300px;
+    background: linear-gradient(45deg, #b81029, #ff4856);
+    border-top-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    margin-right: -50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fun-fact-box1 .icon {
+    margin-bottom: 10px;
+}
+
+.fun-fact-box1 .icon img {
+    width: 160px;
+    height: 80px;
+}
+
+.fun-fact-box1 h3 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ffb100;
+}
+
+.fun-fact-box1 p {
+    font-size: 32px;
+    color: #ffffff;
+    line-height: 1;
+    text-align: center;
+}
+
+
+/* Responsive Styles */
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .fun-fact-box1 {
+        width: 45%; /* Adjust width to fit two boxes in one row */
+        margin: 0px ; /* Spacing between boxes */
+    }
+
+    .wpo-fun-fact-grids {
+        padding: 0 0px; /* Adjust padding for smaller screens */
+        justify-content: space-around; /* Center the boxes in rows */
+    }
+}
+ 
+
+/* Fun Fact Section */
+.wpo-fun-fact-section {
+    background-color: #ffffff;
+    padding: 50px 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.wpo-fun-fact-grids {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 30px;
+}
+
+.fun-fact-box2 {
+    width: 16%;
+    height: 300px;
+    background: linear-gradient(45deg, #b81029, #ff4856);
+    border-top-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    margin-right: -50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fun-fact-box2 .icon {
+    margin-bottom: 10px;
+}
+
+.fun-fact-box2 .icon img {
+    width: 80px;
+    height: 70px;
+    margin-bottom: 10%;
+}
+
+.fun-fact-box2 h3 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ffb100;
+}
+
+.fun-fact-box2 p {
+    font-size: 32px;
+    color: #ffffff;
+    line-height: 1;
+    text-align: center;
+}
+
+
+/* Responsive Styles */
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .fun-fact-box2 {
+        width: 45%; /* Adjust width to fit two boxes in one row */
+        margin: 0px ; /* Spacing between boxes */
+    }
+
+    .wpo-fun-fact-grids {
+        padding: 0 0px; /* Adjust padding for smaller screens */
+        justify-content: space-around; /* Center the boxes in rows */
+    }
+}
+
+/* Fun Fact Section */
+.wpo-fun-fact-section {
+    background-color: #ffffff;
+    padding: 50px 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.wpo-fun-fact-grids {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 30px;
+}
+
+.fun-fact-box3 {
+    width: 16%;
+    height: 300px;
+    background: linear-gradient(45deg, #b81029, #ff4856);
+    border-top-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    margin-right: 140px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fun-fact-box3 .icon {
+    margin-bottom: 10px;
+}
+
+.fun-fact-box3 .icon img {
+    width: 60px;
+    height: 70px;
+}
+
+.fun-fact-box3 h3 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ffb100;
+}
+
+.fun-fact-box3 p {
+    font-size: 32px;
+    color: #ffffff;
+    line-height: 1;
+    text-align: center;
+}
+
+
+/* Responsive Styles */
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .fun-fact-box3 {
+        width: 45%; /* Adjust width to fit two boxes in one row */
+        margin: 0px ; /* Spacing between boxes */
+    }
+
+    .wpo-fun-fact-grids {
+        padding: 0 0px; /* Adjust padding for smaller screens */
+        justify-content: space-around; /* Center the boxes in rows */
+    }
+}
 .wpo-blog-section{
     padding-bottom: 90px;
 
