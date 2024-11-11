@@ -1064,19 +1064,21 @@
     justify-content: center;
     align-items: center;
 }
-/* 360 Rotation animation */
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg); /* Start at 0 degrees */
+
+/* Flashing animation */
+@keyframes flash {
+    0%, 100% {
+        opacity: 1; /* Fully visible at the start and end */
     }
-    100% {
-        transform: rotate(360deg); /* Complete full rotation */
+    50% {
+        opacity: 0; /* Invisible at the halfway point */
     }
 }
 
-.fun-fact-box.rotate {
-    animation: rotate 1s ease-in-out; /* Rotate once when triggered */
+.fun-fact-box.flash {
+    animation: flash 1s ease-in-out; /* Flash once when triggered */
 }
+
 
 .fun-fact-box .icon {
     margin-bottom: 10px;
@@ -1098,6 +1100,40 @@
     color: #ffffff;
     line-height: 1;
     text-align: center;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .fun-fact-box {
+        width: 45%; /* Adjust width to fit two boxes in one row */
+        height: 250px;
+        margin: 0px ; /* Spacing between boxes */
+    }
+
+    .wpo-fun-fact-grids {
+        padding: 0 0px; /* Adjust padding for smaller screens */
+        justify-content: space-around; /* Center the boxes in rows */
+    }
+    .fun-fact-box .icon {
+        margin-bottom: 10px;
+    }
+    
+    .fun-fact-box .icon img {
+        width: 100px;
+        height: 70px;
+    }
+    
+    .fun-fact-box h3 {
+        font-size: 50px;
+        font-weight: bold;
+        color: #ffb100;
+    }
+    
+    .fun-fact-box p {
+        font-size: 25px;
+        color: #ffffff;
+        line-height: 1;
+        text-align: center;
+    }
 }
 
 /* For larger screens, e.g. desktop */
@@ -1185,9 +1221,16 @@
     }
 
     .logo-slide img {
-        width: 70px; /* Smaller logo size */
-        height: 75px; /* Adjust height accordingly */
+        width: 70px; /* Fixed width */
+        height: 70px; /* Fixed height */
+        object-fit: contain;
+        background: linear-gradient(45deg, #b81029, #ff4856);
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
     }
+    
 }
 
 
@@ -1195,18 +1238,6 @@
 
 
 /* Responsive Styles */
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .fun-fact-box {
-        width: 45%; /* Adjust width to fit two boxes in one row */
-        margin: 0px ; /* Spacing between boxes */
-    }
-
-    .wpo-fun-fact-grids {
-        padding: 0 0px; /* Adjust padding for smaller screens */
-        justify-content: space-around; /* Center the boxes in rows */
-    }
-}
 
 /* Fun Fact Section */
 .wpo-fun-fact-section {
@@ -1270,6 +1301,7 @@
 @media (max-width: 768px) {
     .fun-fact-box1 {
         width: 45%; /* Adjust width to fit two boxes in one row */
+        height: 250px;
         margin: 0px ; /* Spacing between boxes */
     }
 
@@ -1277,7 +1309,29 @@
         padding: 0 0px; /* Adjust padding for smaller screens */
         justify-content: space-around; /* Center the boxes in rows */
     }
+    .fun-fact-box1 .icon {
+        margin-bottom: 10px;
+    }
+    
+    .fun-fact-box1 .icon img {
+        width: 100px;
+        height: 75px;
+    }
+    
+    .fun-fact-box1 h3 {
+        font-size: 50px;
+        font-weight: bold;
+        color: #ffb100;
+    }
+    
+    .fun-fact-box1 p {
+        font-size: 25px;
+        color: #ffffff;
+        line-height: 1;
+        text-align: center;
+    }
 }
+
  
 
 /* Fun Fact Section */
@@ -1343,6 +1397,7 @@
 @media (max-width: 768px) {
     .fun-fact-box2 {
         width: 45%; /* Adjust width to fit two boxes in one row */
+        height: 250px;
         margin: 0px ; /* Spacing between boxes */
     }
 
@@ -1350,7 +1405,29 @@
         padding: 0 0px; /* Adjust padding for smaller screens */
         justify-content: space-around; /* Center the boxes in rows */
     }
+    .fun-fact-box2 .icon {
+        margin-bottom: 10px;
+    }
+    
+    .fun-fact-box2 .icon img {
+        width: 80px;
+        height: 70px;
+    }
+    
+    .fun-fact-box2 h3 {
+        font-size: 50px;
+        font-weight: bold;
+        color: #ffb100;
+    }
+    
+    .fun-fact-box2 p {
+        font-size: 25px;
+        color: #ffffff;
+        line-height: 1;
+        text-align: center;
+    }
 }
+
 
 /* Fun Fact Section */
 .wpo-fun-fact-section {
@@ -1408,12 +1485,11 @@
     text-align: center;
 }
 
-
-/* Responsive Styles */
 /* Responsive Styles */
 @media (max-width: 768px) {
     .fun-fact-box3 {
         width: 45%; /* Adjust width to fit two boxes in one row */
+        height: 250px;
         margin: 0px ; /* Spacing between boxes */
     }
 
@@ -1421,8 +1497,29 @@
         padding: 0 0px; /* Adjust padding for smaller screens */
         justify-content: space-around; /* Center the boxes in rows */
     }
+    .fun-fact-box3 .icon {
+        margin-bottom: 10px;
+    }
+    
+    .fun-fact-box3 .icon img {
+        width: 80px;
+        height: 70px;
+    }
+    
+    .fun-fact-box3 h3 {
+        font-size: 50px;
+        font-weight: bold;
+        color: #ffb100;
+    }
+    
+    .fun-fact-box3 p {
+        font-size: 25px;
+        color: #ffffff;
+        line-height: 1;
+        text-align: center;
+    }
 }
-.wpo-blog-section{
+g-section{
     padding-bottom: 90px;
 
     @media(max-width:767px){
