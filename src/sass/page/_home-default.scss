@@ -1087,6 +1087,12 @@
     line-height: 1;
     text-align: center;
 }
+/* For larger screens, e.g. desktop */
+@media (max-width: 1920px) {
+    .client-logo-slider {
+        width: 130vw; /* Ensures it spans the entire width */
+    }
+}
 /* Add this to your CSS file */
 /* General styling */
 .client-logo-slider {
@@ -1175,12 +1181,7 @@
     }
 }
 
-/* For larger screens, e.g. desktop */
-@media (min-width: 1920px) {
-    .client-logo-slider {
-        width: 100vw; /* Ensures it spans the entire width */
-    }
-}
+
 
 
 
