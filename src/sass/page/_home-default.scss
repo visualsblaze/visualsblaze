@@ -1234,11 +1234,11 @@
     }
 
     .logo-slide img {
-        width: 70px; /* Fixed width */
+        width: 80px; /* Fixed width */
         height: 50px; /* Fixed height */
         object-fit: contain;
         background: linear-gradient(45deg, #b81029, #ff4856);
-        padding: 10px;
+        padding: 5px;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
