@@ -41,7 +41,7 @@ const FunFactSection = (props) => {
               <div
                 key={index}
                 ref={(el) => (boxRefs.current[index] = el)}
-                className={`fun-fact-box ${visibleBoxes.includes(boxRefs.current[index]) ? 'flash' : ''} ${boxClass}`}
+                className={`fun-fact-box ${visibleBoxes.includes(boxRefs.current[index]) ? 'flip-horizontal' : ''} ${boxClass}`}
               >
                 <div className="icon">
                   <img
