@@ -1247,7 +1247,153 @@
 }
 
 
+/* Modal background */
+.popup-modal {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    opacity: 10; /* Hidden by default */
+    visibility: hidden; /* Hidden by default */
+}
 
+/* Modal content */
+.popup-content {
+    position: relative;
+    max-width: 90%; /* Limit max width of the full image */
+    max-height: 80vh; /* Limit max height of the full image */
+    overflow: auto; /* Allow scrolling */
+    background-color: #fff; /* Background for the content area */
+    border-radius: 10px; /* Optional: rounded corners for the modal */
+    padding: 10px; /* Padding for better spacing */
+    transition: transform 0.3s ease;
+}
+
+/* Full image inside modal */
+.popup-content img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Keep the aspect ratio of the image */
+    max-height: 100%; /* Ensure the image doesn't overflow */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+.popup-actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.popup-actions button {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 8px 16px; /* Increase padding for spacing */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+    font-size: 14px;
+    line-height: 1;
+}
+
+.popup-actions button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.close-btn:hover {
+    background: rgba(255, 0, 0, 0.9);
+}
+
+/* When modal is open, show it */
+.popup-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+/* Responsive styling for mobile screens */
+@media (max-width: 768px) {
+   
+}
+
+/* Smaller screens (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+    .popup-actions button {
+        font-size: 12px; /* Reduce font size for smaller screens */
+        padding: 8px;
+    }
+    .close-btn {
+        font-size: 12px; /* Reduce font size for smaller screens */
+        padding: 8px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+
+    }
+}
+/* Container for the image grid */
+.project-image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px; /* Space between images */
+    width: 100%;
+}
+
+/* Each image item */
+.project-image {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Make the image cover the container without distorting */
+    border-radius: 10px; /* Optional: rounded corners for images */
+    max-height: 200px; /* Limit the height of the images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Hover effect for zoom */
+.project-image:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .project-image-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-image-container {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}
 
 
 /* Responsive Styles */

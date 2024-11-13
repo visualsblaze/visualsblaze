@@ -1,58 +1,71 @@
 import React, { Component } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Projects from '../../api/project';
-import { Link } from 'react-router-dom';
-
+import { FaLink, FaShareAlt, FaSave, FaTimes } from "react-icons/fa"; // Import icons from React Icons
+import pageTitleImage from '../../images/general-offers-cover-image.jpg';
+import typographyImage from '../../images/general-offer-inner-image-design.jpg';
 
 class ProjectSection extends Component {
-    render() {
-        var settings = {
-            dots: false,
-            arrows: true,
-            speed: 1000,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        infinite: true,
-                    }
-                },
-                {
-                    breakpoint: 991,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        };
+    state = {
+        isPopupOpen: false,
+        selectedImage: null,
+        projectImages: []
+    };
 
-        const ClickHandler = () => {
-            window.scrollTo(10, 0);
+    getImages = () => {
+        const images = [
+            { thumb: pageTitleImage, full: typographyImage },
+            { thumb: pageTitleImage, full: typographyImage },
+            { thumb: pageTitleImage, full: typographyImage },
+        ];
+        this.setState({ projectImages: images });
+    };
+
+    openPopup = (imageUrl) => {
+        this.setState({ isPopupOpen: true, selectedImage: imageUrl });
+    };
+
+    closePopup = () => {
+        this.setState({ isPopupOpen: false, selectedImage: null });
+    };
+
+    generatePermalink = () => {
+        const permalink = `${window.location.origin}/projects/${encodeURIComponent(this.state.selectedImage)}`;
+        navigator.clipboard.writeText(permalink)
+            .then(() => alert("Permalink copied to clipboard!"))
+            .catch(err => console.error("Error copying permalink: ", err));
+    };
+
+    shareImage = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: "Check out this project",
+                text: "Here's a project I liked:",
+                url: this.state.selectedImage
+            }).catch(err => console.error("Error sharing: ", err));
+        } else {
+            navigator.clipboard.writeText(this.state.selectedImage)
+                .then(() => alert("Link copied to clipboard for sharing!"))
+                .catch(err => console.error("Error copying link: ", err));
         }
+    };
 
-        
+    saveImage = () => {
+        const savedImages = JSON.parse(localStorage.getItem("savedImages")) || [];
+        if (!savedImages.includes(this.state.selectedImage)) {
+            savedImages.push(this.state.selectedImage);
+            localStorage.setItem("savedImages", JSON.stringify(savedImages));
+            alert("Image saved successfully!");
+        } else {
+            alert("Image already saved.");
+        }
+    };
+
+    componentDidMount() {
+        this.getImages();
+    }
+
+    render() {
+        const { isPopupOpen, selectedImage, projectImages } = this.state;
+
         return (
             <section className="wpo-project-section section-padding">
                 <div className="container">
@@ -60,33 +73,39 @@ class ProjectSection extends Component {
                         <div className="col-lg-6 col-12">
                             <div className="project-section-title">
                                 <span>Portfolio</span>
-                                <h2>Our Project project</h2>
+                                <h2>Our Projects</h2>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="container">
-                    <div className="project-active owl-carousel">
-                        <Slider {...settings}>
-                            {Projects.map((project, prj) => (
-                                <div className="wpo-project-item" key={prj}>
-                                    <div className="wpo-project-text">
-                                    <h2><Link onClick={ClickHandler} to={`/project-single/${project.Id}`}>{project.cTitle}</Link></h2>
-                                    </div>
-                                    <div className="wpo-project-img">
-                                        <Link onClick={ClickHandler} to={`/project-single/${project.Id}`}><img src={project.pImg} alt=""/></Link>
-                                    </div>
-                                    <div className="wpo-project-thumb">
-                                        <span>{project.Id}</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </Slider>
-                    </div>
-                    <div className="section-title-s4">
-                        <div className="transparent-text">Project</div>
+                    <div className="project-image-container">
+                        {projectImages.map((image, index) => (
+                            <div key={index} onClick={() => this.openPopup(image.full)}>
+                                <img
+                                    src={image.thumb}
+                                    alt={`Project ${index + 1}`}
+                                    className="project-image"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
+
+                {/* Popup Modal */}
+                {isPopupOpen && (
+                    <div className={`popup-modal ${isPopupOpen ? 'open' : ''}`} onClick={this.closePopup}>
+                        <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+                            <div className="popup-actions">
+                                <button onClick={this.generatePermalink}><FaLink /> Permalink</button>
+                                <button onClick={this.shareImage}><FaShareAlt /> Share</button>
+                                <button onClick={this.saveImage}><FaSave /> Save</button>
+                            </div>
+                            <img src={selectedImage} alt="Project Detail" />
+                            <button className="close-btn" onClick={this.closePopup}><FaTimes /> </button>
+                        </div>
+                    </div>
+                )}
             </section>
         );
     }
