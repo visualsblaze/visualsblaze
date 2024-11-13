@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { FaLink, FaShareAlt, FaSave, FaTimes } from "react-icons/fa"; // Import icons from React Icons
 import pageTitleImage from '../../images/general-offers-cover-image.jpg';
 import typographyImage from '../../images/general-offer-inner-image-design.jpg';
+import typography from '../../images/nd offer inner image designdesign.jpg';
+import typogr from '../../images/nd offers cover imagedesign.jpg';
+
 
 class ProjectSection extends Component {
     state = {
@@ -13,8 +16,7 @@ class ProjectSection extends Component {
     getImages = () => {
         const images = [
             { thumb: pageTitleImage, full: typographyImage },
-            { thumb: pageTitleImage, full: typographyImage },
-            { thumb: pageTitleImage, full: typographyImage },
+            { thumb: typogr, full: typography },
         ];
         this.setState({ projectImages: images });
     };
