@@ -27,7 +27,7 @@ const Footer = (props) =>{
                             </div>
                             <p className='p-text'>BLAZE FOR THE PEOPLE WHO <br/> 
                             WANT MORE </p>
-                            <p className='follow' style={{ color: '#ffb100' }}>Follow us on<br/></p>
+                            <p className='follow' style={{ color: '#aa2135' }}>Follow us on<br/></p>
 
                             <ul>
                                 <li>
@@ -119,7 +119,7 @@ const Footer = (props) =>{
             <div className="container">
                 <div className="row">
                     <div className="col col-xs-12">
-                        <p className="copyright"> © Visuals Blaze | Designed and Developed By Hamza Manzoor.All Rights Reserved</p>
+                        <p className="copyright" style={{ color: '#ffffff' }}> © Visuals Blaze | Designed and Developed By Hamza Manzoor.All Rights Reserved</p>
                     </div>
                 </div>
             </div>

@@ -13,10 +13,10 @@
     }
 
     p{
-        color: $white;
+        color: #333333;
     }
     li{
-        color: $white;
+        color: #333333;
     }
 
     .container {
@@ -72,7 +72,7 @@
     .widget-title{
        h3 {
   font-size: 23px;
-  color: #ffcc00;
+  color: #aa2135;
   margin: 0;
   text-transform: uppercase;
   position: relative;
@@ -174,7 +174,7 @@
             margin-right: 0px;
             font-size: 15px;
             margin-left: 2px;
-            color: #ffcc00;
+            color: #aa2135;
             margin-right: 125px;
             word-break: break-word; /* Break long words if needed */
             white-space: normal;    /* Allow text to wrap to the next line */
@@ -304,7 +304,7 @@
             li{
                 position: relative;
                 a{
-                    color: $white;
+                    color:#333333;
                     font-size: 17px;
 
                     &:hover{
@@ -327,7 +327,7 @@
                 padding-bottom: 2px;
                 position: relative;
                 padding-left: 35px;
-                color: #ffffff;
+                color: #333333;
                 font-size: 17px;
 
                 i{

@@ -11,7 +11,8 @@ import PageTitle from '../../components/pagetitle'
 import Footer from '../../components/footer'
 import Scrollbar from '../../components/scrollbar'
 import SectionTitle from '../../components/SectionTitle'
-
+import project3 from '../../images/privilege-card-design-cover-image.jpg';
+import project4 from '../../images/privilege-card-design-inner-image.jpg';
 
 class PortfolioGridS2 extends Component {
     state = {
@@ -24,6 +25,8 @@ class PortfolioGridS2 extends Component {
         const images = [
             { thumb: pageTitleImage, full: typographyImage },
             { thumb: typogr, full: typography },
+            { thumb: project3, full: project4 },
+
         ];
         this.setState({ projectImages: images });
     };

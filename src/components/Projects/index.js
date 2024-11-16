@@ -4,6 +4,10 @@ import pageTitleImage from '../../images/general-offers-cover-image.jpg';
 import typographyImage from '../../images/general-offer-inner-image-design.jpg';
 import typography from '../../images/nd offer inner image designdesign.jpg';
 import typogr from '../../images/nd offers cover imagedesign.jpg';
+import project3 from '../../images/privilege-card-design-cover-image.jpg';
+import project4 from '../../images/privilege-card-design-inner-image.jpg';
+
+
 import SectionTitle from '../SectionTitle'
 
 
@@ -18,6 +22,8 @@ class ProjectSection extends Component {
         const images = [
             { thumb: pageTitleImage, full: typographyImage },
             { thumb: typogr, full: typography },
+            { thumb: project3, full: project4 },
+
         ];
         this.setState({ projectImages: images });
     };
