@@ -4,6 +4,7 @@ import pageTitleImage from '../../images/general-offers-cover-image.jpg';
 import typographyImage from '../../images/general-offer-inner-image-design.jpg';
 import typography from '../../images/nd offer inner image designdesign.jpg';
 import typogr from '../../images/nd offers cover imagedesign.jpg';
+import SectionTitle from '../SectionTitle'
 
 
 class ProjectSection extends Component {
@@ -69,16 +70,11 @@ class ProjectSection extends Component {
         const { isPopupOpen, selectedImage, projectImages } = this.state;
 
         return (
-            <section className="wpo-project-section section-padding">
+            <section className="wpo-work-section section-padding">
                 <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-lg-6 col-12">
-                            <div className="project-section-title">
-                                <span>Portfolio</span>
-                                <h2>Our Projects</h2>
-                            </div>
-                        </div>
-                    </div>
+                <SectionTitle subTitle={'PORTFOILIO'} MainTitle={'Our Projects'} vTitle={'Work'}/>
+                    
+                   
                 </div>
                 <div className="container">
                     <div className="project-image-container">
