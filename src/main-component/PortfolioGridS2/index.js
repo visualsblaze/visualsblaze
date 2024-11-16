@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { FaLink, FaShareAlt, FaSave, FaTimes } from "react-icons/fa"; // Import icons from React Icons
 import pageTitleImage from '../../images/general-offers-cover-image.jpg';
