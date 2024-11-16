@@ -10,6 +10,7 @@ import  {Fragment} from 'react';
 import PageTitle from '../../components/pagetitle'
 import Footer from '../../components/footer'
 import Scrollbar from '../../components/scrollbar'
+import SectionTitle from '../../components/SectionTitle'
 
 
 class PortfolioGridS2 extends Component {
@@ -81,14 +82,7 @@ class PortfolioGridS2 extends Component {
             <PageTitle pageTitle={'Portfolio'} pagesub={'Portfolio'}/> 
 
                 <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-lg-6 col-12">
-                            <div className="project-section-tit">
-                                <span>Portfolio</span>
-                                <h2>Our Projects</h2>
-                            </div>
-                        </div>
-                    </div>
+                <SectionTitle subTitle={'PORTFOILIO'} MainTitle={'Our Projects'} vTitle={'Work'}/>
                 </div>
                 <div className="container">
                     <div className="project-imag-container">
