@@ -508,25 +508,25 @@
 
 @media (max-width: 576px) {
     .mission-vision-icon h2 {
-        font-size: 20px;
+        font-size: 40px;
     }
 
     .mission-vision-icon::before {
-        font-size: 40px;
-        transform: translate(-50%, -270%);
+        font-size: 60px;
+        transform: translate(-50%, -206%);
     }
 
     .mission-vision-content p {
         font-size: 13px;
-        width: 75%;
+        width: 85%;
     }
 
     .mission-vision-icon img {
-        max-width: 200px;
+        max-width: 230px;
     }
 
     .mission-vision-icon.yellow-line::after {
-        width: 270px;
+        width: 310px;
     }
 }
 
