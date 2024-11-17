@@ -59,7 +59,7 @@ const Features = (props) => {
                            <div className="mission-vision-item">
                            <div className="mission-vision-icon yellow-line" data-title={item.title}>
     <h2>{item.title}</h2>
-    <img src={item.image} alt={item.title} />
+    <img className='mission-vision' src={item.image} alt={item.title} />
 </div>
 
     <div className="mission-vision-content">

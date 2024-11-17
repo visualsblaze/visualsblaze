@@ -357,97 +357,10 @@
         }
     }
 }
-@media(max-width: 1920px){
-    .mission-vision-icon {
-        position: relative;
-        text-align: center; /* Ensure the text aligns properly */
-    }
-    
-    .mission-vision-icon h2 {
-        position: relative;
-        z-index: 2; /* Keep the title above the background text */
-        font-size: 34px;
-        font-weight: bold;
-        color: #aa2135; /* Adjust to your desired red color */
-    }
-    
-    .mission-vision-icon::before {
-        content: attr(data-title); /* Use the data-title attribute to add dynamic text */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -180%);
-        font-size: 80px; /* Adjust the size for the background text */
-        color: rgba(0, 0, 0, 0.1); /* Light, subtle color for the background text */
-        font-weight: bold;
-        z-index: 1; /* Place the background text behind the actual title */
-        pointer-events: none; /* Make the background text non-interactive */
-        white-space: nowrap; /* Prevent the text from wrapping */
-    }
-    
-    .mission-vision-section {
-        padding: 50px 0;
-    }
-    
-    .mission-vision-item {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    
-    .mission-vision-icon img {
-        max-width: 240px;
-        margin: 0 auto 20px;
-        border-radius: 50%; /* Makes the image circular */
-    }
-    .mission-vision-item {
-        text-align: center; /* Center-align the content for better layout */
-        padding: 20px 0; /* Add spacing between items */
-    }
-    
-    .mission-vision-icon.yellow-line {
-        position: relative;
-        padding-bottom: 10px;
-    }
-    
-    .mission-vision-icon.yellow-line::after {
-        content: '';
-        display: block;
-        width: 460px; /* Adjust the width of the line */
-        height: 4px; /* Adjust the thickness of the line */
-        background-color: #ffcc00; /* Line color */
-        margin: 0 auto;
-        position: absolute;
-        bottom: -10px; /* Position the line slightly below the icon */
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .mission-vision-content p .highlight {
-        color: #aa2135; /* Red color */
-        font-size: 20px; /* Bigger size */
-        font-weight: bold; /* Make it bold for emphasis */
-    }
-    
-    .mission-vision-icon h2 {
-        font-size: 34px;
-        font-weight: bold;
-        color: #aa2135; /* Adjust to your desired red color */
-        margin-bottom: 20px; /* Space between the title and yellow line */
-    }
-    
-    .mission-vision-content p {
-        font-size: 16px;
-        color: #333;
-        line-height: 1.8;
-        text-align: justify;
-        margin: 20px 80px 0; /* Remove top padding to align with the yellow line */
-        width: 70%; /* Ensure the paragraph spans the full width */
-    }
-    
-    
-}
+/* Base styles (Desktop and larger screens) */
 .mission-vision-icon {
     position: relative;
-    text-align: center; /* Ensure the text aligns properly */
+    text-align: center;
 }
 
 .mission-vision-icon h2 {
@@ -456,20 +369,21 @@
     font-size: 34px;
     font-weight: bold;
     color: #aa2135; /* Adjust to your desired red color */
+    margin-bottom: 20px;
 }
 
 .mission-vision-icon::before {
-    content: attr(data-title); /* Use the data-title attribute to add dynamic text */
+    content: attr(data-title);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -180%);
-    font-size: 80px; /* Adjust the size for the background text */
-    color: rgba(0, 0, 0, 0.1); /* Light, subtle color for the background text */
+    font-size: 80px;
+    color: rgba(0, 0, 0, 0.1);
     font-weight: bold;
-    z-index: 1; /* Place the background text behind the actual title */
-    pointer-events: none; /* Make the background text non-interactive */
-    white-space: nowrap; /* Prevent the text from wrapping */
+    z-index: 1;
+    pointer-events: none;
+    white-space: nowrap;
 }
 
 .mission-vision-section {
@@ -486,11 +400,24 @@
     margin: 0 auto 20px;
     border-radius: 50%; /* Makes the image circular */
 }
-.mission-vision-item {
-    text-align: center; /* Center-align the content for better layout */
-    padding: 20px 0; /* Add spacing between items */
+
+.mission-vision-content p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 20px auto;
+    width: 70%;
 }
 
+/* Highlight styles */
+.mission-vision-content p .highlight {
+    color: #aa2135; /* Red color */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Yellow line styles */
 .mission-vision-icon.yellow-line {
     position: relative;
     padding-bottom: 10px;
@@ -499,37 +426,109 @@
 .mission-vision-icon.yellow-line::after {
     content: '';
     display: block;
-    width: 430px; /* Adjust the width of the line */
-    height: 4px; /* Adjust the thickness of the line */
-    background-color: #ffcc00; /* Line color */
+    width: 430px;
+    height: 4px;
+    background-color: #ffcc00;
     margin: 0 auto;
     position: absolute;
-    bottom: -10px; /* Position the line slightly below the icon */
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
 }
-.mission-vision-content p .highlight {
-    color: #aa2135; /* Red color */
-    font-size: 20px; /* Bigger size */
-    font-weight: bold; /* Make it bold for emphasis */
+/* Horizontal Flip 360 Animation */
+@keyframes flipHorizontal {
+    0% {
+        transform: rotateY(0deg); /* Start at initial position */
+    }
+    100% {
+        transform: rotateY(360deg); /* Complete one full horizontal flip */
+    }
 }
 
-.mission-vision-icon h2 {
-    font-size: 34px;
-    font-weight: bold;
-    color: #aa2135; /* Adjust to your desired red color */
-    margin-bottom: 20px; /* Space between the title and yellow line */
+.mission-vision.flip-horizontal {
+    animation: flipHorizontal 1s ease-in-out; /* Apply the flip animation */
+    transform-style: preserve-3d; /* Maintain 3D effect */
+    display: inline-block; /* Ensure proper rendering during animation */
 }
 
-.mission-vision-content p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.8;
-    text-align: justify;
-    margin: 20px 90px 0; /* Remove top padding to align with the yellow line */
-    width: 70%; /* Ensure the paragraph spans the full width */
+/* Ensure spacing and alignment during animation */
+.mission-vision:hover  {
+    animation: flipHorizontal 1s ease-in-out; /* Trigger animation on hover */
 }
 
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .mission-vision-icon h2 {
+        font-size: 28px;
+    }
+
+    .mission-vision-icon::before {
+        font-size: 60px;
+        transform: translate(-50%, -150%);
+    }
+
+    .mission-vision-content p {
+        font-size: 15px;
+        width: 85%; /* Adjust the paragraph width */
+    }
+
+    .mission-vision-icon img {
+        max-width: 200px;
+    }
+
+    .mission-vision-icon.yellow-line::after {
+        width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .mission-vision-icon h2 {
+        font-size: 24px;
+    }
+
+    .mission-vision-icon::before {
+        font-size: 50px;
+        transform: translate(-50%, -140%);
+    }
+
+    .mission-vision-content p {
+        font-size: 14px;
+        width: 90%;
+    }
+
+    .mission-vision-icon img {
+        max-width: 180px;
+    }
+
+    .mission-vision-icon.yellow-line::after {
+        width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mission-vision-icon h2 {
+        font-size: 20px;
+    }
+
+    .mission-vision-icon::before {
+        font-size: 40px;
+        transform: translate(-50%, -270%);
+    }
+
+    .mission-vision-content p {
+        font-size: 13px;
+        width: 75%;
+    }
+
+    .mission-vision-icon img {
+        max-width: 200px;
+    }
+
+    .mission-vision-icon.yellow-line::after {
+        width: 270px;
+    }
+}
 
 /* 3.5 wpo-fun-fact-section */
 
