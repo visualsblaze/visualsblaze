@@ -32,6 +32,16 @@
                 top: 15px;
                 z-index: 1;
             }
+            .wp-icon{
+                width:50px;
+                height: 60px;
+                line-height: 100px;
+                text-align: center;
+                position: absolute;
+                left: 24px;
+                top: 20px;
+                z-index: 1;
+            }
             .wpo-work-icon-thumb{
                 width:55px;
                 height: 55px;
@@ -53,7 +63,7 @@
                     color: $white;
                     -webkit-text-fill-color: $white;
                     -webkit-text-stroke-width: 1px;
-                    -webkit-text-stroke-color: $light;
+                    -webkit-text-stroke-color: #ffcc00;
                 }
             }
               
@@ -347,7 +357,178 @@
         }
     }
 }
+@media(max-width: 1920px){
+    .mission-vision-icon {
+        position: relative;
+        text-align: center; /* Ensure the text aligns properly */
+    }
+    
+    .mission-vision-icon h2 {
+        position: relative;
+        z-index: 2; /* Keep the title above the background text */
+        font-size: 34px;
+        font-weight: bold;
+        color: #aa2135; /* Adjust to your desired red color */
+    }
+    
+    .mission-vision-icon::before {
+        content: attr(data-title); /* Use the data-title attribute to add dynamic text */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -180%);
+        font-size: 80px; /* Adjust the size for the background text */
+        color: rgba(0, 0, 0, 0.1); /* Light, subtle color for the background text */
+        font-weight: bold;
+        z-index: 1; /* Place the background text behind the actual title */
+        pointer-events: none; /* Make the background text non-interactive */
+        white-space: nowrap; /* Prevent the text from wrapping */
+    }
+    
+    .mission-vision-section {
+        padding: 50px 0;
+    }
+    
+    .mission-vision-item {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .mission-vision-icon img {
+        max-width: 240px;
+        margin: 0 auto 20px;
+        border-radius: 50%; /* Makes the image circular */
+    }
+    .mission-vision-item {
+        text-align: center; /* Center-align the content for better layout */
+        padding: 20px 0; /* Add spacing between items */
+    }
+    
+    .mission-vision-icon.yellow-line {
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .mission-vision-icon.yellow-line::after {
+        content: '';
+        display: block;
+        width: 460px; /* Adjust the width of the line */
+        height: 4px; /* Adjust the thickness of the line */
+        background-color: #ffcc00; /* Line color */
+        margin: 0 auto;
+        position: absolute;
+        bottom: -10px; /* Position the line slightly below the icon */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .mission-vision-content p .highlight {
+        color: #aa2135; /* Red color */
+        font-size: 20px; /* Bigger size */
+        font-weight: bold; /* Make it bold for emphasis */
+    }
+    
+    .mission-vision-icon h2 {
+        font-size: 34px;
+        font-weight: bold;
+        color: #aa2135; /* Adjust to your desired red color */
+        margin-bottom: 20px; /* Space between the title and yellow line */
+    }
+    
+    .mission-vision-content p {
+        font-size: 16px;
+        color: #333;
+        line-height: 1.8;
+        text-align: justify;
+        margin: 20px 80px 0; /* Remove top padding to align with the yellow line */
+        width: 70%; /* Ensure the paragraph spans the full width */
+    }
+    
+    
+}
+.mission-vision-icon {
+    position: relative;
+    text-align: center; /* Ensure the text aligns properly */
+}
 
+.mission-vision-icon h2 {
+    position: relative;
+    z-index: 2; /* Keep the title above the background text */
+    font-size: 34px;
+    font-weight: bold;
+    color: #aa2135; /* Adjust to your desired red color */
+}
+
+.mission-vision-icon::before {
+    content: attr(data-title); /* Use the data-title attribute to add dynamic text */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -180%);
+    font-size: 80px; /* Adjust the size for the background text */
+    color: rgba(0, 0, 0, 0.1); /* Light, subtle color for the background text */
+    font-weight: bold;
+    z-index: 1; /* Place the background text behind the actual title */
+    pointer-events: none; /* Make the background text non-interactive */
+    white-space: nowrap; /* Prevent the text from wrapping */
+}
+
+.mission-vision-section {
+    padding: 50px 0;
+}
+
+.mission-vision-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mission-vision-icon img {
+    max-width: 240px;
+    margin: 0 auto 20px;
+    border-radius: 50%; /* Makes the image circular */
+}
+.mission-vision-item {
+    text-align: center; /* Center-align the content for better layout */
+    padding: 20px 0; /* Add spacing between items */
+}
+
+.mission-vision-icon.yellow-line {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.mission-vision-icon.yellow-line::after {
+    content: '';
+    display: block;
+    width: 430px; /* Adjust the width of the line */
+    height: 4px; /* Adjust the thickness of the line */
+    background-color: #ffcc00; /* Line color */
+    margin: 0 auto;
+    position: absolute;
+    bottom: -10px; /* Position the line slightly below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mission-vision-content p .highlight {
+    color: #aa2135; /* Red color */
+    font-size: 20px; /* Bigger size */
+    font-weight: bold; /* Make it bold for emphasis */
+}
+
+.mission-vision-icon h2 {
+    font-size: 34px;
+    font-weight: bold;
+    color: #aa2135; /* Adjust to your desired red color */
+    margin-bottom: 20px; /* Space between the title and yellow line */
+}
+
+.mission-vision-content p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 20px 90px 0; /* Remove top padding to align with the yellow line */
+    width: 70%; /* Ensure the paragraph spans the full width */
+}
 
 
 /* 3.5 wpo-fun-fact-section */
