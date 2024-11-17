@@ -445,14 +445,14 @@
     }
 }
 
-.mission-vision.flip-horizontal {
+.flip-horizontal {
     animation: flipHorizontal 1s ease-in-out; /* Apply the flip animation */
     transform-style: preserve-3d; /* Maintain 3D effect */
     display: inline-block; /* Ensure proper rendering during animation */
 }
 
 /* Ensure spacing and alignment during animation */
-.mission-vision:hover  {
+.mission-vision-item:hover .mission-vision-icon {
     animation: flipHorizontal 1s ease-in-out; /* Trigger animation on hover */
 }
 

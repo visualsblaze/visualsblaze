@@ -95,7 +95,7 @@
       }
       @media (max-width: 480px) {
         .logo{
-            width: 250px;
+            width: 255px;
             margin-left: -5px;
         }
       }
@@ -132,9 +132,9 @@
         .p-text {
             text-align: center;
             margin-right: 0px;
-            font-size: 15px;
-            margin-left: 2px;
-            margin-right: 125px;
+            font-size: 17px;
+            margin-left: 0px;
+            margin-right: 110px;
             word-break: break-word; /* Break long words if needed */
             white-space: normal;    /* Allow text to wrap to the next line */
             overflow-wrap: break-word; /* Ensures words break within boundaries */
@@ -173,7 +173,7 @@
             text-align: center;
             margin-right: 0px;
             font-size: 15px;
-            margin-left: 2px;
+            margin-left: 15px;
             color: #aa2135;
             margin-right: 125px;
             word-break: break-word; /* Break long words if needed */

@@ -53,28 +53,27 @@ const Features = (props) => {
     return(
         <section className={`wpo-work-section section-padding ${props.wClass}`}>
         <div className="container">
-                <div className="row">
-                    {missionVision.map((item) => (
-                        <div className="col col-lg-6 col-md-12" key={item.id}>
-                           <div className="mission-vision-item">
-                           <div className="mission-vision-icon yellow-line" data-title={item.title}>
-    <h2>{item.title}</h2>
-    <img className='mission-vision' src={item.image} alt={item.title} />
+        <div className="mission-vision-section">
+    {missionVision.map((item) => (
+        <div className="mission-vision-item" key={item.id}>
+            <div
+                className="mission-vision-icon yellow-line "
+                data-title={item.title}
+            >
+                <h2>{item.title}</h2>
+                <img className='flip-horizontal' src={item.image} alt={item.title} />
+            </div>
+            <div className="mission-vision-content">
+                <p>
+                    <span className="highlight">
+                        {item.description.split(" ").slice(0, 2).join(" ")}
+                    </span>{" "}
+                    {item.description.split(" ").slice(2).join(" ")}
+                </p>
+            </div>
+        </div>
+    ))}
 </div>
-
-    <div className="mission-vision-content">
-    <p>
-        <span className="highlight">
-            {item.description.split(' ').slice(0, 2).join(' ')}
-        </span>{' '}
-        {item.description.split(' ').slice(2).join(' ')}
-    </p>
-</div>
-</div>
-</div>
-
-                    ))}
-                </div>
             </div>
             <div className="container">
                 <SectionTitle subTitle={'Working Process'} MainTitle={'How We Do Our Work Plan'} vTitle={'Work'}/>
