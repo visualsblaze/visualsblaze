@@ -83,14 +83,14 @@ const Features = (props) => {
                             <div className="col col-lg-3 col-md-6 col-12" key={fitem}> 
                                 <div className="wpo-work-iem">
                                     <div className="wpo-work-icon-wrap">
-                                        <div className="wpo-work-icon">
+                                        <div className="wpo-work-icon flip-horizontal">
                                             <img src={featres.fIcon} className='wp-icon' alt=""/>
                                         </div>
                                         <div className="wpo-work-icon-thumb">
                                             <span>{featres.id}</span>
                                         </div>
                                     </div>
-                                    <div className="wpo-work-text">
+                                    <div className="wpo-work-text flip-horizontal">
                                         <h4>{featres.title}</h4>
                                     </div>
                                 </div>

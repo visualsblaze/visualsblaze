@@ -86,26 +86,48 @@ const Footer = (props) =>{
                         </div>
                     </div>
                     <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div className="widget wpo-service-link-widget">
-                            <div className="widget-title">
-                                <h3>Contact Details</h3>
-                            </div>
-                            <div className="contact-ft">
-                                <ul>
-                                <p>Al-Andalus District,Jeddah KSA</p>
-                                    <li><i className="fi flaticon-phone-call"></i>+966 50 887 5968</li>
-                                    <li><i className="fi flaticon-email"></i>visualsblaze@gmail.com</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div className="widget wpo-service-link-widget">
+        <div className="widget-title">
+            <h3>Contact Details</h3>
+        </div>
+        <div className="contact-ft">
+            <ul>
+                <p>Al-Andalus District, Jeddah KSA</p>
+                <li><i className="fi flaticon-phone-call"></i>+966 50 887 5968</li>
+                <li><i className="fi flaticon-email"></i>visualsblaze@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+    {/* Logo Section (Visible on Mobile) */}
+    <div className="footer-logo-mobile">
+        <img src={Logo} alt="Footer Logo" className="logo-mobile" />
+        <p style={{ color: '#333333' }}>BLAZE FOR THE PEOPLE WHO <br/> 
+        WANT MORE </p>
+        <p style={{ color: '#aa2135', fontWeight: 'bold' }}>Follow us on</p>
+        <div className="social-icons-mobile">
+            <Link to="https://www.behance.net/discovervisualsblaze" className="social-link">
+                <FaBehance />
+            </Link>
+            <Link to="https://www.linkedin.com/" className="social-link">
+                <FaLinkedin />
+            </Link>
+            <Link to="https://www.facebook.com/" className="social-link">
+                <FaFacebook />
+            </Link>
+            <Link to="https://www.instagram.com/" className="social-link">
+                <FaInstagram />
+            </Link>
+        </div>
+    </div>
+</div>
+
 
                     {/* <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
                         <div className="widget instagram">
                             <div className="widget-title">
                                 <h3>Projects</h3>
                             </div>
-                            <ul className="d-flex">
+                            <ul className="d-flex"> 
                                 {Project.slice(0, 6).map((project, Pitem) => (
                                     <li key={Pitem}><Link onClick={ClickHandler} to={`/project-single/${project.Id}`}><img src={project.pImg} alt="" /></Link></li>
                                 ))}

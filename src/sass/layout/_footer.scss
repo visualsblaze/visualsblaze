@@ -95,8 +95,7 @@
       }
       @media (max-width: 480px) {
         .logo{
-            width: 255px;
-            margin-left: -5px;
+           display: none;
         }
       }
     .about-widget {
@@ -130,18 +129,7 @@
       }
       @media (max-width: 480px) {
         .p-text {
-            text-align: center;
-            margin-right: 0px;
-            font-size: 17px;
-            margin-left: 0px;
-            margin-right: 110px;
-            word-break: break-word; /* Break long words if needed */
-            white-space: normal;    /* Allow text to wrap to the next line */
-            overflow-wrap: break-word; /* Ensures words break within boundaries */
-    
-            &:last-child {
-                margin-bottom: 0;
-            }
+          display: none;
         }
     }
     @media (max-width: 1920px) {
@@ -170,22 +158,74 @@
       }
       @media (max-width: 480px) {
         .follow {
-            text-align: center;
-            margin-right: 0px;
-            font-size: 15px;
-            margin-left: 15px;
-            color: #aa2135;
-            margin-right: 125px;
-            word-break: break-word; /* Break long words if needed */
-            white-space: normal;    /* Allow text to wrap to the next line */
-            overflow-wrap: break-word; /* Ensures words break within boundaries */
-    
-            &:last-child {
-                margin-bottom: 0;
-            }
+          display: none;
         }
     }
-        
+        /* Mobile Footer Logo Section */
+.footer-logo-mobile {
+    display: none; /* Hidden by default */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-logo-mobile img.logo-mobile {
+    max-width: 230px; /* Adjust logo size */
+    height: auto;
+    margin-bottom: 10px;
+    margin-right: 150px;
+    margin-top: 20px;
+}
+
+/* "Follow us on" text styling */
+.footer-logo-mobile p {
+    color: #aa2135;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+    margin-right: 120px;
+
+}
+
+/* Social Icons Styling */
+.social-icons-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between icons */
+    margin-top: 10px;
+    margin-right: 130px;
+
+}
+
+.social-icons-mobile .social-link {
+    color: $white;
+    width: 36px;
+    height: 36px;
+    line-height: 37px;
+    background: linear-gradient(45deg, #ff4856, #aa2135);
+    display: block;
+    text-align: center;
+    @include rounded-border(50%);
+    font-size: 18px;
+    gap: 102px;
+
+
+    &:hover{
+        color:$dark-gray;
+        background: $white;
+    }
+}
+
+.social-icons-mobile .social-link:hover {
+    color: #000000; /* Change icon color on hover */
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    .footer-logo-mobile {
+        display: block; /* Show logo section on mobile screens */
+    }
+}
+
     .about-widget {
         p{
             
@@ -234,7 +274,6 @@
           @media (max-width: 1200px) {
             ul{
                 overflow: hidden;
-                padding-top: 0px;
                 margin-left: 40px;
     
                 li{
@@ -242,23 +281,7 @@
                     float: left;
     
                     a{
-                        
-                        color: $white;
-                        width: 36px;
-                        height: 36px;
-                        line-height: 37px;
-                        background: linear-gradient(45deg, #ff4856, #aa2135);
-                        display: block;
-                        text-align: center;
-                        @include rounded-border(50%);
-                        font-size: 18px;
-                        gap: 102px;
-    
-    
-                        &:hover{
-                            color:$dark-gray;
-                            background: $white;
-                        }
+                       display: none;
                     }
                 }
     
