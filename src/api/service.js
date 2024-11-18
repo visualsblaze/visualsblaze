@@ -146,5 +146,28 @@ const Services = [
         ssImg2:sSingleimg2,
         sinst:ins6,
     },
+    {
+        Id: '6',
+        sImg:simg6,
+        sTitle: 'Video Editing',
+        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ultrices gravida.',
+        des2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        icon:sIcon6,
+        icon2:svIcon6,
+        ssImg1:sSingleimg1,
+        ssImg2:sSingleimg2,
+        sinst:ins6,
+    },{
+        Id: '6',
+        sImg:simg6,
+        sTitle: 'Video Composition',
+        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ultrices gravida.',
+        des2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        icon:sIcon6,
+        icon2:svIcon6,
+        ssImg1:sSingleimg1,
+        ssImg2:sSingleimg2,
+        sinst:ins6,
+    },
 ]
 export default Services;

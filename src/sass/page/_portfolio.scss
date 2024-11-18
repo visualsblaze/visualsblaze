@@ -319,6 +319,8 @@
 .project-imag:hover {
     transform: scale(1.05); /* Slight zoom effect */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    filter: grayscale(70%); /* Turns the image black and white on hover */
+
 }
 
 

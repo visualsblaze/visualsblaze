@@ -53,8 +53,9 @@ const Features = (props) => {
     return(
         <section className={`wpo-work-section section-padding ${props.wClass}`}>
         <div className="container">
-        <div className="mission-vision-section">
+        <div className="row">
     {missionVision.map((item) => (
+          <div className="col col-lg-6 col-md-12" key={item.id}>
         <div className="mission-vision-item" key={item.id}>
             <div
                 className="mission-vision-icon yellow-line "
@@ -72,6 +73,8 @@ const Features = (props) => {
                 </p>
             </div>
         </div>
+        </div>
+
     ))}
 </div>
             </div>

@@ -1465,73 +1465,38 @@
     max-height: 100%; /* Ensure the image doesn't overflow */
     border-radius: 10px; /* Optional: rounded corners */
 }
-.popup-actions {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
+
+
+.popup-fixed-actions {
+    position: fixed; /* Keep the buttons fixed within the viewport */
+    top: 1; /* Align to the top */
+    left: 1; /* Align to the left */
+    width: 89%; /* Span the entire width of the modal */
+    background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
+    padding: 10px 20px; /* Add spacing around buttons */
+    display: left; /* Flexbox for button alignment */
+    justify-content: space-between; /* Spread buttons across the bar */
+    z-index: 1000; /* Ensure it's above other modal content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for depth */
 }
 
-.popup-actions button {
-    background: rgba(0, 0, 0, 0.6);
+.popup-fixed-actions button {
     color: white;
-    border: none;
-    padding: 8px 16px; /* Increase padding for spacing */
+    background: transparent;
+    border: 1px solid white;
+    padding: 8px 10px;
     border-radius: 4px;
+    margin-right: 8px;
+    font-size: 14px;
     cursor: pointer;
     transition: background 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px; /* Space between icon and text */
-    font-size: 14px;
-    line-height: 1;
 }
 
-.popup-actions button:hover {
-    background: rgba(0, 0, 0, 0.8);
+.popup-fixed-actions button:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
-.close-btn {
-    position: fixed; /* Keep the button fixed on the screen */
-    top: 150px; /* Distance from the top of the viewport */
-    right: 110px; /* Distance from the right of the viewport */
-    background: rgba(255, 0, 0, 0.7);
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    z-index: 9999; /* Ensure it's above other elements */
-}
-
-.close-btn:hover {
-    background: rgba(255, 0, 0, 0.9);
-}
-
-/* Adjust button for smaller screens */
 @media screen and (max-width: 768px) {
-    .close-btn {
-    position: fixed; /* Keep the button fixed on the screen */
-    top: 130px; /* Distance from the top of the viewport */
-    right: 30px; /* Distance from the right of the viewport */
-    background: rgba(255, 0, 0, 0.7);
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    z-index: 9999; /* Ensure it's above other elements */
-    }
+    
 }
 
 
@@ -1547,16 +1512,30 @@
 
 /* Smaller screens (e.g., phones in portrait mode) */
 @media (max-width: 480px) {
-    .popup-actions button {
-        font-size: 12px; /* Reduce font size for smaller screens */
-        padding: 8px;
-    }
-    .close-btn {
-        font-size: 12px; /* Reduce font size for smaller screens */
-        padding: 8px;
-        margin-bottom: 10px;
-        margin-left: 10px;
+    
+.popup-fixed-actions {
+    position: fixed; /* Keep the buttons fixed within the viewport */
+    top: 1; /* Align to the top */
+    left: 1; /* Align to the left */
+    width: 85%; /* Span the entire width of the modal */
+    background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
+    padding: 10px 20px; /* Add spacing around buttons */
+    display: left; /* Flexbox for button alignment */
+    justify-content: space-between; /* Spread buttons across the bar */
+    z-index: 1000; /* Ensure it's above other modal content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for depth */
+}
 
+    .popup-fixed-actions button {
+        color: white;
+        background: transparent;
+        border: 1px solid white;
+        padding: 8px 10px;
+        border-radius: 4px;
+        margin-right: 8px;
+        font-size: 10px;
+        cursor: pointer;
+        transition: background 0.3s;
     }
 }
 /* Container for the image grid */
@@ -1570,17 +1549,20 @@
 .project-image {
     width: 415px; /* Ensure the image fills the container */
     height: 300px; /* Set a fixed height to make the image appear taller */
-    object-fit: fit; /* Make the image cover the container without distorting */
+    object-fit: cover; /* Make the image cover the container without distorting */
     border-radius: 0px; /* Optional: rounded corners for images */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Include filter transition */
     cursor: pointer;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    box-shadow: 0 6px 15px rgba(224, 2, 2, 0.1); /* Shadow effect */
 }
-/* Hover effect for zoom */
+
+/* Hover effect */
 .project-image:hover {
     transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    box-shadow: 0 8px 20px rgba(48, 46, 46, 0.978); /* Enhanced shadow on hover */
+    filter: grayscale(70%); /* Turns the image black and white on hover */
 }
+
 
 /* Media query for smaller screens */
 @media (max-width: 1500px) {
@@ -1605,6 +1587,8 @@
 .project-image:hover {
     transform: scale(1.05); /* Slight zoom effect */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    filter: grayscale(70%); /* Turns the image black and white on hover */
+
 }
 }
 
