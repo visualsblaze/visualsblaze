@@ -99,16 +99,25 @@ class ProjectSection extends Component {
                 {/* Popup Modal */}
                 {isPopupOpen && (
                  <div className={`popup-modal ${isPopupOpen ? 'open' : ''}`} onClick={this.closePopup}>
-                 <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-                     {/* Fixed Action Bar */}
-                     <div className="popup-fixed-actions">
-                         <button onClick={this.generatePermalink}><FaLink /> Permalink</button>
-                         <button onClick={this.shareImage}><FaShareAlt /> Share</button>
-                         <button onClick={this.saveImage}><FaSave /> Save</button>
-                         <button className="close-btn" onClick={this.closePopup}><FaTimes /> Close</button>
-                     </div>
-                     <img src={selectedImage} alt="Project Detail" />
-                 </div>
+                <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+    {/* Fixed Action Bar */}
+    <div className="popup-fixed-actions">
+        <button onClick={this.generatePermalink}>
+            <FaLink /> Permalink
+        </button>
+        <button onClick={this.shareImage}>
+            <FaShareAlt /> Share
+        </button>
+        <button onClick={this.saveImage}>
+            <FaSave /> Save
+        </button>
+        <button className="close-btn" onClick={this.closePopup}>
+            <FaTimes /> Close
+        </button>
+    </div>
+    <img src={selectedImage} alt="Project Detail" />
+</div>
+
              </div>
              
                 )}

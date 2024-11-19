@@ -1461,17 +1461,21 @@
 .popup-content img {
     width: 100%;
     height: auto;
+    margin-top: 55px;
     object-fit: contain; /* Keep the aspect ratio of the image */
     max-height: 100%; /* Ensure the image doesn't overflow */
     border-radius: 10px; /* Optional: rounded corners */
 }
 
+.popup-content {
+    position: relative;
+}
 
 .popup-fixed-actions {
     position: fixed; /* Keep the buttons fixed within the viewport */
     top: 1; /* Align to the top */
     left: 1; /* Align to the left */
-    width: 89%; /* Span the entire width of the modal */
+    width: 79%; /* Span the entire width of the modal */
     background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
     padding: 10px 20px; /* Add spacing around buttons */
     display: left; /* Flexbox for button alignment */
@@ -1492,9 +1496,28 @@
     transition: background 0.3s;
 }
 
+
 .popup-fixed-actions button:hover {
     background: rgba(255, 255, 255, 0.2);
 }
+
+.popup-fixed-actions .close-btn {
+    position: absolute;
+    top: 10px; /* Adjust based on your design */
+    right: 10px; /* Align to the right edge of the popup */
+    background-color: transparent; /* Optional: to remove background */
+    border: none; /* Optional: to remove borders */
+    font-size: 16px; /* Adjust button size */
+    cursor: pointer;
+    color: #ffffff; /* Optional: Adjust color */
+    border: 1px solid white;
+
+}
+
+.popup-fixed-actions .close-btn:hover {
+    color: red; /* Optional: Add a hover effect */
+}
+
 @media screen and (max-width: 768px) {
     
 }
@@ -1537,6 +1560,24 @@
         cursor: pointer;
         transition: background 0.3s;
     }
+    
+.popup-fixed-actions .close-btn {
+    position: absolute;
+    top: 10px; /* Adjust based on your design */
+    right: 0px; /* Align to the right edge of the popup */
+    background-color: transparent; /* Optional: to remove background */
+    border: none; /* Optional: to remove borders */
+    font-size: 10px; /* Adjust button size */
+    cursor: pointer;
+    color: #ffffff; /* Optional: Adjust color */
+    border: 1px solid white;
+
+}
+
+.popup-fixed-actions .close-btn:hover {
+    color: red; /* Optional: Add a hover effect */
+}
+
 }
 /* Container for the image grid */
 .project-image-container {

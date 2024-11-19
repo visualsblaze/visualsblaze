@@ -94,7 +94,8 @@ const Features = (props) => {
                                         </div>
                                     </div>
                                     <div className="wpo-work-text flip-horizontal">
-                                        <h4>{featres.title}</h4>
+                                    <h4 style={{ textTransform: 'uppercase' }}>{featres.title}</h4>
+
                                     </div>
                                 </div>
                             </div>

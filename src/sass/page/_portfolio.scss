@@ -307,8 +307,8 @@
 
 }
 .project-imag {
-    width: 380px; /* Ensure the image fills the container */
-    height: 250px; /* Set a fixed height to make the image appear taller */
+    width: 415px; /* Ensure the image fills the container */
+    height: 300px; /* Set a fixed height to make the image appear taller */
     object-fit: fit; /* Make the image cover the container without distorting */
     border-radius: 0px; /* Optional: rounded corners for images */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
@@ -385,6 +385,64 @@
     }
 }
 
+.popup-fixed-actions {
+    position: fixed; /* Keep the buttons fixed within the viewport */
+    top: 1; /* Align to the top */
+    width: 89%; /* Span the entire width of the modal */
+    background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
+    padding: 10px 20px; /* Add spacing around buttons */
+    justify-content: space-between; /* Spread buttons across the bar */
+    z-index: 1000; /* Ensure it's above other modal content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for depth */
+}
+
+.popup-fixed-actions button {
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+    padding: 8px 10px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.popup-fixed-actions button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.close-btn
+{
+
+}
+/* Smaller screens (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+    
+    .popup-fixed-actions {
+        position: fixed; /* Keep the buttons fixed within the viewport */
+        top: 1; /* Align to the top */
+        left: 1; /* Align to the left */
+        width: 85%; /* Span the entire width of the modal */
+        background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
+        padding: 10px 20px; /* Add spacing around buttons */
+        display: left; /* Flexbox for button alignment */
+        justify-content: space-between; /* Spread buttons across the bar */
+        z-index: 1000; /* Ensure it's above other modal content */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for depth */
+    }
+    
+        .popup-fixed-actions button {
+            color: white;
+            background: transparent;
+            border: 1px solid white;
+            padding: 8px 10px;
+            border-radius: 4px;
+            margin-right: 8px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+    }
 .protfolio-slide-area .wpo-protfolio-single:hover .thumb-text {
     top: 0;
     opacity: 1;
