@@ -20,7 +20,7 @@ const Contactpage = () => {
                                         </div>
                                         <div className="office-info-text">
                                             <h2>Address</h2>
-                                            <p>Jeddah</p>
+                                            <p>Al-Andalus District, Jeddah KSA</p>
                                         </div>
                                     </div>
                                 </div> 
