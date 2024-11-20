@@ -388,7 +388,10 @@
 .popup-fixed-actions {
     position: fixed; /* Keep the buttons fixed within the viewport */
     top: 1; /* Align to the top */
-    width: 89%; /* Span the entire width of the modal */
+    margin-left: -10px;
+    border-radius: 10px;
+
+    width: 90%; /* Span the entire width of the modal */
     background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
     padding: 10px 20px; /* Add spacing around buttons */
     justify-content: space-between; /* Spread buttons across the bar */
@@ -420,9 +423,10 @@
     
     .popup-fixed-actions {
         position: fixed; /* Keep the buttons fixed within the viewport */
-        top: 1; /* Align to the top */
-        left: 1; /* Align to the left */
-        width: 85%; /* Span the entire width of the modal */
+        top: 128px; /* Align to the top */
+        border-radius: 10px;
+        left: 30px; /* Align to the left */
+        width: 90%; /* Span the entire width of the modal */
         background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
         padding: 10px 20px; /* Add spacing around buttons */
         display: left; /* Flexbox for button alignment */
