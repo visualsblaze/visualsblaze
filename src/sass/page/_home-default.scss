@@ -1453,7 +1453,11 @@
     overflow: auto; /* Allow scrolling */
     background-color: #fff; /* Background for the content area */
     border-radius: 10px; /* Optional: rounded corners for the modal */
-    padding: 10px; /* Padding for better spacing */
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
     transition: transform 0.3s ease;
 }
 
@@ -1475,14 +1479,16 @@
     position: fixed; /* Keep the buttons fixed within the viewport */
     top: 1; /* Align to the top */
     left: 1; /* Align to the left */
-    width: 79%; /* Span the entire width of the modal */
+    width: 1705px; /* Span the entire width of the modal */
     background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
     padding: 10px 20px; /* Add spacing around buttons */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     display: left; /* Flexbox for button alignment */
     justify-content: space-between; /* Spread buttons across the bar */
     z-index: 1000; /* Ensure it's above other modal content */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for depth */
-    margin-top: -10px;
+    margin-top: -16px;
 }
 
 .popup-fixed-actions button {
@@ -1519,8 +1525,24 @@
     color: red; /* Optional: Add a hover effect */
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1500px) {
     
+.popup-fixed-actions {
+    position: fixed; /* Keep the buttons fixed within the viewport */
+    top: 1; /* Align to the top */
+    left: 1; /* Align to the left */
+    width: 1192px; /* Span the entire width of the modal */
+    background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
+    padding: 10px 20px; /* Add spacing around buttons */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: left; /* Flexbox for button alignment */
+    justify-content: space-between; /* Spread buttons across the bar */
+    z-index: 1000; /* Ensure it's above other modal content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for depth */
+    margin-top: -16px;
+}
+
 }
 
 
