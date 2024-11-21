@@ -388,10 +388,9 @@
 .popup-fixed-actions {
     position: fixed; /* Keep the buttons fixed within the viewport */
     top: 1; /* Align to the top */
-    margin-left: -10px;
-    border-radius: 10px;
+    margin-left: 2px;
 
-    width: 90%; /* Span the entire width of the modal */
+    width: 1703px; /* Span the entire width of the modal */
     background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
     padding: 10px 20px; /* Add spacing around buttons */
     justify-content: space-between; /* Spread buttons across the bar */
@@ -414,10 +413,33 @@
 .popup-fixed-actions button:hover {
     background: rgba(255, 255, 255, 0.2);
 }
-.close-btn
-{
-
-}
+@media (max-width: 1500px) {
+    
+    .popup-fixed-actions {
+        position: fixed; /* Keep the buttons fixed within the viewport */
+        top: 109px; /* Align to the top */
+        left: 77px; /* Align to the left */
+        width: 87%; /* Span the entire width of the modal */
+        background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
+        padding: 10px 20px; /* Add spacing around buttons */
+        display: left; /* Flexbox for button alignment */
+        justify-content: space-between; /* Spread buttons across the bar */
+        z-index: 1000; /* Ensure it's above other modal content */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for depth */
+    }
+    
+        .popup-fixed-actions button {
+            color: white;
+            background: transparent;
+            border: 1px solid white;
+            padding: 8px 10px;
+            border-radius: 4px;
+            margin-right: 8px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+    }
 /* Smaller screens (e.g., phones in portrait mode) */
 @media (max-width: 480px) {
     

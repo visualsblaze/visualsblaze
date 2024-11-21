@@ -7,7 +7,9 @@ import ProjectSection from '../../components/Projects';
 import Testimonial from '../../components/Testimonial';
 import Support from '../../components/support';
 import Footer from '../../components/footer';
-import Scrollbar from '../../components/scrollbar'
+import Scrollbar from '../../components/scrollbar';
+import BlogSection from '../../components/BlogSection'
+
 import Logo from '../../images/logo.png'
 
 
@@ -21,9 +23,10 @@ const HomePage =() => {
             {/* <ServiceSection/> */}
             <FunFact/>
             <ProjectSection/>
+            <BlogSection/>
+
             <Testimonial/>
             <Support/>
-            {/* <BlogSection/> */}
             <Footer/>
             <Scrollbar/>
         </Fragment>
