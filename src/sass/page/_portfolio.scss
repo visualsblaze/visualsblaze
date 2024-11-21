@@ -450,10 +450,11 @@
     
     .popup-fixed-actions {
         position: fixed; /* Keep the buttons fixed within the viewport */
-        top: 127px; /* Align to the top */
-        border-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        top: 128px; /* Align to the top */
         left: 28px; /* Align to the left */
-        width: 91%; /* Span the entire width of the modal */
+        width: 331px; /* Span the entire width of the modal */
         background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
         padding: 10px 20px; /* Add spacing around buttons */
         display: left; /* Flexbox for button alignment */
