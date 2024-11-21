@@ -1,89 +1,46 @@
-import React from 'react';
+import React from 'react'
+import blogs from '../../api/blogs'
+import {Link} from 'react-router-dom'
 
-const BlogSection = () => {
-  return (
-    <section className="testimonial-section">
-      <div className="containerss">
-        <h2 className="section-title">Testimonials</h2>
-        <div className="testimonial-layout">
-         
-          {/* Testimonials */}
-          <div className="testimonial-grid">
-            {/* Testimonial 1 */}
-            <div className="testimonial-card card-1">
-              <div className="testimonial-header">
-                <h4>Angela N.</h4>
-                <span className="location">Vancouver, CA</span>
-                <span className="date">09 DEC 2020</span>
-              </div>
-              <p className="testimonial-text">
-                Husnain did an amazing job! Good communication and great work. Highly recommended.
-              </p>
-              <div className="rating">⭐⭐⭐⭐⭐</div>
+const BlogSection = (props) => {
+    
+    const ClickHandler = () =>{
+        window.scrollTo(10, 0);
+     }
+
+    return(
+        <section className="wpo-blog-section">
+            <div className="container">
+                <div className="row">
+                    <div className="col col-xs-12">
+                        <div className="section-title-s4">
+                            <span>Our blog</span>
+                            <h2>Latest News</h2>
+                            <div className="transparent-text">News</div>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    {blogs.map((blog, Bitem) => (
+                        <div className="col col-lg-4 col-md-6 col-12" key={Bitem}>
+                            <div className="wpo-blog-item">
+                                <div className="wpo-blog-img">
+                                    <img src={blog.screens} alt=""/>
+                                    <div className="blog-thumb"><span>{blog.thumb}</span></div>
+                                    <Link onClick={ClickHandler} to={`/blog-single/${blog.id}`} className="blog-favorite"><i className="ti-heart"></i></Link>
+                                </div>
+                                <div className="wpo-blog-text">
+                                    <span>{blog.create_at}</span>
+                                    <h2><Link onClick={ClickHandler} to={`/blog-single/${blog.id}`}>{blog.title}</Link></h2>
+                                    <Link onClick={ClickHandler} className="theme-btn-s2" to={`/blog-single/${blog.id}`}>Read More <i className="ti-arrow-right"></i></Link>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-
-            {/* Testimonial 2 */}
-            <div className="testimonial-card card-2">
-              <div className="testimonial-header">
-                <h4>Hayden R.</h4>
-                <span className="location">Vantaa, FI</span>
-                <span className="date">06 FEB 2021</span>
-              </div>
-              <p className="testimonial-text">
-                Well done! Completed my project fast and like hoped.
-              </p>
-              <div className="rating">⭐⭐⭐⭐⭐</div>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="testimonial-card card-3">
-              <div className="testimonial-header">
-                <h4>Jenni M.</h4>
-                <span className="location">Rotherhithe, GB</span>
-                <span className="date">21 DEC 2020</span>
-              </div>
-              <p className="testimonial-text">
-                Husnain was fantastic! Very quick turnaround and reasonably priced. The project I
-                submitted for him was close to my heart, and he will be making my family's Christmas
-                this year, in such a hard time. Thank you, Husnain!
-              </p>
-              <div className="rating">⭐⭐⭐⭐⭐</div>
-            </div>
-
-            {/* Testimonial 4 */}
-            <div className="testimonial-card card-4">
-              <div className="testimonial-header">
-                <h4>Caitlin W.</h4>
-                <span className="location">Philippi, WV, US</span>
-                <span className="date">25 FEB 2021</span>
-              </div>
-              <p className="testimonial-text">
-                Husnain did a great job on my project. He created post card designs for my business.
-                He made revisions at my request and completed the project in a timely manner.
-              </p>
-              <div className="rating">⭐⭐⭐⭐⭐</div>
-            </div>
-
-            {/* Testimonial 5 */}
-            <div className="testimonial-card card-5">
-              <div className="testimonial-header">
-                <h4>Angela N.</h4>
-                <span className="location">Vancouver, CA</span>
-                <span className="date">13 MAR 2021</span>
-              </div>
-              <p className="testimonial-text">
-                Wonderful work by Husnain. Delivered ahead of schedule as well! A great designer to
-                work with.
-              </p>
-              <div className="rating">⭐⭐⭐⭐⭐</div>
-            </div>
-          </div>
-
-          
-        </div>
-      </div>
-    </section>
-  );
-};
+        </section>
+    )
+}
 
 export default BlogSection;
