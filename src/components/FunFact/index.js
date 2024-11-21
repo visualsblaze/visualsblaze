@@ -105,7 +105,6 @@ const ClientLogoSlider = () => {
     { src: `${process.env.PUBLIC_URL}/helix logo.png`, alt: "Client 10" },
     { src: `${process.env.PUBLIC_URL}/international dental logo.png`, alt: "Client 11" },
     { src: `${process.env.PUBLIC_URL}/pak n pure logo.png`, alt: "Client 12" },
-    { src: `${process.env.PUBLIC_URL}/rida fatima logo.png`, alt: "Client 13" },
     { src: `${process.env.PUBLIC_URL}/smile kingdom logo.png`, alt: "Client 14" },
     { src: `${process.env.PUBLIC_URL}/utam industries logo.png`, alt: "Client 15" },
     { src: `${process.env.PUBLIC_URL}/rida fatima logo.png`, alt: "Client 16" },

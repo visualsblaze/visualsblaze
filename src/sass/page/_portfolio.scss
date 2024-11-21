@@ -389,6 +389,8 @@
     position: fixed; /* Keep the buttons fixed within the viewport */
     top: 1; /* Align to the top */
     margin-left: 2px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 
     width: 1703px; /* Span the entire width of the modal */
     background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
@@ -420,6 +422,9 @@
         top: 109px; /* Align to the top */
         left: 77px; /* Align to the left */
         width: 87%; /* Span the entire width of the modal */
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
         background-color: rgba(0, 0, 0, 0.8); /* Background with some transparency */
         padding: 10px 20px; /* Add spacing around buttons */
         display: left; /* Flexbox for button alignment */
