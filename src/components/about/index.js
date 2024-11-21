@@ -50,7 +50,7 @@ const About = (props) => {
                             
                         </div>
                     </div>
-                    {/* My Resume Section */}
+                    {/* My Resume Section
                     <div className="resume-section">
                                 <h2>My Resume</h2>
                                 <p className="resume-intro">
@@ -92,9 +92,9 @@ const About = (props) => {
                                             <p className="resume-title">Freelancer</p>
                                             <p className="resume-detail">Worked in different programming languages</p>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    </div> */}
+                                {/* </div> */}
+                            {/* </div> */}
                 </div>
             </div>
         </section>
