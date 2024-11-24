@@ -407,16 +407,90 @@
 	height: auto; /* Maintain aspect ratio */
 	border-radius: 10px;
   }
+  
   /* Optional hover effect */
   .free-image:hover {
 	transform: scale(1.1); /* Slight zoom on hover */
   }
+ /* Media query for mobile screens */
+@media (max-width: 768px) {
+	.image-section {
+	  display: flex; /* Apply flexbox */
+	  flex-direction: column; /* Stack images vertically */
+	  align-items: center; /* Center images horizontally */
+	  justify-content: center; /* Center images vertically */
+	  height: 500px; /* Adjust height for content */
+	  padding-top: 100px; /* Add padding for spacing */
+	  padding-left: 10px;
+	  padding-right: 10px;
+	}
   
-  /* Media query for smaller screens */
-@media (max-width: 1500px) {
+	.image-wrapper {
+	  position: static; /* Reset absolute positioning */
+	  margin-bottom: 20px; /* Add spacing between images */
+	}
+  
+	.free-image1
+	{
+		max-width: 80%; /* Make images responsive */
+		margin-left: 70px;
+		width: auto; /* Reset width */
+	  }
+	.free-image2{
+		max-width: 80%; /* Make images responsive */
+		margin-left: 55px;
 
- }
+		width: auto; /* Reset width */
+	  }
+	.free-image3{
+		max-width: 80%; /* Make images responsive */
+		margin-left: 55px;
 
+		width: auto; /* Reset width */
+	  }
+	.free-image4{
+		max-width: 80%; /* Make images responsive */
+		margin-left: 55px;
+
+		width: auto; /* Reset width */
+	  }
+	.free-image5{
+		max-width: 80%; /* Make images responsive */
+		margin-left: -5px;
+
+		width: auto; /* Reset width */
+	  }
+	.free-image6{
+		max-width: 80%; /* Make images responsive */
+		margin-left: -5px;
+
+		width: auto; /* Reset width */
+	  }
+	.free-image7{
+		display: none;
+
+	  }
+	.free-image8{
+		display: none;
+	  }
+	.free-image9{
+		display: none;
+		
+	  }
+	.free-image10 {
+		max-width: 23%; /* Make images responsive */
+		width: auto; /* Reset width */
+		margin-top: -870px;
+		margin-left: -23px;
+	}
+	.free-image11 {
+		max-width: 23%; /* Make images responsive */
+		width: auto; /* Reset width */
+		margin-top: -280px;
+		margin-left: 300px;
+		
+	}
+  }
 @-webkit-keyframes save-the-date-pulse {
 	from {
 	  -webkit-transform: scale3d(1, 1, 1);
