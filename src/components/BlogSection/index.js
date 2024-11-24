@@ -42,10 +42,10 @@ const BlogSection = () => {
         </div> <div className="image-wrapper" style={{ top: '70px', left: '1500px' }}>
           <img src={FreeImage8} alt="Image 8" className="free-image8" />
         </div>
-         <div className="image-wrapper" style={{ top: '300px', left: '-10px' }}>
+         <div className="image-wrapper" style={{ top: '280px', left: '-25px' }}>
           <img src={FreeImage9} alt="Image 9" className="free-image9" />
         </div>
-         <div className="image-wrapper" style={{ top: '170px', left: '-30px' }}>
+         <div className="image-wrapper" style={{ top: '170px', left: '-10px' }}>
           <img src={FreeImage10} alt="Image 10" className="free-image10" />
         </div>
       </div>
