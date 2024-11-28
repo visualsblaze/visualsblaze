@@ -21,37 +21,37 @@ const BlogSection = () => {
   return (
     <section className="image-section">
       <div className="image-container">
-        <div className="image-wrapper" style={{ top: '30px', left: '40px' }}>
+        <div className="image-wrapper">
           <img src={FreeImage1} alt="Image 1" className="free-image1" />
         </div>
-        <div className="image-wrapper" style={{ top: '20px', left: '950px' }}>
+        <div className="image-wrapper" >
           <img src={FreeImage2} alt="Image 2" className="free-image2" />
         </div>
-        <div className="image-wrapper" style={{ top: '200px', left: '590px' }}>
+        <div className="image-wrapper">
           <img src={FreeImage3} alt="Image 3" className="free-image3" />
         </div>
-        <div className="image-wrapper" style={{ top: '370px', left: '350px' }}>
+        <div className="image-wrapper">
           <img src={FreeImage4} alt="Image 4" className="free-image4" />
         </div>
-        <div className="image-wrapper" style={{ top: '540px', left: '850px' }}>
+        <div className="image-wrapper" >
           <img src={FreeImage5} alt="Image 5" className="free-image5" />
         </div>
-        <div className="image-wrapper" style={{ top: '670px', left: '300px' }}>
+        <div className="image-wrapper" >
           <img src={FreeImage6} alt="Image 6" className="free-image6" />
         </div>
-        <div className="image-wrapper" style={{ top: '680px', left: '1630px' }}>
+        <div className="image-wrapper" >
           <img src={FreeImage7} alt="Image 7" className="free-image7" />
         </div> 
-        <div className="image-wrapper" style={{ top: '80px', left: '1500px' }}>
+        <div className="image-wrapper" >
           <img src={FreeImage8} alt="Image 8" className="free-image8" />
         </div>
-         <div className="image-wrapper" style={{ top: '280px', left: '-30px' }}>
+         <div className="image-wrapper" >
           <img src={FreeImage9} alt="Image 9" className="free-image9" />
         </div>
-         <div className="image-wrapper" style={{ top: '170px', left: '-15px' }}>
+         <div className="image-wrapper" >
           <img src={FreeImage10} alt="Image 10" className="free-image10" />
         </div>
-        <div className="image-wrapper" style={{ top: '870px', left: '-15px' }}>
+        <div className="image-wrapper" style={{ top: '70px', left: '-15px' }}>
           <img src={FreeImage11} alt="Image 11" className="free-image11" />
         </div>
       </div>

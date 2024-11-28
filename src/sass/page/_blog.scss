@@ -346,6 +346,8 @@
 	}
 }
 
+
+@media (max-width: 1920px) {
 //* Section styling */
 .image-section {
 	position: relative; /* Establish a relative positioning context */
@@ -366,130 +368,296 @@
   /* Styling for images */
   .free-image1 {
 	width: 850px;
+	margin-top: 30px;
+	margin-left: 40px;
 	height: auto; /* Maintain aspect ratio */
 	border-radius: 10px;
   }
   .free-image2 {
 	width: 850px;
+	margin-top: 20px;
+	margin-left: 950px;
 	height: auto; /* Maintain aspect ratio */
 	border-radius: 10px;
   }
   .free-image3 {
 	width: 850px;
+	margin-top: 200px;
+	margin-left: 590px;
 	height: auto; /* Maintain aspect ratio */
 	border-radius: 10px;
   }
   
   .free-image4 {
 	width: 850px;
+	margin-top: 370px;
+	margin-left: 400px;
 	height: auto; /* Maintain aspect ratio */
 	border-radius: 10px;
   }
   .free-image5 {
 	width: 650px;
+	margin-top: 540px;
+	margin-left: 850px;
 	height: auto; /* Maintain aspect ratio */
 	border-radius: 10px;
   }
-  .free-image7 {
-	width: 250px;
+  .free-image6 {
+	width: 650px;
+	margin-top: 670px;
+	margin-left: 350px;
 	height: auto; /* Maintain aspect ratio */
 	border-radius: 10px;
-  } .free-image8 {
-	width: 550px;
-	height: auto; /* Maintain aspect ratio */
-	border-radius: 10px;
-  } .free-image9 {
-	width: 370px;
-	height: auto; /* Maintain aspect ratio */
-	border-radius: 10px;
-  } .free-image10 {
-	width: 260px;
-	height: auto; /* Maintain aspect ratio */
-	border-radius: 10px;
+  }
+  @keyframes moveRightLeft {
+	0%, 100% {
+	  transform: translateX(0); /* Original position */
+	}
+	50% {
+	  transform: translateX(20px); /* Move to the right */
+	}
   }
   
+  .free-image7 {
+	width: 250px;
+	margin-top: 680px;
+	margin-left: 1630px;
+	height: auto; /* Maintain aspect ratio */
+	border-radius: 10px;
+	animation: moveRightLeft 3s linear infinite; /* Add right-left animation */
+
+  } @keyframes bounce {
+	0%, 100% {
+	  transform: translateY(0);
+	}
+	50% {
+	  transform: translateY(-20px); /* Adjust bounce height */
+	}
+  }
+  
+  .free-image8 {
+	width: 550px;
+	margin-top: 80px;
+	margin-left: 1500px;
+	height: auto; /* Maintain aspect ratio */
+	border-radius: 10px;
+	animation: bounce 3s linear infinite; /* Add bounce animation */
+  } @keyframes bounce {
+	0%, 100% {
+	  transform: translateY(0);
+	}
+	50% {
+	  transform: translateY(-20px); /* Adjust bounce height */
+	}
+  }.free-image9 {
+	width: 430px;
+	margin-top: 300px;
+	margin-left: -35px;
+	height: auto; /* Maintain aspect ratio */
+	border-radius: 10px;
+	animation: bounce 3s linear infinite; /* Add bounce animation */
+
+  }  @keyframes bounce {
+	0%, 100% {
+	  transform: translateY(0);
+	}
+	50% {
+	  transform: translateY(-20px); /* Adjust bounce height */
+	}
+  }
+  .free-image10 {
+	width: 320px;
+	margin-top: 200px;
+	margin-left: -35px;
+	height: auto; /* Maintain aspect ratio */
+	border-radius: 10px;
+	animation: bounce 3s linear infinite; /* Add bounce animation */
+
+
+  }
+  .free-image11 {
+	width: 650px;
+	margin-top: 310px;
+	margin-left: -400px;
+	height: auto; /* Maintain aspect ratio */
+	border-radius: 10px;
+	
+}
   /* Optional hover effect */
   .free-image:hover {
 	transform: scale(1.1); /* Slight zoom on hover */
   }
+}
+
+@media (max-width: 1500px) {
+		.image-section {
+		position: relative; /* Establish a relative positioning context */
+		width: 100%;
+		height: 900px; /* Adjust height as needed */
+		background-color: #fff8f0; /* Light blue background */
+		border-radius: 15px; /* Optional rounded corners */
+		overflow: hidden; /* Prevent images from going outside the section */
+	  }
+	  
+	  /* Wrapper for each image */
+	  .image-wrapper {
+		position: absolute; /* Allows free positioning within the section */
+		transition: transform 0.3s ease-in-out; /* Smooth hover effects */
+		cursor: grab; /* Cursor change for draggable appearance */
+	  }//* Section styling */
+
+	  
+	  /* Styling for images */
+	  .free-image1 {
+		width: 650px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	  .free-image2 {
+		width: 550px;
+		margin-left: 750px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	  .free-image3 {
+		width: 650px;
+		margin-top: 170px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	  
+	  .free-image4 {
+		width: 650px;
+		margin-top: 310px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	  .free-image5 {
+		width: 650px;
+		margin-left: 500px;
+		margin-top: 450px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	  .free-image6 {
+		width: 650px;
+		margin-top: 590px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	  .free-image7 {
+		width: 250px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  } .free-image8 {
+		width: 550px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  } .free-image9 {
+		width: 430px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  } .free-image10 {
+		width: 320px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	
+	  /* Optional hover effect */
+	  .free-image:hover {
+		transform: scale(1.1); /* Slight zoom on hover */
+	  }
+	}
  /* Media query for mobile screens */
 @media (max-width: 768px) {
 	.image-section {
-	  display: flex; /* Apply flexbox */
-	  flex-direction: column; /* Stack images vertically */
-	  align-items: center; /* Center images horizontally */
-	  justify-content: center; /* Center images vertically */
-	  height: 500px; /* Adjust height for content */
-	  padding-top: 100px; /* Add padding for spacing */
-	  padding-left: 10px;
-	  padding-right: 10px;
-	}
-  
-	.image-wrapper {
-	  position: static; /* Reset absolute positioning */
-	  margin-bottom: 20px; /* Add spacing between images */
-	}
-  
-	.free-image1
-	{
-		max-width: 80%; /* Make images responsive */
-		margin-left: 70px;
-		width: auto; /* Reset width */
+		position: relative; /* Establish a relative positioning context */
+		width: 100%;
+		height: 450px; /* Adjust height as needed */
+		background-color: #fff8f0; /* Light blue background */
+		border-radius: 15px; /* Optional rounded corners */
+		overflow: hidden; /* Prevent images from going outside the section */
 	  }
-	.free-image2{
-		max-width: 80%; /* Make images responsive */
-		margin-left: 55px;
+	  
+	  /* Wrapper for each image */
+	  .image-wrapper {
+		position: absolute; /* Allows free positioning within the section */
+		transition: transform 0.3s ease-in-out; /* Smooth hover effects */
+		cursor: grab; /* Cursor change for draggable appearance */
+	  }//* Section styling */
 
-		width: auto; /* Reset width */
+	  
+	  /* Styling for images */
+	  .free-image1 {
+		width: 300px;
+		margin-left: 80px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
 	  }
-	.free-image3{
-		max-width: 80%; /* Make images responsive */
-		margin-left: 55px;
-
-		width: auto; /* Reset width */
+	  .free-image2 {
+		width: 310px;
+		margin-left: 60px;
+		margin-top: 100px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
 	  }
-	.free-image4{
-		max-width: 80%; /* Make images responsive */
-		margin-left: 55px;
-
-		width: auto; /* Reset width */
+	  .free-image3 {
+		width: 310px;
+		margin-top: 170px;
+		margin-left: 60px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
 	  }
-	.free-image5{
-		max-width: 80%; /* Make images responsive */
-		margin-left: -5px;
-
-		width: auto; /* Reset width */
+	  
+	  .free-image4 {
+		width: 310px;
+		margin-top: 240px;
+		margin-left: 60px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
 	  }
-	.free-image6{
-		max-width: 80%; /* Make images responsive */
-		margin-left: -5px;
-
-		width: auto; /* Reset width */
+	  .free-image5 {
+		width: 310px;
+		margin-left: 10px;
+		margin-top: 310px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
 	  }
-	.free-image7{
-		display: none;
-
+	  .free-image6 {
+		width: 310px;
+		margin-top: 380px;
+		margin-left: 10px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
 	  }
-	.free-image8{
-		display: none;
-	  }
-	.free-image9{
+	  .free-image7 {
 		display: none;
 		
-	  }
-	.free-image10 {
-		max-width: 23%; /* Make images responsive */
-		width: auto; /* Reset width */
-		margin-top: -870px;
-		margin-left: -23px;
-	}
-	.free-image11 {
-		max-width: 23%; /* Make images responsive */
-		width: auto; /* Reset width */
-		margin-top: -280px;
-		margin-left: 300px;
+	  } .free-image8 {
+		display: none;
+	  } .free-image9 {
+		display: none;
+	  } .free-image10 {
+		width: 80px;
+		margin-top: -8px;
+		margin-left: -3px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
 		
-	}
+	  }
+	  .free-image11 {
+		width: 80px;
+		margin-top: 270px;
+		margin-left: 340px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+		
+	
+	  /* Optional hover effect */
+	  .free-image:hover {
+		transform: scale(1.1); /* Slight zoom on hover */
+	  }
   }
 @-webkit-keyframes save-the-date-pulse {
 	from {
