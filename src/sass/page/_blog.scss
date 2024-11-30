@@ -435,10 +435,12 @@
 	  }
 	}
   
+	
+
 	/* Images with animations */
 	.free-image7 {
 	  width: 250px;
-	  margin-top: 680px;
+	  margin-top: 600px;
 	  margin-left: 1630px;
 	  height: auto; /* Maintain aspect ratio */
 	  border-radius: 10px;
@@ -456,7 +458,7 @@
   
 	.free-image9 {
 	  width: 430px;
-	  margin-top: 330px;
+	  margin-top: 240px;
 	  margin-left: -35px;
 	  height: auto; /* Maintain aspect ratio */
 	  border-radius: 10px;
@@ -465,7 +467,7 @@
   
 	.free-image10 {
 	  width: 320px;
-	  margin-top: 200px;
+	  margin-top: 160px;
 	  margin-left: -35px;
 	  height: auto; /* Maintain aspect ratio */
 	  border-radius: 10px;
@@ -534,7 +536,12 @@
 	.client{
 		text-align: center;
 		padding-top: 20px;
-	}
+		font-size: 18px;
+		font-size: 2rem;
+		font-weight: 600;
+		position: relative;
+		margin: 0.91em 0 0;
+		}
   }
   
 
@@ -617,13 +624,14 @@
 	  .free-image:hover {
 		transform: scale(1.1); /* Slight zoom on hover */
 	  }
+	
 	}
  /* Media query for mobile screens */
 @media (max-width: 768px) {
 	.image-section {
 		position: relative; /* Establish a relative positioning context */
 		width: 100%;
-		height: 450px; /* Adjust height as needed */
+		height: 500px; /* Adjust height as needed */
 		background-color: #fff8f0; /* Light blue background */
 		border-radius: 15px; /* Optional rounded corners */
 		overflow: hidden; /* Prevent images from going outside the section */
@@ -687,18 +695,72 @@
 		display: none;
 	  } .free-image9 {
 		display: none;
-	  } .free-image10 {
+	  }
+	  @keyframes bounce {
+		0%, 100% {
+		  transform: translateY(0);
+		}
+		50% {
+		  transform: translateY(-20px); /* Adjust bounce height */
+		}
+	  }
+	 .free-image10 {
 		width: 80px;
-		margin-top: -8px;
+		margin-top: -50px;
 		margin-left: -3px;
 		height: auto; /* Maintain aspect ratio */
 		border-radius: 10px;
 		
 	  }
+
 	  .free-image11 {
 		width: 80px;
-		margin-top: 270px;
+		margin-top: 330px;
 		margin-left: 340px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+		animation: bounce 3s linear infinite; /* Bounce animation */ 
+
+	  }
+	  .free-image12 {
+		width: 300px;
+		margin-left: 80px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	  .free-image13 {
+		width: 310px;
+		margin-left: 60px;
+		margin-top: 100px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	  .free-image14 {
+		width: 310px;
+		margin-top: 170px;
+		margin-left: 60px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	  
+	  .free-image15 {
+		width: 310px;
+		margin-top: 240px;
+		margin-left: 60px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	  .free-image16 {
+		width: 310px;
+		margin-left: 10px;
+		margin-top: 310px;
+		height: auto; /* Maintain aspect ratio */
+		border-radius: 10px;
+	  }
+	  .free-image17 {
+		width: 310px;
+		margin-top: 380px;
+		margin-left: 10px;
 		height: auto; /* Maintain aspect ratio */
 		border-radius: 10px;
 	  }
@@ -708,6 +770,15 @@
 	  .free-image:hover {
 		transform: scale(1.1); /* Slight zoom on hover */
 	  }
+	  .client{
+		text-align: center;
+		padding-top: 20px;
+		font-size: 8px;
+		font-size: 0.90rem;
+		font-weight: 600;
+		position: relative;
+		margin: 0.91em 0 0;
+		}
   }
 @-webkit-keyframes save-the-date-pulse {
 	from {
