@@ -96,7 +96,6 @@ const ClientLogoSlider = () => {
     { src: `${process.env.PUBLIC_URL}/enstpos logo.png`, alt: "Client 1" },
     { src: `${process.env.PUBLIC_URL}/alpha healthcare logo.png`, alt: "Client 2" },
     { src: `${process.env.PUBLIC_URL}/nawni logo.png`, alt: "Client 3" },
-    { src: `${process.env.PUBLIC_URL}/elde clare logo.png`, alt: "Client 4" },
     { src: `${process.env.PUBLIC_URL}/apni dukan wala logo.png`, alt: "Client 5" },
     { src: `${process.env.PUBLIC_URL}/eboxx nde logo.png`, alt: "Client 6" },
     { src: `${process.env.PUBLIC_URL}/elde clare logo.png`, alt: "Client 7" },
