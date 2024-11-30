@@ -11,6 +11,8 @@ import PageTitle from '../../components/pagetitle'
 import Footer from '../../components/footer'
 import Scrollbar from '../../components/scrollbar'
 import SectionTitle from '../../components/SectionTitle'
+import Projects from '../../components/Projects'
+
 import project3 from '../../images/privilege-card-design-cover-image.jpg';
 import project4 from '../../images/privilege-card-design-inner-image.jpg';
 
@@ -85,19 +87,10 @@ class PortfolioGridS2 extends Component {
             <PageTitle pageTitle={'Portfolio'} pagesub={'Portfolio'}/> 
 
                 <div className="container">
-                <SectionTitle subTitle={'PORTFOILIO'} MainTitle={'Our Projects'} vTitle={'Work'}/>
                 </div>
                 <div className="container">
                     <div className="project-imag-container">
-                        {projectImages.map((image, index) => (
-                            <div key={index} onClick={() => this.openPopup(image.full)}>
-                                <img
-                                    src={image.thumb}
-                                    alt={`Project ${index + 1}`}
-                                    className="project-imag"
-                                />
-                            </div>
-                        ))}
+                        <Projects/>
                     </div>
                 </div>
 
