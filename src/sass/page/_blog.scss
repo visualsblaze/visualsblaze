@@ -533,15 +533,40 @@
 	.image-container.fade-out {
 	  opacity: 4;
 	}
-	.client{
-		text-align: center;
-		padding-top: 20px;
-		font-size: 18px;
-		font-size: 2rem;
-		font-weight: 600;
+	.mission-vision-icon {
 		position: relative;
-		margin: 0.91em 0 0;
-		}
+		text-align: center;
+		margin: 50px 0;
+	  }
+	  
+	  .client-endorsement-wrapper {
+		position: relative;
+		display: inline-block;
+	  }
+	  
+	
+	  
+	  .background-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -30%);
+		font-size: 3rem; /* Make it larger than the heading */
+		font-weight: bold;
+		color: rgba(162, 151, 151, 0.1);
+		/* Light and faded color for background effect */
+		z-index: 1; /* Ensure this is below the main heading */
+		pointer-events: none; /* Prevent interaction */
+		white-space: nowrap;
+	  }
+	  .client {
+		position: relative;
+		font-size: 2rem;
+		font-weight: bold;
+		z-index: 2; /* Ensure this is above the background text */
+		color: #aa2135; /* Change this to your desired heading color */
+		text-align: center;
+	  }
   }
   
 
@@ -706,7 +731,7 @@
 	  }
 	 .free-image10 {
 		width: 80px;
-		margin-top: -50px;
+		margin-top: -70px;
 		margin-left: -3px;
 		height: auto; /* Maintain aspect ratio */
 		border-radius: 10px;
@@ -770,15 +795,40 @@
 	  .free-image:hover {
 		transform: scale(1.1); /* Slight zoom on hover */
 	  }
-	  .client{
-		text-align: center;
-		padding-top: 20px;
-		font-size: 8px;
-		font-size: 0.90rem;
-		font-weight: 600;
+	  .mission-vision-icon {
 		position: relative;
-		margin: 0.91em 0 0;
-		}
+		text-align: center;
+		margin: 50px 0;
+	  }
+	  
+	  .client-endorsement-wrapper {
+		position: relative;
+		display: inline-block;
+	  }
+	  
+	  
+	  
+	  .background-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -30%);
+		font-size: 1.5rem; /* Make it larger than the heading */
+		font-weight: bold;
+		color: rgba(162, 151, 151, 0.1);
+		/* Light and faded color for background effect */
+		z-index: 1; /* Ensure this is below the main heading */
+		pointer-events: none; /* Prevent interaction */
+		white-space: nowrap;
+	  }
+	  .client {
+		position: relative;
+		font-size: 1rem;
+		font-weight: bold;
+		z-index: 2; /* Ensure this is above the background text */
+		color: #aa2135; /* Change this to your desired heading color */
+		text-align: center;
+	  }
   }
 @-webkit-keyframes save-the-date-pulse {
 	from {

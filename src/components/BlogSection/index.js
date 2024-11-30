@@ -35,7 +35,12 @@ const BlogSection = () => {
   return (
     <section className="image-section">
       <div className={`image-container ${showFirstSet ? 'fade-in' : 'fade-out'}`}>
+      <div className="mission-vision-icon" >
+
+        <span className="background-text">CLIENT ENDORSEMENTS</span>
+        </div>
         <h2 className='client'> CLIENT ENDORSEMENTS</h2>
+
         {showFirstSet ? (
           <>
             <div className="image-wrapper"><img src={FreeImage1} alt="Image 1" className="free-image1" /></div>
