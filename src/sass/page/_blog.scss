@@ -548,13 +548,12 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -30%);
-		font-size: 3rem; /* Make it larger than the heading */
-		font-weight: bold;
+		transform: translate(-50%, -40%);
+		font-size: 80px;
 		color: rgba(162, 151, 151, 0.1);
-		/* Light and faded color for background effect */
-		z-index: 1; /* Ensure this is below the main heading */
-		pointer-events: none; /* Prevent interaction */
+		font-weight: bold;
+		z-index: 1;
+		pointer-events: none;
 		white-space: nowrap;
 	  }
 	  .client {
