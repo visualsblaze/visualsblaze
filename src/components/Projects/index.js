@@ -1,11 +1,18 @@
 import React, { Component } from "react";
+import Slider from "react-slick";
 import { FaLink, FaShareAlt, FaSave, FaTimes } from "react-icons/fa";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import pageTitleImage from "../../images/general-offers-cover-image.jpg";
 import typographyImage from "../../images/general-offer-inner-image-design.jpg";
 import typography from "../../images/nd offer inner image designdesign.jpg";
 import typogr from "../../images/nd offers cover imagedesign.jpg";
 import project3 from "../../images/privilege-card-design-cover-image.jpg";
 import project4 from "../../images/privilege-card-design-inner-image.jpg";
+import project5 from "../../images/certificate-design-cover-image.jpg";
+import project6 from "../../images/certificate-design-inner-image.jpg";
+
 
 import SectionTitle from "../SectionTitle";
 
@@ -21,6 +28,8 @@ class ProjectSection extends Component {
       { thumb: pageTitleImage, full: typographyImage },
       { thumb: typogr, full: typography },
       { thumb: project3, full: project4 },
+      { thumb: project5, full: project6 },
+
     ];
     this.setState({ projectImages: images });
   };
@@ -80,6 +89,32 @@ class ProjectSection extends Component {
   render() {
     const { isPopupOpen, selectedImage, projectImages } = this.state;
 
+    // Slider settings
+    const sliderSettings = {
+      dots: false,
+      infinite: true,
+      speed: 2000,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 10,
+      arrows: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
+    };
+
     return (
       <section className="wpo-work-section section-padding">
         <div className="container">
@@ -90,21 +125,14 @@ class ProjectSection extends Component {
           />
         </div>
         <div className="container">
-          <div className="project-image-container">
+          {/* Slider */}
+          <Slider {...sliderSettings}>
             {projectImages.map((image, index) => (
-              <div
-                key={index}
-                onClick={() => this.openPopup(image.full)}
-                style={{ cursor: "pointer" }}
-              >
-                <img
-                  src={image.thumb}
-                  alt={`Project ${index + 1}`}
-                  className="project-image"
-                />
+              <div key={index} onClick={() => this.openPopup(image.full)} style={{ cursor: "pointer" }}>
+                <img src={image.thumb} alt={`Project ${index + 1}`} className="project-image" />
               </div>
             ))}
-          </div>
+          </Slider>
         </div>
 
         {/* Popup Modal */}
