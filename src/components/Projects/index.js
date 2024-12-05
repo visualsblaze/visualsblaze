@@ -98,7 +98,7 @@ class ProjectSection extends Component {
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 10,
-      arrows: true,
+      arrows: false,
       responsive: [
         {
           breakpoint: 768,
