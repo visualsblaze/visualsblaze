@@ -39,7 +39,7 @@ const BlogSection = () => {
 
         <span className="background-text">CLIENT ENDORSEMENTS</span>
         </div>
-        <h2 className='client'>client endorsements</h2>
+        <h2 className='client'>Client Endorsements</h2>
 
         {showFirstSet ? (
           <>
