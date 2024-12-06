@@ -9,6 +9,9 @@ import Support from '../../components/support';
 import Footer from '../../components/footer';
 import Scrollbar from '../../components/scrollbar';
 import BlogSection from '../../components/BlogSection'
+import Tools from '../../components/about2'
+
+
 
 import Logo from '../../images/logo.png'
 
@@ -18,8 +21,9 @@ const HomePage =() => {
         <Fragment>
             <Navbar Logo={Logo} hclass={'wpo-header-style-1'}/>
             <Hero/>
+            <Tools/>
+
             <Features/>
-            {/* <About/> */}
             {/* <ServiceSection/> */}
             <FunFact/>
             <ProjectSection/>

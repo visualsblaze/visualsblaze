@@ -1,51 +1,71 @@
-import React from 'react'
-import abimg from '../../images/about2.jpg'
-import abimg2 from '../../images/ab-shape.png'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import brandingImage from '../../images/branding design.png';
+import motionDesignImage from '../../images/motion design.png';
+import creativeDesignImage from '../../images/creative design.png';
+import videoEditingImage from '../../images/video editing.png';
+import uiUxImage from '../../images/mobile & web design.png';
 
-
-const About2 = (props) => {
-
-    const ClickHandler = () => {
-        window.scrollTo(10, 0);
-    }
-
-    return(
+const About2 = () => {
+    return (
         <section className="wpo-about-section-s2">
             <div className="container">
-                <div className="row align-items-center">
-                    <div className="col-lg-6">
-                        <div className="about-img">
-                            <img src={abimg} alt=""/>
-                            <div className="shape-1"></div>
-                            <div className="shape-2"></div>
-                            <div className="shape-3"><img src={abimg2} alt=""/></div>
-                            <span className="ab-btn">7 Years Experience</span>
+                <div className="title-section">
+                    <h2 className="section-titles">Services</h2>
+                    <p className="section-subtitles">
+                    The way we do things in our  <br />line of work
+                    </p>
+
+                </div>
+                <div className="services-grid">
+                    <div className="service-card service-card1">
+                        <div className="service-image">
+                            <img src={brandingImage} alt="Branding Design" />
                         </div>
+                        <h3 className="service-title">Branding Design</h3>
+                        <p className="service-description">
+                        Elevate your brand with unique logos, color palettes, and visual identities that leave a lasting impression.
+                        </p>
                     </div>
-                    <div className="col-lg-6">
-                        <div className="about-content">
-                            <div className="section-title">
-                                <span>ABOUT US</span>
-                                <h2>We are more than just a
-                                    <span>digital agency.</span>
-                                </h2>
-                                <div className="transparent-text">About</div>
-                            </div>
-                            <p>We create award-winning websites, remarkable brands and cutting-edge apps. Nullam
-                                imperdiet, sem at fringilla lobortis, sem nibh fringilla nibh. </p>
-                            <ul>
-                                <li><i className="ti-plus"></i> Quis ipsum suspendisse ultrices gravida. </li>
-                                <li><i className="ti-plus"></i> Risus commodo viverra maecenas accumsan lacus.</li>
-                                <li><i className="ti-plus"></i> Incididunt ut labore et dolore magna aliqua. </li>
-                            </ul>
-                            <Link onClick={ClickHandler} className="theme-btn-s2" to="/portfolio-grid">View Projects</Link>
+                    <div className="service-card service-card2">
+                        <div className="service-image">
+                            <img src={motionDesignImage} alt="Motion Design" />
                         </div>
+                        <h3 className="service-title">Motion Design</h3>
+                        <p className="service-description">
+                        Bring your story to life with dynamic animations and engaging visuals that move audiences.
+                        </p>
+                    </div>
+                    <div className="service-card service-card3">
+                        <div className="service-image">
+                            <img src={creativeDesignImage} alt="Creative Design" />
+                        </div>
+                        <h3 className="service-title">Creative Design</h3>
+                        <p className="service-description">
+                        From illustrations to custom graphics, we deliver designs that inspire and stand out. Let’s craft something extraordinary together!
+                        </p>
+                    </div>
+                    <div className="service-card service-card4">
+                        <div className="service-image">
+                            <img src={videoEditingImage} alt="Video Editing" />
+                        </div>
+                        <h3 className="service-title">Video Editing</h3>
+                        <p className="service-description">
+                        Transform raw footage into compelling, polished videos that tell your story with impact
+                        </p>
+                    </div>
+                    <div className="service-card service-card5">
+                        <div className="service-image">
+                            <img src={uiUxImage} alt="Mobile & Web UI/UX Design" />
+                        </div>
+                        <h3 className="service-title">Mobile & Web UI/UX Design</h3>
+                        <p className="service-description">
+                        Design seamless and intuitive user experiences for your apps and websites that captivate and engage.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default About2;

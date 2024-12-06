@@ -270,6 +270,30 @@
         object-fit: cover;
     }
 }
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px; /* Space between items */
+    margin-top: 20px;
+}
+
+.project-grid-item {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-grid-item:hover {
+    transform: scale(1.05);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
 .protfolio-slide-area .thumb-text span {
     font-size: 200px;

@@ -1,18 +1,18 @@
-import React, { Component } from "react";
-import { FaLink, FaShareAlt, FaSave, FaTimes } from "react-icons/fa"; // Import icons from React Icons
+import React, { Component, Fragment } from "react";
+import { FaLink, FaShareAlt, FaSave, FaTimes } from "react-icons/fa";
+import Navbar from '../../components/Navbar';
+import PageTitle from '../../components/pagetitle';
+import SectionTitle from '../../components/SectionTitle';
+
+import Footer from '../../components/footer';
+import Scrollbar from '../../components/scrollbar';
+import Logo from '../../images/logo-3.png';
 import pageTitleImage from '../../images/general-offers-cover-image.jpg';
 import typographyImage from '../../images/general-offer-inner-image-design.jpg';
 import typography from '../../images/nd offer inner image designdesign.jpg';
 import typogr from '../../images/nd offers cover imagedesign.jpg';
-import Navbar from '../../components/Navbar'
-import Logo from '../../images/logo-3.png'
-import  {Fragment} from 'react';
-import PageTitle from '../../components/pagetitle'
-import Footer from '../../components/footer'
-import Scrollbar from '../../components/scrollbar'
-import SectionTitle from '../../components/SectionTitle'
-import Projects from '../../components/Projects'
-
+import project5 from "../../images/certificate-design-cover-image.jpg";
+import project6 from "../../images/certificate-design-inner-image.jpg";
 import project3 from '../../images/privilege-card-design-cover-image.jpg';
 import project4 from '../../images/privilege-card-design-inner-image.jpg';
 
@@ -28,7 +28,7 @@ class PortfolioGridS2 extends Component {
             { thumb: pageTitleImage, full: typographyImage },
             { thumb: typogr, full: typography },
             { thumb: project3, full: project4 },
-
+            { thumb: project5, full: project6 },
         ];
         this.setState({ projectImages: images });
     };
@@ -81,38 +81,64 @@ class PortfolioGridS2 extends Component {
         const { isPopupOpen, selectedImage, projectImages } = this.state;
 
         return (
-         <Fragment>
+            <Fragment>
+                <Navbar Logo={Logo} hclass={'wpo-header-style-5'} />
+                <PageTitle pageTitle={'Portfolio'} pagesub={'Portfolio'} />
+                <SectionTitle subTitle={'portfolio'} MainTitle={'Our projects'} vTitle={'Work'}/>
 
-            <Navbar Logo={Logo} hclass={'wpo-header-style-5'}/>
-            <PageTitle pageTitle={'Portfolio'} pagesub={'Portfolio'}/> 
 
                 <div className="container">
-                </div>
-                <div className="container">
-                    <div className="project-imag-container">
-                        <Projects/>
+                    <div className="project-grid">
+                        {projectImages.map((image, index) => (
+                            <div
+                            style={{ marginBottom: '40px' }} 
+
+                                key={index}
+                                onClick={() => this.openPopup(image.full)}
+                                className="project-grid-item"
+                            >
+                                <img
+                                    src={image.thumb}
+                                    alt={`Project ${index + 1}`}
+                                    className="project-image"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
 
                 {/* Popup Modal */}
                 {isPopupOpen && (
-                    <div className={`popup-modal ${isPopupOpen ? 'open' : ''}`} onClick={this.closePopup}>
-                        <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-                            {/* Fixed Action Bar */}
-                     <div className="popup-fixed-actions">
-                         <button onClick={this.generatePermalink}><FaLink /> Permalink</button>
-                         <button onClick={this.shareImage}><FaShareAlt /> Share</button>
-                         <button onClick={this.saveImage}><FaSave /> Save</button>
-                         <button className="close-btn" onClick={this.closePopup}><FaTimes /> Close</button>
-                     </div>
-                     <img src={selectedImage} alt="Project Detail" />
-                 </div>
+                    <div
+                        className={`popup-modal ${isPopupOpen ? "open" : ""}`}
+                        onClick={this.closePopup}
+                    >
+                        <div
+                            className="popup-content"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="popup-fixed-actions">
+                                <button onClick={this.generatePermalink}>
+                                    <FaLink /> Permalink
+                                </button>
+                                <button onClick={this.shareImage}>
+                                    <FaShareAlt /> Share
+                                </button>
+                                <button onClick={this.saveImage}>
+                                    <FaSave /> Save
+                                </button>
+                                <button className="close-btn" onClick={this.closePopup}>
+                                    <FaTimes /> Close
+                                </button>
+                            </div>
+                            <img src={selectedImage} alt="Project Detail" />
+                        </div>
                     </div>
                 )}
-                 <Footer/>
-                 <Scrollbar/>
-                </Fragment>
 
+                <Footer />
+                <Scrollbar />
+            </Fragment>
         );
     }
 }
