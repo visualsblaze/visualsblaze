@@ -13,7 +13,7 @@ import Tools from '../../components/about2'
 
 
 
-import Logo from '../../images/logo.png'
+import Logo from '../../images/logo-3.png'
 
 
 const HomePage =() => {

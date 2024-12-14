@@ -1609,7 +1609,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Three columns */
     gap: 20px; /* Space between images */
-    width: 100%;
+    width: 10%;
 
 }
 .project-image {
@@ -1619,7 +1619,7 @@
     border-radius: 0px; /* Optional: rounded corners for images */
     transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Include filter transition */
     cursor: pointer;
-    box-shadow: 0 6px 15px rgba(224, 2, 2, 0.1); /* Shadow effect */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1); /* Shadow effect */
 }
 
 /* Hover effect */
@@ -2016,7 +2016,7 @@
     color: #252323;
     margin-top: 10px;
     text-align: center;
-    
+    word-spacing: -3px; /* Adjust value as needed */
 }
 
 .service-description {
