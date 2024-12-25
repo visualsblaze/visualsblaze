@@ -9,9 +9,13 @@
     justify-content: center;
     flex-direction: column;
     z-index: 1;
+	@media(max-width: 1500px) {
+		background: url(../../images/web-header-slider.jpg) no-repeat center top / cover;
 
+		min-height: 280px;
+	}
 	@media(max-width: 767px) {
-		background: url(../../images/web-header.jpg) no-repeat center top / cover;
+		background: url(../../images/web-header-slider-mobile.jpg) no-repeat center top / cover;
 
 		min-height: 200px;
 	}

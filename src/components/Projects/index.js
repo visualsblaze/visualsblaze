@@ -8,12 +8,17 @@ import "slick-carousel/slick/slick-theme.css";
 
 import pageTitleImage from "../../images/general-offers-cover-image.jpg";
 import typographyImage from "../../images/general-offer-inner-image-design.jpg";
-import typography from "../../images/nd offer inner image designdesign.jpg";
+import typography from "../../images/nd-offer-inner-image-design.jpg";
 import typogr from "../../images/nd offers cover imagedesign.jpg";
 import project3 from "../../images/privilege-card-design-cover-image.jpg";
 import project4 from "../../images/privilege-card-design-inner-image.jpg";
 import project5 from "../../images/certificate-design-cover-image.jpg";
 import project6 from "../../images/certificate-design-inner-image.jpg";
+import project7 from "../../images/pharma7-cover-image.jpg";
+import project8 from "../../images/pharma7-inner-image.jpg";
+import project9 from "../../images/real-time-brochure-cover-image.jpg";
+import project10 from "../../images/real-time-brochure-inner-image.jpg";
+
 
 
 import SectionTitle from "../SectionTitle";
@@ -31,6 +36,9 @@ class ProjectSection extends Component {
       { thumb: typogr, full: typography },
       { thumb: project3, full: project4 },
       { thumb: project5, full: project6 },
+      { thumb: project7, full: project8 },
+      { thumb: project9, full: project10 },
+
 
     ];
     this.setState({ projectImages: images });

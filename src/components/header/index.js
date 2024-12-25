@@ -31,7 +31,7 @@ export default class Header extends Component {
         }
         const handleDownload = () => {
             const link = document.createElement('a');
-            link.href = "../../images/visuals.pdf"; // Update with your PDF path
+            link.href = "../../images/VISUALS BLAZE PROFILE.pdf"; // Update with your PDF path
             link.download = "visualsblaze.pdf"; // Set the downloaded filename
             link.click();
           };
