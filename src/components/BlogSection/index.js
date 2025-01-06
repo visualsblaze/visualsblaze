@@ -37,9 +37,9 @@ const BlogSection = () => {
       <div className={`image-container ${showFirstSet ? 'fade-in' : 'fade-out'}`}>
       <div className="mission-vision-icon" >
 
-        <span className="background-text">CLIENT ENDORSEMENTS</span>
+        <span className="background-text">Reviews</span>
         </div>
-        <h2 className='client'>Client Endorsements</h2>
+        <h2 className='client'>Reviews</h2>
 
         {showFirstSet ? (
           <>
