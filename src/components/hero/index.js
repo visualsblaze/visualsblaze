@@ -4,15 +4,20 @@ import himg from "../../images/slider/right-img.png";
 import him from "../../images/asset1.png";
 import hi from "../../images/asset2.png";
 import h from "../../images/typography.png";
+import pdfFile from "../../images/VISUALS BLAZE PROFILE.pdf";
+
 import { FaFacebook, FaLinkedin, FaInstagram, FaWhatsapp, FaArrowDown } from "react-icons/fa";
 
 const Hero = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = "../../images/VISUALS BLAZE PROFILE.pdf"; // Update with your PDF path
-    link.download = "visualsblaze.pdf"; // Set the downloaded filename
+    link.href = pdfFile; // Webpack will resolve the correct path
+    link.download = "visualsblaze.pdf";
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
+  
 
   return (
     <section className="wpo-hero-section-1">
