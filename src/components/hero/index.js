@@ -4,7 +4,7 @@ import himg from "../../images/slider/right-img.png";
 import him from "../../images/asset1.png";
 import hi from "../../images/asset2.png";
 import h from "../../images/typography.png";
-import { FaFacebook, FaLinkedin, FaInstagram, FaBehance, FaArrowDown } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaInstagram, FaWhatsapp, FaArrowDown } from "react-icons/fa";
 
 const Hero = () => {
   const handleDownload = () => {
@@ -57,7 +57,7 @@ const Hero = () => {
         <ul>
           <li>
             <Link to="https://www.behance.net/discovervisualsblaze">
-              <FaBehance />
+              <FaWhatsapp />
             </Link>
           </li>
           <li>

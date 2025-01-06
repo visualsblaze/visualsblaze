@@ -3,7 +3,7 @@ import {Link}  from 'react-router-dom'
 import Logo from '../../images/footer-logo.png'
 import Services from '../../api/service';
 import Project from '../../api/project';
-import { FaFacebook, FaLinkedin, FaInstagram, FaBehance, FaArrowDown } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaInstagram, FaWhatsapp, FaArrowDown } from "react-icons/fa";
 
 
 
@@ -32,7 +32,7 @@ const Footer = (props) =>{
                             <ul>
                                 <li>
                                 <Link to="https://www.behance.net/discovervisualsblaze">
-              <FaBehance />
+              <FaWhatsapp />
             </Link>
                                 </li><li>
                                 <Link to="https://www.behance.net/discovervisualsblaze">
@@ -106,7 +106,7 @@ const Footer = (props) =>{
         <p style={{ color: '#aa2135', fontWeight: 'bold' }}>Follow us on</p>
         <div className="social-icons-mobile">
             <Link to="https://www.behance.net/discovervisualsblaze" className="social-link">
-                <FaBehance />
+                <FaWhatsapp />
             </Link>
             <Link to="https://www.linkedin.com/" className="social-link">
                 <FaLinkedin />
