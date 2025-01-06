@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import MobileMenu from '../../components/MobileMenu'
 import { FaFacebook, FaLinkedin, FaInstagram, FaBehance, FaArrowDown } from "react-icons/fa";
 
+import pdfFile from "../../images/VISUALS BLAZE PROFILE.pdf";
 
 export default class Header extends Component {
     
@@ -31,10 +32,13 @@ export default class Header extends Component {
         }
         const handleDownload = () => {
             const link = document.createElement('a');
-            link.href = "../../images/VISUALS BLAZE PROFILE.pdf"; // Update with your PDF path
-            link.download = "visualsblaze.pdf"; // Set the downloaded filename
+            link.href = pdfFile; // Webpack will resolve the correct path
+            link.download = "visualsblaze.pdf";
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
           };
+          
         return (
             <header id="header" className={this.props.topbarNone}>
                 <div className={`wpo-site-header ${this.props.hclass}`}>
