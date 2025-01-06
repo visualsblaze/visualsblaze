@@ -19,6 +19,9 @@ import project7 from '../../images/pharma7-cover-image.jpg';
 import project8 from '../../images/pharma7-inner-image.jpg';
 import project9 from '../../images/real-time-brochure-cover-image.jpg';
 import project10 from '../../images/real-time-brochure-inner-image.jpg';
+import project11 from '../../images/pak-n-pure-cover-image.jpg';
+import project12 from '../../images/pak-n-pure-inner-image.jpg';
+
 
 
 class PortfolioGridS2 extends Component {
@@ -30,12 +33,17 @@ class PortfolioGridS2 extends Component {
 
     getImages = () => {
         const images = [
-            { thumb: pageTitleImage, full: typographyImage },
-            { thumb: typogr, full: typography },
-            { thumb: project3, full: project4 },
+
+            { thumb: project9, full: project10 },
             { thumb: project5, full: project6 },
             { thumb: project7, full: project8 },
-            { thumb: project9, full: project10 },
+            { thumb: typogr, full: typography },
+
+            { thumb: project3, full: project4 },
+            { thumb: pageTitleImage, full: typographyImage },
+
+            { thumb: project11, full: project12 },
+
 
         ];
         this.setState({ projectImages: images });
