@@ -56,7 +56,7 @@ const Hero = () => {
       <div className="social">
         <ul>
           <li>
-            <Link to="https://www.behance.net/discovervisualsblaze">
+            <Link to="https://w.app/OT5BzR">
               <FaWhatsapp />
             </Link>
           </li>

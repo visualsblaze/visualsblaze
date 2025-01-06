@@ -31,7 +31,7 @@ const Footer = (props) =>{
 
                             <ul>
                                 <li>
-                                <Link to="https://www.behance.net/discovervisualsblaze">
+                                <Link to="https://w.app/OT5BzR">
               <FaWhatsapp />
             </Link>
                                 </li><li>
@@ -105,7 +105,7 @@ const Footer = (props) =>{
         WANT MORE </p>
         <p style={{ color: '#aa2135', fontWeight: 'bold' }}>Follow us on</p>
         <div className="social-icons-mobile">
-            <Link to="https://www.behance.net/discovervisualsblaze" className="social-link">
+            <Link to="https://w.app/OT5BzR" className="social-link">
                 <FaWhatsapp />
             </Link>
             <Link to="https://www.linkedin.com/" className="social-link">
