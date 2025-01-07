@@ -29,7 +29,7 @@ const Hero = () => {
                 <span style={{ color: "#ffcc00" }}>Hello</span>, I’m Husnain M.
               </h1>
               <h2>Motion Graphic Artist</h2>
-              <p>CEO OF VISUALS BLAZE</p>
+              <p>CEO AND FOUNDER OF VISUALS BLAZE</p>
 
               {/* Freely Positioned Download Button */}
               <button onClick={handleDownload} className="button download">
