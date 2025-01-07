@@ -41,9 +41,10 @@ class ProjectSection extends Component {
       { thumb: pageTitleImage, full: typographyImage },
       { thumb: project3, full: project4 },
       { thumb: project5, full: project6 },
+      { thumb: project13, full: project14 },
+      
       { thumb: project7, full: project8 },
       { thumb: typogr, full: typography },
-      { thumb: project13, full: project14 },
 
       { thumb: project9, full: project10 },
       { thumb: project11, full: project12 },
