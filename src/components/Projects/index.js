@@ -36,10 +36,11 @@ class ProjectSection extends Component {
   getImages = () => {
     const images = [
       { thumb: pageTitleImage, full: typographyImage },
-      { thumb: typogr, full: typography },
       { thumb: project3, full: project4 },
       { thumb: project5, full: project6 },
       { thumb: project7, full: project8 },
+      { thumb: typogr, full: typography },
+
       { thumb: project9, full: project10 },
       { thumb: project11, full: project12 },
 

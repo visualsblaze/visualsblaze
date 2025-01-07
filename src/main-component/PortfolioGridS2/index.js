@@ -21,6 +21,9 @@ import project9 from '../../images/real-time-brochure-cover-image.jpg';
 import project10 from '../../images/real-time-brochure-inner-image.jpg';
 import project11 from '../../images/pak-n-pure-cover-image.jpg';
 import project12 from '../../images/pak-n-pure-inner-image.jpg';
+import project13 from '../../images/dental-post-cover-image.jpg';
+import project14 from '../../images/dental-post-inner-image.jpg';
+
 
 
 
@@ -33,6 +36,9 @@ class PortfolioGridS2 extends Component {
 
     getImages = () => {
         const images = [
+            { thumb: project13, full: project14 },
+
+            { thumb: project11, full: project12 },
 
             { thumb: project9, full: project10 },
             { thumb: project5, full: project6 },
@@ -42,7 +48,6 @@ class PortfolioGridS2 extends Component {
             { thumb: project3, full: project4 },
             { thumb: pageTitleImage, full: typographyImage },
 
-            { thumb: project11, full: project12 },
 
 
         ];
@@ -107,7 +112,7 @@ class PortfolioGridS2 extends Component {
                     <div className="project-grid">
                         {projectImages.map((image, index) => (
                             <div
-                            style={{ marginBottom: '40px' }} 
+                            style={{ marginBottom: '0px' }} 
 
                                 key={index}
                                 onClick={() => this.openPopup(image.full)}
