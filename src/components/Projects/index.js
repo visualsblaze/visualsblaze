@@ -20,6 +20,9 @@ import project9 from "../../images/real-time-brochure-cover-image.jpg";
 import project10 from "../../images/real-time-brochure-inner-image.jpg";
 import project11 from "../../images/pak-n-pure-cover-image.jpg";
 import project12 from "../../images/pak-n-pure-inner-image.jpg";
+import project13 from "../../images/dental-post-cover-image.jpg";
+import project14 from "../../images/dental-post-inner-image.jpg";
+
 
 
 
@@ -40,6 +43,7 @@ class ProjectSection extends Component {
       { thumb: project5, full: project6 },
       { thumb: project7, full: project8 },
       { thumb: typogr, full: typography },
+      { thumb: project13, full: project14 },
 
       { thumb: project9, full: project10 },
       { thumb: project11, full: project12 },
@@ -137,7 +141,7 @@ class ProjectSection extends Component {
           <SectionTitle
             subTitle={"PORTFOLIO"}
             MainTitle={"Our Projects"}
-            vTitle={"Work"}
+            vTitle={"Portfolio"}
           />
         </div>
         <div className="container">
