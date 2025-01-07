@@ -1092,9 +1092,13 @@
 	text-decoration: none;
 	transition: transform 0.3s;
 }
+.social li:nth-child(1) a {
+	background: linear-gradient(45deg, #25D366, #128C7E);
 
+
+}
 /* Linear gradient backgrounds */
-.social li:nth-child(1) a,
+
 .social li:nth-child(2) a,
 .social li:nth-child(3) a,
 .social li:nth-child(4) a {
