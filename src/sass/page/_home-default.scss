@@ -2027,6 +2027,213 @@
     text-align: justify; /* Ensures content stretches to fill the width */
 }
 
+.why-choose-us-section {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.why-choose-us-image img {
+    width: 1300px;
+    max-width: 2000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1500px) {
+    
+.why-choose-us-section {
+    padding: 50px 0;
+    background-color: #fff;
+    margin-left: 40px;
+}
+
+.why-choose-us-image img {
+    width: 1000px;
+    max-width: 2000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+    }
+
+
+.quick-fun-fact {
+    margin-top: 50px;
+    text-align: center;
+    color: #aa2135; /* Red color similar to the design */
+}
+
+.quick-fun-fact h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.facts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.fact {
+    background-color: #fff;
+    border: 2px solid #aa2135;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.fact h3 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #aa2135;
+    margin-bottom: 10px;
+}
+
+.fact p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.fact span {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fact::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    // background: url('path-to-your-triangle-icon.png') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.facts .fact:nth-child(1)::before {
+    // background: url('path-to-your-coins-icon.png') no-repeat center center;
+}
+
+.facts .fact:nth-child(2)::before {
+    // background: url('path-to-your-handshake-icon.png') no-repeat center center;
+}
+
+.facts .fact:nth-child(3)::before {
+    // background: url('path-to-your-graph-icon.png') no-repeat center center;
+}
+
+.facts .fact:nth-child(4)::before {
+    // background: url('path-to-your-user-icon.png') no-repeat center center;
+}
+
+
+.tools-section {
+    padding: 50px 0;
+    width: 1320px;
+    background-color: hwb(0 83% 5% / 0.503); /* Light gray background for contrast */
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.tools-section .section-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #aa2135; /* Matches the theme */
+    margin-bottom: 20px;
+}
+
+.tools-section .tools-description {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.tools-section .tools-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four icons per row */
+    gap: 20px; /* Space between items */
+    justify-content: center;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+.tools-section .tool-item {
+    text-align: center;
+}
+
+.tools-section .tool-item img {
+    width: 150px;
+    height: 90px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.tools-section .tool-item img:hover {
+    transform: scale(1.2); /* Zoom-in effect on hover */
+}
+
+.tools-section .tool-item span {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 1500px) {
+    
+    .tools-section {
+        padding: 50px 0;
+        width: 1000px;
+        background-color: hwb(0 83% 5% / 0.503); /* Light gray background for contrast */
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        margin-left: 55px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tools-section .tools-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tools-section .tool-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .facts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fact {
+        width: 90%;
+    }
+}
 
 
 /* Responsive Styles */

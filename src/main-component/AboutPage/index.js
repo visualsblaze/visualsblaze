@@ -16,8 +16,8 @@ const AboutPage =() => {
             <Navbar Logo={Logo} hclass={'wpo-header-style-5'}/>
             <PageTitle pageTitle={'About Us'} pagesub={'About'}/> 
             <About abClass={'pt-120'}/>
-            <Features wClass={'pt-0'}/>
-            <Testimonial/>
+            {/* <Features wClass={'pt-0'}/> */}
+            {/* <Testimonial/> */}
             <Footer/>
             <Scrollbar/>
         </Fragment>

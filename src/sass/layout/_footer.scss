@@ -201,7 +201,7 @@
     width: 36px;
     height: 36px;
     line-height: 37px;
-    background: linear-gradient(45deg, #ff4856, #aa2135);
+    background: linear-gradient(45deg);
     display: block;
     text-align: center;
     @include rounded-border(50%);
@@ -226,75 +226,129 @@
     }
 }
 
-    .about-widget {
-        p{
-            
-        }
-   
-        @media (max-width: 1920px) {
-            ul{
-                overflow: hidden;
-                padding-top: 3px;
-                margin-left: -25px;
-    
-                li{
-                    font-size: 22px;
-                    float: left;
-    
-                    a{
-                        
-                        color: $white;
-                        width: 36px;
-                        height: 36px;
-                        line-height: 37px;
-                        background: linear-gradient(45deg, #ff4856, #aa2135);
-                        display: block;
-                        text-align: center;
-                        @include rounded-border(50%);
-                        font-size: 18px;
-                        gap: 102px;
-    
-    
-                        &:hover{
-                            color:$dark-gray;
-                            background: $white;
-                        }
-                    }
-                }
-    
-                li+li{
-                    margin-left: 20px;
-    
-                    @media(max-width:1200px){
-                        margin-left: 9px;
-                    }
-                }
-            }
-          }
-          @media (max-width: 1200px) {
-            ul{
-                overflow: hidden;
-                margin-left: 40px;
-    
-                li{
-                    font-size: 22px;
-                    float: left;
-    
-                    a{
-                       display: none;
-                    }
-                }
-    
-                li+li{
-                    margin-left: 20px;
-    
-                    @media(max-width:1200px){
-                        margin-left: 9px;
-                    }
-                }
-            }
-          }
+.social {
+    padding: 0;
+    margin: 0;
+    margin-left: 4%;
+    display: flex;
+    flex-direction: row; /* Default: Vertical alignment */
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: -70px;
+
+}
+
+.social li {
+    margin-left: 10px;
+
+}
+
+.social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+.social li:nth-child(1) a {
+    background: linear-gradient(45deg, #25D366, #128C7E);
+
+
+}
+/* Linear gradient backgrounds */
+
+.social li:nth-child(2) a,
+.social li:nth-child(3) a,
+.social li:nth-child(4) a {
+  background: linear-gradient(45deg, #ff4856, #aa2135);
+  color: white; /* Optional: Ensures text visibility */
+  display: inline-block;
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%; /* Makes it circular */
+  text-align: center;
+  line-height: 50px;
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .social ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        position: relative; /* Allow icons to be adjusted within the container */
+        margin-left: -10px;
+        top: 1160px; /* Adjust the vertical position */
     }
+
+    .social ul li {
+        margin: 5px; /* Add space between icons */
+        position: relative; /* Enable individual movement for each icon */
+    }
+    
+.social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+  
+    .social li:nth-child(1) a {
+        background: linear-gradient(45deg, #25D366, #128C7E);
+        width: 30px; /* Adjust size as needed */
+        height: 30px;
+    
+    }
+    /* Linear gradient backgrounds */
+   
+    .social li:nth-child(2) a,
+    .social li:nth-child(3) a,
+    .social li:nth-child(4) a {
+      background: linear-gradient(45deg, #ff4856, #aa2135);
+      color: white; /* Optional: Ensures text visibility */
+      display: inline-block;
+      width: 30px; /* Adjust size as needed */
+      height: 30px;
+      border-radius: 50%; /* Makes it circular */
+      text-align: center;
+      line-height: 30px;
+      transition: 0.3s ease-in-out;
+    }
+    
+    
+}
+
+
+/* Hover effect for animation */
+.social a:hover {
+    transform: scale(1.1);
+}
+
+   
+       
     .wpo-service-link-widget{
         padding-left: 30px;
 

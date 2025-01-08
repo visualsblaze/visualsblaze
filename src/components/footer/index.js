@@ -29,28 +29,30 @@ const Footer = (props) =>{
                             WANT MORE </p>
                             <p className='follow' style={{ color: '#aa2135' }}>Follow us on<br/></p>
 
-                            <ul>
-                                <li>
-                                <Link to="https://w.app/OT5BzR">
+                            <div className="social">
+        <ul>
+          <li>
+            <Link to="https://w.app/OT5BzR">
               <FaWhatsapp />
             </Link>
-                                </li><li>
-                                <Link to="https://www.behance.net/discovervisualsblaze">
+          </li>
+          <li>
+            <Link to="https://www.linkedin.com/in/husnain-manzoor-910581120?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
               <FaLinkedin />
             </Link>
-                                </li>
-                                <li>
-                                <Link to="https://www.behance.net/discovervisualsblaze">
+          </li>
+          <li>
+            <Link to="https://www.facebook.com/people/Visuals-Blaze/61557573718174/?mibextid=LQQJ4d">
               <FaFacebook />
             </Link>
-                                </li>
-                                <li>
-                                <Link to="https://www.behance.net/discovervisualsblaze">
+          </li>
+          <li>
+            <Link to="https://www.instagram.com/visualsblaze/profilecard/?igsh=dDVkcGhkZTA1dnhy">
               <FaInstagram />
             </Link>
-                                </li>
-                                
-                            </ul>
+          </li>
+        </ul>
+      </div>
                         </div>
                     </div>
                     
