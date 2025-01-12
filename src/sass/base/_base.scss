@@ -49,10 +49,20 @@ a:hover {
 
  /* Default styles */
 .welcome-container p {
-    max-width: 88%;
+    max-width: 138%;
     margin: 0;
     line-height: 1.6;
     text-align: justify; /* Justified alignment */
+}
+/* Adjustments for mobile screens */
+@media (max-width: 1500px) {
+    .welcome-container p {
+        max-width: 118%;
+        margin: 0;
+        line-height: 1.6;
+        text-align: justify; /* Justified alignment */
+        margin-left: -50px;
+    }
 }
 
 /* Adjustments for mobile screens */

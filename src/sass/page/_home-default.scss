@@ -118,14 +118,16 @@
         position: relative;
         text-align: right;
         padding: 10px;
-        width: 465px;
-        height: 465px;
+        width: 525px;
+        height: 525px;
         margin-left: auto;
         z-index: 1;
-        margin-right: 75px;
+        margin-left: 60px;
 
-        @include media-query(991px) {
+        @include media-query(1500px) {
            margin: 0 auto;
+           width: 425px;
+           height: 425px;
         }
         @include media-query(767px) {
             width: 335px;
@@ -227,6 +229,11 @@
         }
         .section-title{
             margin-bottom: 30px;
+        }
+        @media(max-width:1500px){
+            .section-title{
+                margin-left: -30px;
+            }
         }
         .section-title h2{
             font-size: 50px;
@@ -2026,34 +2033,111 @@
     width: 350px;
     text-align: justify; /* Ensures content stretches to fill the width */
 }
-
 .why-choose-us-section {
     padding: 50px 0;
     background-color: #fff;
 }
 
 .why-choose-us-image img {
-    width: 1300px;
-    max-width: 2000px;
+    width: 700px;
+    height: 460px;
+    max-width: 500px;
     border-radius: 10px;
+    margin-left: 70px;
+    margin-bottom: 17px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.why-choose-us-text {
+    padding: 20px;
+    color: #333;
+}
+
+.why-choose-us-text .section-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(223, 182, 19); /* White text */
+    margin-bottom: 20px;
+    background-color: #aa2135; /* Red background color */
+    padding: 10px 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px; /* Rounded corners */
+    position: justify;
+    margin-left: -120px;
+}
+
+// .why-choose-us-text .section-title::before {
+//     content: 'J';
+//     font-size: 50px;
+//     font-weight: bold;
+//     color: white;
+//     position: absolute;
+//     left: -40px;
+//     top: -10px;
+// }
+.why-choose-us-text p {
+    line-height: 1.8;
+    font-size: 16px;
+    color: #555;
+    width: 111%;
+    text-align: justify;
+    margin-left: -20px;
+
+}
+
+
 
 @media (max-width: 1500px) {
-    
-.why-choose-us-section {
-    padding: 50px 0;
-    background-color: #fff;
-    margin-left: 40px;
-}
-
-.why-choose-us-image img {
-    width: 1000px;
-    max-width: 2000px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    .why-choose-us-section {
+        padding: 50px 0;
+        background-color: #fff;
     }
+    
+    .why-choose-us-image img {
+        width: 80%;
+        height: 25%;
+        margin-left: 35px;
+        margin-bottom: 50px;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .why-choose-us-text {
+        padding: 20px;
+        color: #333;
+        margin-left: -55px;
+    }
+    
+    .why-choose-us-text .section-title {
+        font-size: 36px;
+        font-weight: bold;
+        color: white; /* White text */
+        margin-bottom: 20px;
+        background-color: #aa2135; /* Red background color */
+        padding: 10px 20px;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-radius: 5px; /* Rounded corners */
+        position: relative;
+        margin-bottom: 50px;
+    }
+    
+   
+    
+    
+    .why-choose-us-text p {
+        line-height: 1.8;
+        font-size: 16px;
+        color: #555;
+    }
+    
+   
+    }
+    
 
 
 .quick-fun-fact {
@@ -2138,8 +2222,6 @@
 .facts .fact:nth-child(4)::before {
     // background: url('path-to-your-user-icon.png') no-repeat center center;
 }
-
-
 .tools-section {
     padding: 50px 0;
     width: 1320px;
@@ -2147,16 +2229,16 @@
     text-align: center;
     margin-top: 30px;
     margin-bottom: 10px;
-}
-
-.tools-section .section-title {
+  }
+  
+  .tools-section .section-title {
     font-size: 26px;
     font-weight: bold;
     color: #aa2135; /* Matches the theme */
     margin-bottom: 20px;
-}
-
-.tools-section .tools-description {
+  }
+  
+  .tools-section .tools-description {
     font-size: 2rem;
     font-weight: bold;
     color: #000000;
@@ -2164,42 +2246,224 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-}
-
-
-.tools-section .tools-list {
+  }
+  
+  .tools-section .tools-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Four icons per row */
     gap: 20px; /* Space between items */
     justify-content: center;
     margin-right: 150px;
     margin-left: 150px;
-}
-
-.tools-section .tool-item {
-    text-align: center;
-}
-
-.tools-section .tool-item img {
-    width: 150px;
-    height: 90px;
+  }
+  
+  .tools-section .tool-item {
+    position: relative; /* Enables positioning for balls relative to the tool */
+    display: inline-block;
+    width: 120px; /* Tool size */
+    height: 120px;
+  }
+  
+  .tools-section .tool-icon {
+    position: relative; /* Ensures proper stacking context */
+  z-index: 1; /* Place the tool above the golden ball */
+    width: 120px;
+    height: 120px;
     margin-bottom: 10px;
     transition: transform 0.3s ease;
-}
+  }
+  
+  /* Ball Styling */
+  .tools-section .ball {
+    position: absolute;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Ensure the image fits properly */
+  }
+  
+ /* White Ball */
+.tools-section .white-ball {
+    width: 25px; /* Customizable width */
+    height: 25px; /* Customizable height */
+    position: absolute;
+    bottom: -10px; /* Position bottom-left */
+    left: -10px; /* Position bottom-left */
+    z-index: 3; /* On top of tool */
+    animation: moveWhiteBallLeftRight 3s infinite alternate ease-in-out; /* Left-right movement */
+  }
+  
+  /* Golden Ball */
+  .tools-section .gold-ball {
+    width: 35px; /* Customizable width */
+    height: 35px; /* Customizable height */
+    position: absolute;
+    top: -20px; /* Position top-left */
+    right: -20px; /* Position top-right */
+    z-index: 1; /* Behind the tool */
+    opacity: 0.9; /* Slight transparency */
+    animation: moveGoldBallUpDown 3s infinite alternate ease-in-out; /* Up-down movement */
+  }
+  
+  /* White Ball Animation (left-right) */
+  @keyframes moveWhiteBallLeftRight {
+    0% {
+      left: -20px; /* Starting position (left) */
+    }
+    100% {
+      left: 5px; /* Move right */
+    }
+  }
+  
+  /* Golden Ball Animation (up-down) */
+  @keyframes moveGoldBallUpDown {
+    0% {
+      top: -20px; /* Starting position (top) */
+    }
+    100% {
+      top: 5px; /* Move down */
+    }
+  }
+  
+  .tools-section .white-ball-second {
+    width: 25px; /* Customizable width */
+    height: 25px; /* Customizable height */
+    position: absolute;
+    bottom: -10px; /* Position bottom-left */
+    left: -10px; /* Position bottom-left */
+    z-index: 3; /* On top of tool */
+    animation: moveWhiteBallUpDown 3s infinite alternate ease-in-out; /* Left-right movement */
+  }
+  
+  /* Golden Ball */
+  .tools-section .gold-ball-second {
+    width: 35px; /* Customizable width */
+    height: 35px; /* Customizable height */
+    position: absolute;
+    top: -20px; /* Position top-left */
+    right: -20px; /* Position top-right */
+    z-index: 1; /* Behind the tool */
+    opacity: 0.9; /* Slight transparency */
+    animation: moveGoldBallLeftRight 3s infinite alternate ease-in-out; /* Up-down movement */
+  }
+  
+  /* Second White Ball Animation (up-down) */
+  @keyframes moveWhiteBallUpDown {
+    0% {
+        bottom: -20px; /* Starting position (top) */
+      }
+      100% {
+        bottom: 5px; /* Move down */
+      }
+  }
+  
+  /* Second Golden Ball Animation (left-right) */
+  @keyframes moveGoldBallLeftRight {
+    0% {
+        right: -20px; /* Starting position (top) */
+      }
+      100% {
+        right: 5px; /* Move down */
+      }
+  }
 
-.tools-section .tool-item img:hover {
-    transform: scale(1.2); /* Zoom-in effect on hover */
-}
-
-.tools-section .tool-item span {
-    display: block;
-    font-size: 14px;
-    color: #333;
-    margin-top: 5px;
+  .quick-fun-fact-section {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .quick-fun-fact-section .section-title {
+    font-size: 36px;
     font-weight: bold;
-}
+    color: #aa2135;
+    margin-bottom: 30px;
+  }
+  
+  .fun-fact-item {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
+    background: #ffffff;
+  }
+  
+  .fun-fact-item img {
+    height: 100px;
+    margin-bottom: 15px;
+  }
+  
+  .fun-fact-item h3 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ff7f00; /* Orange color for the numbers */
+    margin-bottom: 10px;
+  }
+  
+  .fun-fact-item {
+    margin: 20px 0;
+    text-align: left;
+  }
+  
+  .fact-content {
+    display: flex;
+    align-items: center; /* Vertically align the image and text */
+    justify-content: flex-start; /* Align content to the left */
+  }
+  
+  .fact-image {
+    width: 150px; /* Adjust size as needed */
+    height: 250px;
+    margin-right: 20px; /* Add spacing between the image and text */
+    border-radius: 8px; /* Optional styling for rounded corners */
+  }
+  
+  .fact-text {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333; /* Dark text color for readability */
+  }
+  
+  .fact-source {
+    color: #e60000; /* Highlight source text in red */
+    font-weight: bold;
+  }
+  
+  .fact-percentage {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 10px;
+  }
+  
+  .fun-fact-item .fact-source {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aa2135; /* Red color for the source text */
+    font-weight: bold;
+  }
+  .section-titles {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .section-titles .quick-funs {
+    font-size: 36px;
+    color: #aa2135; /* Red color for "Quick Fun" */
 
-
+  }
+  
+  .section-titles .facts {
+    font-size: 78px;
+    color: #000; /* Black color for "Fact" */
+    font-weight: bold;
+    display: block;
+    margin-top: -10px;
+  }
+  
+  
+  
 @media (max-width: 1500px) {
     
     .tools-section {
@@ -2577,6 +2841,7 @@ g-section{
                     left: 3px;
                 }
             }
+            
         }
     }
 }
