@@ -2216,9 +2216,9 @@
 }
 .tools-section {
     padding: 50px 0;
-    width: 1320px;
+    width: 1920px;
     background-color: rgb(249, 249, 249);
-
+    margin-left: -320px;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 10px;
@@ -2246,8 +2246,8 @@
     grid-template-columns: repeat(4, 1fr); /* Four icons per row */
     gap: 40px; /* Space between items */
     justify-content: center;
-    margin-right: 150px;
-    margin-left: 150px;
+    margin-right: 100px;
+    margin-left: 200px;
   }
   
   .tools-section .tool-item {
@@ -2281,7 +2281,7 @@
     bottom: -10px; /* Position bottom-left */
     left: -10px; /* Position bottom-left */
     z-index: 3; /* On top of tool */
-    animation: moveWhiteBallLeftRight 3s infinite alternate ease-in-out; /* Left-right movement */
+    animation: moveWhiteBallLeftRight 1s infinite alternate ease-in-out; /* Left-right movement */
   }
   
   /* Golden Ball */
@@ -2291,7 +2291,7 @@
     position: absolute;
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
-    animation: moveGoldBallUpDown 3s infinite alternate ease-in-out; /* Up-down movement */
+    animation: moveGoldBallUpDown 1s infinite alternate ease-in-out; /* Up-down movement */
   }
   
   /* White Ball Animation (left-right) */
@@ -2321,7 +2321,7 @@
     bottom: -10px; /* Position bottom-left */
     left: -10px; /* Position bottom-left */
     z-index: 3; /* On top of tool */
-    animation: moveWhiteBallUpDown 3s infinite alternate ease-in-out; /* Left-right movement */
+    animation: moveWhiteBallUpDown 1s infinite alternate ease-in-out; /* Left-right movement */
   }
   
   /* Golden Ball */
@@ -2332,7 +2332,7 @@
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
     
-    animation: moveGoldBallLeftRight 3s infinite alternate ease-in-out; /* Up-down movement */
+    animation: moveGoldBallLeftRight 1s infinite alternate ease-in-out; /* Up-down movement */
   }
   
   /* Second White Ball Animation (up-down) */
