@@ -96,7 +96,7 @@ const About = (props) => {
                     <br/>
                     <br/>
 
-                    <h2 className="section-tite"> Why Choose Us</h2>
+                    <h2 className="choose-title"> Why Choose Us</h2>
                   
                 </div>
             </div>
@@ -154,7 +154,7 @@ const About = (props) => {
 
 <section className="quick-fun-fact-section">
   <div className="container">
-    <h2 className="section-titles"><span className="quick-funs">Quick Fun</span> <br />
+    <h2 className="section-titls"><span className="quick-funs">Quick Fun</span> <br />
     <span className="facts">Fact</span></h2>
     <div className="row">
       <div className="col-lg-6">
