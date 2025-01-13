@@ -2045,7 +2045,7 @@
     max-width: 500px;
     border-radius: 10px;
     margin-left: 70px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .why-choose-us-text {
@@ -2217,7 +2217,8 @@
 .tools-section {
     padding: 50px 0;
     width: 1320px;
-    background-color: hwb(0 83% 5% / 0.503); /* Light gray background for contrast */
+    background:#fff8f0 ;
+
     text-align: center;
     margin-top: 30px;
     margin-bottom: 10px;
@@ -2227,7 +2228,7 @@
     font-size: 26px;
     font-weight: bold;
     color: #aa2135; /* Matches the theme */
-    margin-bottom: 20px;
+    margin-bottom: -10px;
   }
   
   .tools-section .tools-description {
@@ -2285,8 +2286,8 @@
   
   /* Golden Ball */
   .tools-section .gold-ball {
-    width: 35px; /* Customizable width */
-    height: 35px; /* Customizable height */
+    width: 45px; /* Customizable width */
+    height: 45px; /* Customizable height */
     position: absolute;
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
@@ -2327,8 +2328,8 @@
   
   /* Golden Ball */
   .tools-section .gold-ball-second {
-    width: 35px; /* Customizable width */
-    height: 35px; /* Customizable height */
+    width: 45px; /* Customizable width */
+    height: 45px; /* Customizable height */
     position: absolute;
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
