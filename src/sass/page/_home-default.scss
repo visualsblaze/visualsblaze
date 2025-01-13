@@ -2217,7 +2217,7 @@
 .tools-section {
     padding: 50px 0;
     width: 1320px;
-    background:#fff8f0 ;
+    background-color: rgb(249, 249, 249);
 
     text-align: center;
     margin-top: 30px;
@@ -2291,8 +2291,6 @@
     position: absolute;
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
-    z-index: -1; /* Behind the tool */
-    opacity: 0.9; /* Slight transparency */
     animation: moveGoldBallUpDown 3s infinite alternate ease-in-out; /* Up-down movement */
   }
   
@@ -2333,8 +2331,7 @@
     position: absolute;
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
-    z-index: -1; /* Behind the tool */
-    opacity: 0.9; /* Slight transparency */
+    
     animation: moveGoldBallLeftRight 3s infinite alternate ease-in-out; /* Up-down movement */
   }
   
