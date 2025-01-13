@@ -2012,7 +2012,7 @@
 .section-titles {
     font-size: 100px;
     font-weight: bold;
-    background: linear-gradient(45deg, #b81029, #ff4856);
+    // background: linear-gradient(45deg, #b81029, #ff4856);
 
     margin-top: 10px;
     text-align: center;
@@ -2043,7 +2043,6 @@
     width: 700px;
     height: 420px;
     max-width: 500px;
-    border-radius: 10px;
     margin-left: 70px;
     margin-bottom: 15px;
 }
@@ -2093,7 +2092,6 @@
         margin-left: 35px;
         margin-bottom: 50px;
         max-width: 500px;
-        border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     
@@ -2281,7 +2279,7 @@
     bottom: -10px; /* Position bottom-left */
     left: -10px; /* Position bottom-left */
     z-index: 3; /* On top of tool */
-    animation: moveWhiteBallLeftRight 1s infinite alternate ease-in-out; /* Left-right movement */
+    animation: moveWhiteBallLeftRight 2s infinite alternate ease-in-out; /* Left-right movement */
   }
   
   /* Golden Ball */
@@ -2291,7 +2289,7 @@
     position: absolute;
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
-    animation: moveGoldBallUpDown 1s infinite alternate ease-in-out; /* Up-down movement */
+    animation: moveGoldBallUpDown 2s infinite alternate ease-in-out; /* Up-down movement */
   }
   
   /* White Ball Animation (left-right) */
@@ -2321,7 +2319,7 @@
     bottom: -10px; /* Position bottom-left */
     left: -10px; /* Position bottom-left */
     z-index: 3; /* On top of tool */
-    animation: moveWhiteBallUpDown 1s infinite alternate ease-in-out; /* Left-right movement */
+    animation: moveWhiteBallUpDown 2s infinite alternate ease-in-out; /* Left-right movement */
   }
   
   /* Golden Ball */
@@ -2332,7 +2330,7 @@
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
     
-    animation: moveGoldBallLeftRight 1s infinite alternate ease-in-out; /* Up-down movement */
+    animation: moveGoldBallLeftRight 2s infinite alternate ease-in-out; /* Up-down movement */
   }
   
   /* Second White Ball Animation (up-down) */
@@ -2402,7 +2400,6 @@
     width: 150px; /* Adjust size as needed */
     height: 250px;
     margin-right: 20px; /* Add spacing between the image and text */
-    border-radius: 8px; /* Optional styling for rounded corners */
   }
   
   .fact-text {
