@@ -2012,7 +2012,8 @@
 .section-titles {
     font-size: 100px;
     font-weight: bold;
-    color: #aa2135;
+    background: linear-gradient(45deg, #b81029, #ff4856);
+
     margin-top: 10px;
     text-align: center;
     
@@ -2040,12 +2041,11 @@
 
 .why-choose-us-image img {
     width: 700px;
-    height: 460px;
+    height: 420px;
     max-width: 500px;
     border-radius: 10px;
     margin-left: 70px;
-    margin-bottom: 17px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .why-choose-us-text {
@@ -2053,30 +2053,23 @@
     color: #333;
 }
 
-.why-choose-us-text .section-title {
+.section-tite {
     font-size: 50px;
     font-weight: bold;
     color: rgb(223, 182, 19); /* White text */
     margin-bottom: 20px;
-    background-color: #aa2135; /* Red background color */
     padding: 10px 20px;
+    background: linear-gradient(45deg, #b81029, #ff4856);
+
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 2px;
     border-radius: 5px; /* Rounded corners */
     position: justify;
     margin-left: -120px;
+    margin-top: -50px;
 }
 
-// .why-choose-us-text .section-title::before {
-//     content: 'J';
-//     font-size: 50px;
-//     font-weight: bold;
-//     color: white;
-//     position: absolute;
-//     left: -40px;
-//     top: -10px;
-// }
 .why-choose-us-text p {
     line-height: 1.8;
     font-size: 16px;
@@ -2084,7 +2077,6 @@
     width: 111%;
     text-align: justify;
     margin-left: -20px;
-
 }
 
 
@@ -2251,7 +2243,7 @@
   .tools-section .tools-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Four icons per row */
-    gap: 20px; /* Space between items */
+    gap: 40px; /* Space between items */
     justify-content: center;
     margin-right: 150px;
     margin-left: 150px;
@@ -2298,7 +2290,7 @@
     position: absolute;
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
-    z-index: 1; /* Behind the tool */
+    z-index: -1; /* Behind the tool */
     opacity: 0.9; /* Slight transparency */
     animation: moveGoldBallUpDown 3s infinite alternate ease-in-out; /* Up-down movement */
   }
@@ -2340,7 +2332,7 @@
     position: absolute;
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
-    z-index: 1; /* Behind the tool */
+    z-index: -1; /* Behind the tool */
     opacity: 0.9; /* Slight transparency */
     animation: moveGoldBallLeftRight 3s infinite alternate ease-in-out; /* Up-down movement */
   }
@@ -2393,7 +2385,7 @@
   .fun-fact-item h3 {
     font-size: 40px;
     font-weight: bold;
-    color: #ff7f00; /* Orange color for the numbers */
+    color: #ffcc00; /* Orange color for the numbers */
     margin-bottom: 10px;
   }
   
@@ -2430,7 +2422,7 @@
   .fact-percentage {
     font-size: 24px;
     font-weight: bold;
-    color: #000;
+    color: #f1ebeb;
     margin-top: 10px;
   }
   
@@ -2455,7 +2447,7 @@
   }
   
   .section-titles .facts {
-    font-size: 78px;
+    font-size: 88px;
     color: #000; /* Black color for "Fact" */
     font-weight: bold;
     display: block;

@@ -67,8 +67,12 @@ const About = (props) => {
                                     video making, animation, or packing design, our works drive people to action.
                                 </p>
                                 <br />
+                                
                             </div>
                             <Link onClick={ClickHandler} className="theme-btn-s2" to="/portfolio-grid">View Projects</Link>
+                    <br/>
+                    <br/>
+
                         </div>
                     </div>
                 </div>
@@ -92,7 +96,7 @@ const About = (props) => {
                     <br/>
                     <br/>
 
-                    <h2 className="section-title"> Why Choose Us</h2>
+                    <h2 className="section-tite"> Why Choose Us</h2>
                   
                 </div>
             </div>
@@ -126,6 +130,7 @@ const About = (props) => {
         <img className="ball white-ball-second" src={wball} alt="White Ball" />
         <img className="ball gold-ball-second" src={gball} alt="Gold Ball" />
       </div>
+      
       <div className="tool-item">
         <img className="tool-icon" src={illus} alt="Illustrator" />
         <img className="ball white-ball" src={wball} alt="White Ball" />
