@@ -2041,10 +2041,10 @@
 
 .why-choose-us-image img {
     width: 700px;
-    height: 420px;
+    height: 450px;
     max-width: 500px;
     margin-left: 70px;
-    margin-bottom: 15px;
+    margin-bottom: 47px;
 }
 
 .why-choose-us-text {
@@ -2279,7 +2279,8 @@
     bottom: -10px; /* Position bottom-left */
     left: -10px; /* Position bottom-left */
     z-index: 3; /* On top of tool */
-    animation: moveWhiteBallLeftRight 2s infinite alternate ease-in-out; /* Left-right movement */
+    animation: moveLeftRight 3s linear infinite;
+
   }
   
   /* Golden Ball */
@@ -2289,28 +2290,11 @@
     position: absolute;
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
-    animation: moveGoldBallUpDown 2s infinite alternate ease-in-out; /* Up-down movement */
+    animation: bounce 3s linear infinite;
+
   }
   
-  /* White Ball Animation (left-right) */
-  @keyframes moveWhiteBallLeftRight {
-    0% {
-      left: -20px; /* Starting position (left) */
-    }
-    100% {
-      left: 5px; /* Move right */
-    }
-  }
   
-  /* Golden Ball Animation (up-down) */
-  @keyframes moveGoldBallUpDown {
-    0% {
-      top: -20px; /* Starting position (top) */
-    }
-    100% {
-      top: 5px; /* Move down */
-    }
-  }
   
   .tools-section .white-ball-second {
     width: 25px; /* Customizable width */
@@ -2319,7 +2303,8 @@
     bottom: -10px; /* Position bottom-left */
     left: -10px; /* Position bottom-left */
     z-index: 3; /* On top of tool */
-    animation: moveWhiteBallUpDown 2s infinite alternate ease-in-out; /* Left-right movement */
+    animation: bounce 3s linear infinite;
+
   }
   
   /* Golden Ball */
@@ -2330,28 +2315,23 @@
     top: -20px; /* Position top-left */
     right: -20px; /* Position top-right */
     
-    animation: moveGoldBallLeftRight 2s infinite alternate ease-in-out; /* Up-down movement */
+    animation: moveLeftRight 3s linear infinite;
+
   }
   
-  /* Second White Ball Animation (up-down) */
-  @keyframes moveWhiteBallUpDown {
+  /* Keyframes for left-right movement */
+@keyframes moveLeftRight {
     0% {
-        bottom: -20px; /* Starting position (top) */
-      }
-      100% {
-        bottom: 5px; /* Move down */
-      }
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px); /* Move 20px to the right */
+    }
+    100% {
+      transform: translateX(0); /* Return to original position */
+    }
   }
-  
-  /* Second Golden Ball Animation (left-right) */
-  @keyframes moveGoldBallLeftRight {
-    0% {
-        right: -20px; /* Starting position (top) */
-      }
-      100% {
-        right: 5px; /* Move down */
-      }
-  }
+
 
   .quick-fun-fact-section {
     padding: 50px 0;
