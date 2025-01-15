@@ -11,18 +11,9 @@ const About2 = () => {
             <div className="container">
                 <div className="title-section">
                     <h2 className="section-titles">Services</h2>
-                    <p
-  className="section-subtitle"
-  style={{
-    fontWeight: "bold",
-    color: "black",
-    marginLeft: "55px", // Inline margin
-    display: "inline-block", // Keeps the element styled inline
-    textAlign: "center", // Centers the text
-  }}
->
-  The way we do things in our <br /> line of work
-</p>
+                    <p className="subtitles">
+                    The way we do things in our  <br />line of work
+                    </p>
 
                 </div>
                 <div className="services-grid">
