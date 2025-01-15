@@ -243,7 +243,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin-left: -70px;
+    margin-left: -40px;
 
 }
 
@@ -256,11 +256,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     text-decoration: none;
     transition: transform 0.3s;
 }
@@ -277,11 +277,11 @@
   background: linear-gradient(45deg, #ff4856, #aa2135);
   color: white; /* Optional: Ensures text visibility */
   display: inline-block;
-  width: 50px; /* Adjust size as needed */
-  height: 50px;
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
   border-radius: 50%; /* Makes it circular */
   text-align: center;
-  line-height: 50px;
+  line-height: 40px;
   transition: 0.3s ease-in-out;
 }
 

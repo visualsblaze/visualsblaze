@@ -2041,10 +2041,9 @@
 
 .why-choose-us-image img {
     width: 700px;
-    height: 450px;
+    height: 500px;
     max-width: 500px;
     margin-left: 70px;
-    margin-bottom: 47px;
 }
 
 .why-choose-us-text {
@@ -2056,17 +2055,15 @@
     font-size: 50px;
     font-weight: bold;
     color: rgb(223, 182, 19); /* White text */
-    margin-bottom: 20px;
     padding: 10px 20px;
     background: linear-gradient(45deg, #b81029, #ff4856);
-
+    margin-bottom: -30px;
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 2px;
     border-radius: 5px; /* Rounded corners */
     position: justify;
-    margin-left: -120px;
-    margin-top: -50px;
+    margin-left: -20px;
 }
 
 .why-choose-us-text p {

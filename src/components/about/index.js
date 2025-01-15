@@ -1,12 +1,12 @@
 import React from 'react';
 import abimg from '../../images/about.jpg';
 import { Link } from 'react-router-dom';
-// import photoshope from "../../images/photoshope img.png";
-// import premiere from "../../images/premiere img.png";
+import photoshope from "../../images/photoshop img.png";
+import premiere from "../../images/premiere img.png";
 import xd from "../../images/xd img.png";
 import effects from "../../images/after effects img.png";
-// import indesign from "../../images/indesign img.png";
-// import media from "../../images/media endcoder img.png";
+import indesign from "../../images/indesign img.png";
+import media from "../../images/media encoder img.png";
 import figma from "../../images/figma img.png";
 import illus from "../../images/illustrator img.png";
 import choose from "../../images/choose-us-img.png";
@@ -111,40 +111,40 @@ const About = (props) => {
 
     <div className="tools-list">
       <div className="tool-item">
-        <img className="tool-icon" src={xd} alt="XD" />
+        <img className="tool-icon" src={photoshope} alt="XD" />
         <img className="ball white-ball" src={wball} alt="White Ball" />
         <img className="ball gold-ball" src={gball} alt="Gold Ball" />
       </div>
       <div className="tool-item">
-        <img className="tool-icon" src={effects} alt="After Effects" />
+        <img className="tool-icon" src={illus} alt="After Effects" />
         <img className="ball white-ball-second" src={wball} alt="White Ball" />
         <img className="ball gold-ball-second" src={gball} alt="Gold Ball" />
       </div>
       <div className="tool-item">
-        <img className="tool-icon" src={figma} alt="Figma" />
+        <img className="tool-icon" src={effects} alt="Figma" />
         <img className="ball white-ball" src={wball} alt="White Ball" />
         <img className="ball gold-ball" src={gball} alt="Gold Ball" />
       </div>
       <div className="tool-item">
-        <img className="tool-icon" src={illus} alt="Illustrator" />
+        <img className="tool-icon" src={premiere} alt="Illustrator" />
         <img className="ball white-ball-second" src={wball} alt="White Ball" />
         <img className="ball gold-ball-second" src={gball} alt="Gold Ball" />
       </div>
       
       <div className="tool-item">
-        <img className="tool-icon" src={illus} alt="Illustrator" />
+        <img className="tool-icon" src={media} alt="Illustrator" />
         <img className="ball white-ball" src={wball} alt="White Ball" />
         <img className="ball gold-ball" src={gball} alt="Gold Ball" />
       </div><div className="tool-item">
-        <img className="tool-icon" src={illus} alt="Illustrator" />
+        <img className="tool-icon" src={indesign} alt="Illustrator" />
         <img className="ball white-ball-second" src={wball} alt="White Ball" />
         <img className="ball gold-ball-second" src={gball} alt="Gold Ball" />
       </div><div className="tool-item">
-        <img className="tool-icon" src={illus} alt="Illustrator" />
+        <img className="tool-icon" src={xd} alt="Illustrator" />
         <img className="ball white-ball" src={wball} alt="White Ball" />
         <img className="ball gold-ball" src={gball} alt="Gold Ball" />
       </div><div className="tool-item">
-        <img className="tool-icon" src={illus} alt="Illustrator" />
+        <img className="tool-icon" src={figma} alt="Illustrator" />
         <img className="ball white-ball-second" src={wball} alt="White Ball" />
         <img className="ball gold-ball-second" src={gball} alt="Gold Ball" />
       </div>
