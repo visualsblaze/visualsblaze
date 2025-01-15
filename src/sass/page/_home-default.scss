@@ -1405,6 +1405,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
+/* Responsive Styles */
 
 .logo-slide img:hover {
     transform: scale(1.05);
@@ -1453,8 +1454,8 @@
     }
 
     .logo-slide img {
-        width: 110px; /* Fixed width */
-        height: 50px; /* Fixed height */
+        width: 140px; /* Fixed width */
+        height: 55px; /* Fixed height */
         object-fit: contain;
         background: linear-gradient(45deg, #b81029, #ff4856);
         padding: 5px;
@@ -2169,7 +2170,6 @@
             margin-left: 0px;
             margin-bottom: 50px;
             max-width: 500px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .why-choose-us-text {
@@ -2448,18 +2448,19 @@
   /* Responsive Design for Mobile */
   @media (max-width: 768px) {
     .tools-section .tools-list {
-      grid-template-columns: repeat(3, 1fr); /* Adjust to 3 tools per row */
-      gap: 20px; /* Reduce gap for smaller screens */
+      grid-template-columns: repeat(2, 1fr); /* Adjust to 3 tools per row */
+      gap: 10px; /* Reduce gap for smaller screens */
     }
   
     .tools-section .tool-item {
-      width: 90px; /* Reduce tool size for smaller screens */
-      height: 90px;
+      width: 120px; /* Reduce tool size for smaller screens */
+      height: 120px;
     }
   
     .tools-section .tool-icon {
-      width: 90px;
-      height: 90px;
+      width: 120px;
+      height: 120px;
+      margin-left: 15px;
     }
   
     .tools-section .white-ball,
@@ -2600,8 +2601,9 @@
   }
   
   .fun-fact-item {
-    margin: 20px 0;
+    margin: 2px 0;
     text-align: left;
+    margin-bottom: -20px;
   }
   
   .fact-content {
@@ -2612,7 +2614,7 @@
   
   .fact-image {
     width: 70px; /* Adjust size as needed */
-    max-height: 60px;
+    max-height: 50px;
     margin-right: 20px; /* Add spacing between the image and text */
     margin-left: -20px;
   }

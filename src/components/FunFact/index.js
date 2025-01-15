@@ -118,7 +118,7 @@ const ClientLogoSlider = () => {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: window.innerWidth <= 768 ? 3 : 4,
+        slidesToShow: window.innerWidth <= 768 ? 2 : 4,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,

@@ -37,7 +37,7 @@
     @media (max-width: 767px) {
     
         .wpo-upper-footer{
-            padding: 60px 0 0;
+            margin-top: -120px;
         }
     }
     
@@ -295,7 +295,7 @@
         align-items: flex-start;
         position: relative; /* Allow icons to be adjusted within the container */
         margin-left: -10px;
-        top: 1160px; /* Adjust the vertical position */
+        top: 1135px; /* Adjust the vertical position */
     }
 
     .social ul li {
