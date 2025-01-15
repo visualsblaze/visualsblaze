@@ -47,7 +47,8 @@ const About = (props) => {
                     <div className="col-lg-6">
                         <div className="about-content">
                             <div className="section-title">
-                                <span>ABOUT US</span>
+                            <span style={{ marginLeft: "30px" }}>ABOUT US</span>
+
                                 <h2>We are more than just a
                                     <span> digital agency.</span>
                                 </h2>

@@ -47,35 +47,6 @@ a:hover {
     text-decoration: none;
 }
 
- /* Default styles */
-.welcome-container p {
-    max-width: 138%;
-    margin: 0;
-    line-height: 1.6;
-    text-align: justify; /* Justified alignment */
-}
-/* Adjustments for mobile screens */
-@media (max-width: 1500px) {
-    .welcome-container p {
-        max-width: 118%;
-        margin: 0;
-        line-height: 1.6;
-        text-align: justify; /* Justified alignment */
-        margin-left: -50px;
-    }
-}
-
-/* Adjustments for mobile screens */
-@media (max-width: 480px) {
-    .welcome-container p {
-        max-width: 90%;     /* Utilize full width on small screens */
-        font-size: 16px;     /* Slightly reduce font size for readability */
-        line-height: 1.4;    /* Compact line height to fit more text on screen */
-        margin: 0 0px;      /* Add horizontal padding to prevent text from touching screen edges */
-        text-align: justify;    /* Consider left alignment for better readability on narrow screens */
-    }
-}
-
   
 .resume-section {
     margin-top: 80px;
