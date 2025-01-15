@@ -15,6 +15,7 @@ const About2 = () => {
   className="section-subtitle"
   style={{
     fontWeight: "bold",
+    color: "black",
     marginLeft: "55px", // Inline margin
     display: "inline-block", // Keeps the element styled inline
     textAlign: "center", // Centers the text

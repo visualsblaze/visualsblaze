@@ -1454,11 +1454,12 @@
     }
 
     .logo-slide img {
-        width: 140px; /* Fixed width */
-        height: 55px; /* Fixed height */
+        width: 240px; /* Fixed width */
+        height: 75px; /* Fixed height */
         object-fit: contain;
         background: linear-gradient(45deg, #b81029, #ff4856);
         padding: 5px;
+        margin-left: 50px;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
@@ -2472,6 +2473,19 @@
     .tools-section .gold-ball-second{
        display: none;
     }
+    .tools-section .section-title {
+        font-size: 34px;
+        font-weight: bold;
+        color: #aa2135; /* Matches the theme */
+        margin-bottom: -6px;
+      }
+      
+      .tools-section .tools-description {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #000000;
+        max-width: 900px;
+      }
   
   }
   
@@ -2613,8 +2627,8 @@
   }
   
   .fact-image {
-    width: 70px; /* Adjust size as needed */
-    max-height: 50px;
+    width: 90px; /* Adjust size as needed */
+    max-height: 70px;
     margin-right: 20px; /* Add spacing between the image and text */
     margin-left: -20px;
   }
