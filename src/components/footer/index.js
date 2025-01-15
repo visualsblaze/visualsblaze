@@ -106,20 +106,7 @@ const Footer = (props) =>{
         <p style={{ color: '#333333' }}>BLAZE FOR THE PEOPLE WHO <br/> 
         WANT MORE </p>
         <p style={{ color: '#aa2135', fontWeight: 'bold' }}>Follow us on</p>
-        <div className="social-icons-mobile">
-            <Link to="https://w.app/OT5BzR" className="social-link">
-                <FaWhatsapp />
-            </Link>
-            <Link to="https://www.linkedin.com/" className="social-link">
-                <FaLinkedin />
-            </Link>
-            <Link to="https://www.facebook.com/" className="social-link">
-                <FaFacebook />
-            </Link>
-            <Link to="https://www.instagram.com/" className="social-link">
-                <FaInstagram />
-            </Link>
-        </div>
+       
     </div>
 </div>
 
