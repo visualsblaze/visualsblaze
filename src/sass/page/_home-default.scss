@@ -134,7 +134,7 @@
             height: 335px;
         }
         @include media-query(575px) {
-            width: 225px;
+            width: 325px;
             height: 225px;
         }
 
@@ -238,8 +238,10 @@
         .section-title h2{
             font-size: 50px;
             @media(max-width:575px){
-                font-size: 35px;
-                margin-left: 20px;
+                font-size: 25px;
+                margin-left: 30px;
+                margin-right: 50px;
+                text-align: justify;
               }
         }
 
