@@ -70,8 +70,9 @@ const About = (props) => {
                                 <br />
                                 
                             </div>
-                            <Link onClick={ClickHandler} className="theme-btn-s2" to="/portfolio-grid">View Projects</Link>
-                    <br/>
+                            <Link onClick={ClickHandler} className="theme-btn-s2" to="/portfolio-grid" style={{ marginLeft: '-200px' }}>
+  View Projects
+</Link>
                     <br/>
 
                         </div>
