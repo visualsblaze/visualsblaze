@@ -122,9 +122,8 @@
         padding: 10px;
         width: 525px;
         height: 525px;
-        margin-left: auto;
         z-index: 1;
-        margin-left: 60px;
+        margin-left: -150px;
 
         @include media-query(1500px) {
            margin: 0 auto;
@@ -228,9 +227,18 @@
         @media(max-width:991px){
             padding-top: 120px;
         }
+        .about-us{
+            margin-left: -180px;
+
+        }
+        .transparent-text{
+            margin-left: -180px;
+            
+        }
         .section-title{
             margin-bottom: 30px;
         }
+        
         @media(max-width:1500px){
             .section-title{
                 margin-left: -30px;
@@ -238,6 +246,7 @@
         }
         .section-title h2{
             font-size: 50px;
+            margin-left: -200px;
             @media(max-width:575px){
                 font-size: 25px;
                 margin-left: 30px;
@@ -275,8 +284,9 @@
 
  /* Default styles */
  .welcome-container p {
-    max-width: 138%;
-    margin: 0;
+    max-width: 308%;
+    margin-left: -200px;
+    margin-right: -180px;
     line-height: 1.6;
     text-align: justify; /* Justified alignment */
 }
@@ -2109,7 +2119,9 @@
     border-radius: 5px; /* Rounded corners */
     margin-left: -20px;
 }
-
+.choose-titlemobile {
+   display: none;
+}
 .why-choose-us-text p {
     line-height: 1.8;
     font-size: 16px;
@@ -2361,16 +2373,17 @@
 }
 .tools-section {
     padding: 50px 0;
-    width: 100%; /* Adjust width for responsiveness */
+    width: 150%; /* Adjust width for responsiveness */
     background-color: rgb(249, 249, 249);
     text-align: center;
     margin-top: 30px;
     margin-bottom: 10px;
+    margin-left: -310px;
     overflow: hidden; /* Avoid horizontal overflow */
   }
   
   .tools-section .section-title {
-    font-size: 26px;
+    font-size: 36px;
     font-weight: bold;
     color: #aa2135; /* Matches the theme */
     margin-bottom: -10px;
@@ -2391,7 +2404,9 @@
     grid-template-columns: repeat(4, 1fr); /* Default: Four icons per row */
     gap: 40px; /* Space between items */
     justify-content: center;
-    margin: 0 auto; /* Center the grid */
+    margin-left: 100px;
+    margin-right: 100px;
+
     padding: 0 20px; /* Add padding for mobile spacing */
   }
   
