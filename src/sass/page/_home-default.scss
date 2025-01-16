@@ -243,16 +243,31 @@
             .section-title{
                 margin-left: -30px;
             }
+            .about-us{
+                margin-left: 30px;
+    
+            }
+            .transparent-text{
+                margin-left: 30px;
+                
+            }
         }
         .section-title h2{
             font-size: 50px;
             margin-left: -200px;
+
+            @media(max-width:1500px){
+                margin-left: -20px;
+                margin-top: 90px;
+
+              }
             @media(max-width:575px){
                 font-size: 25px;
                 margin-left: 30px;
                 margin-right: 50px;
                 text-align: justify;
               }
+            
         }
 
         ul{
@@ -2404,7 +2419,7 @@
     grid-template-columns: repeat(4, 1fr); /* Default: Four icons per row */
     gap: 40px; /* Space between items */
     justify-content: center;
-    margin-left: 100px;
+    margin-left: 120px;
     margin-right: 100px;
 
     padding: 0 20px; /* Add padding for mobile spacing */
