@@ -91,13 +91,18 @@ const About = (props) => {
             <div className="col-lg-6">
                 {/* Text Section */}
                 <div className="why-choose-us-text">
+                <h2 className="choose-titlemobile"> Why Choose Us</h2>
+
                     <p>
                     When it comes to graphic design, choosing the right partner can make all the difference in the success of your brand. At our studio, we offer more than just design services, we provide a comprehensive solution tailored to your unique needs. Our team is comprised of skilled professionals who are passionate about creativity and innovation. We understand that effective graphic design goes beyond aesthetics; it's about communicating your message clearly and engaging your audience on a deeper level. With our expertise in both traditional and digital design techniques, we can bring your vision to life across various platforms and mediums. What sets us apart is our commitment to excellence, attention to detail, and dedication to exceeding your expectations. When you choose us for your graphic design needs, you're not just getting a service provider, you're gaining a strategic partner invested in your success.
+
                     </p>
+
                     <br/>
                     <br/>
 
                     <h2 className="choose-title"> Why Choose Us</h2>
+
                   
                 </div>
             </div>
