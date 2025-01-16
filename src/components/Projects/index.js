@@ -140,7 +140,7 @@ class ProjectSection extends Component {
       <section className="wpo-work-section section-padding">
         <div className="container">
           <SectionTitle
-            subTitle={"PORTFOLIO"}
+            subTitle={"Portfolio"}
             MainTitle={"Our Projects"}
             vTitle={"Portfolio"}
           />

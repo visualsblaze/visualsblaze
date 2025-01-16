@@ -27,22 +27,18 @@ const Features = (props) => {
     ];
      const featres = [
          {
-            id:'1',
             fIcon:fIcon1,
             title:'Creating a Concept',
          },
          {
-            id:'2',
             fIcon:fIcon2,
             title:'Budget Planning',   
          },
          {
-            id:'3',
             fIcon:fIcon3,
             title:'Design Process',    
          },
          {
-            id:'4',
             fIcon:fIcon4,
             title:'Building Your Dream',    
          },
@@ -89,9 +85,7 @@ const Features = (props) => {
                                         <div className="wpo-work-icon flip-horizontal">
                                             <img src={featres.fIcon} className='wp-icon' alt=""/>
                                         </div>
-                                        <div className="wpo-work-icon-thumb">
-                                            <span>{featres.id}</span>
-                                        </div>
+                                       
                                     </div>
                                     <div className="wpo-work-text flip-horizontal">
                                     <h4 style={{ textTransform: 'uppercase' }}>{featres.title}</h4>
