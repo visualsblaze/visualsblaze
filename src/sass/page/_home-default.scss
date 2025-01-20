@@ -264,7 +264,7 @@
             @media(max-width:575px){
                 font-size: 25px;
                 margin-left: 30px;
-                margin-right: 50px;
+                margin-right: 70px;
                 text-align: justify;
               }
             
@@ -2507,20 +2507,32 @@
   
   /* Responsive Design for Mobile */
   @media (max-width: 768px) {
+    .tools-section {
+        padding: 50px 0;
+        width: 150%; /* Adjust width for responsiveness */
+        background-color: rgb(249, 249, 249);
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        margin-left: -90px;
+        overflow: hidden; /* Avoid horizontal overflow */
+      }
     .tools-section .tools-list {
       grid-template-columns: repeat(2, 1fr); /* Adjust to 3 tools per row */
       gap: 10px; /* Reduce gap for smaller screens */
+
     }
   
     .tools-section .tool-item {
       width: 120px; /* Reduce tool size for smaller screens */
       height: 120px;
+
     }
   
     .tools-section .tool-icon {
       width: 120px;
       height: 120px;
-      margin-left: 15px;
+      margin-left: -10px;
     }
   
     .tools-section .white-ball,
@@ -2648,7 +2660,7 @@
   @media (max-width: 768px) {
      
   .quick-fun-fact-section .section-title {
-    font-size: 36px;
+    font-size: 26px;
     font-weight: bold;
     color: #aa2135;
     margin-bottom: 30px;
@@ -2660,7 +2672,19 @@
     margin: 10px;
     background: #ffffff;
   }
+  .section-titls .quick-funs {
+    font-size: 36px;
+    color: #aa2135; /* Red color for "Quick Fun" */
+
+  }
   
+  .section-titls .facts {
+    font-size: 68px;
+    color: #000; /* Black color for "Fact" */
+    font-weight: bold;
+    display: block;
+    margin-top: -10px;
+  }
   .fun-fact-item img {
     height: 100px;
     margin-bottom: 15px;
@@ -2898,7 +2922,7 @@
         text-align: center;
         
     }
-    .section-subtitles {
+    .subtitles {
         font-size: 20px;
         font-weight: bold;
         color: #252323;

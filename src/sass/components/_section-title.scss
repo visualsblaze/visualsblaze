@@ -40,6 +40,15 @@
 
 	@media (max-width: 767px) {
 		  margin-top: 20px;
+		  &:before{
+			content: "";
+			background: $theme-primary-color;
+			width: 30px;
+			height: 2px;
+			position: absolute;
+			left: -35px;
+			top: 13px;
+		}
 	  }
   }
 
