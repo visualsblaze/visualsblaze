@@ -23,6 +23,9 @@ import project11 from '../../images/pak-n-pure-cover-image.jpg';
 import project12 from '../../images/pak-n-pure-inner-image.jpg';
 import project13 from '../../images/dental-post-cover-image.jpg';
 import project14 from '../../images/dental-post-inner-image.jpg';
+import project15 from '../../images/ahmed-mohammed-co-cover-image.jpg';
+import project16 from '../../images/ahmed-mohammed-co-inner-image.jpg';
+
 
 
 
@@ -46,7 +49,10 @@ class PortfolioGridS2 extends Component {
             { thumb: typogr, full: typography },
 
             { thumb: project3, full: project4 },
+
             { thumb: pageTitleImage, full: typographyImage },
+            { thumb: project15, full: project16 },
+
 
 
 

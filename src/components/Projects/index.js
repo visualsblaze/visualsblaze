@@ -22,6 +22,9 @@ import project11 from "../../images/pak-n-pure-cover-image.jpg";
 import project12 from "../../images/pak-n-pure-inner-image.jpg";
 import project13 from "../../images/dental-post-cover-image.jpg";
 import project14 from "../../images/dental-post-inner-image.jpg";
+import project15 from "../../images/ahmed-mohammed-co-cover-image.jpg";
+import project16 from "../../images/ahmed-mohammed-co-inner-image.jpg";
+
 
 
 
@@ -48,6 +51,8 @@ class ProjectSection extends Component {
 
       { thumb: project9, full: project10 },
       { thumb: project11, full: project12 },
+      { thumb: project15, full: project16 },
+
 
 
 
