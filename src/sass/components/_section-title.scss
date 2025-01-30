@@ -285,6 +285,16 @@
 	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);
   }
+  @media (max-width: 767px) {
+	.section-title-s4 .transparent-text {
+		left: 45%;
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+	  }
+  }
   
   .section-title-s4 > span:after {
 	display: none;

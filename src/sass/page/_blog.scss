@@ -692,7 +692,7 @@
 	  /* Styling for images */
 	  .free-image1 {
 		width: 310px;
-		margin-left: 35px;
+		margin-left: 40px;
 		height: auto; /* Maintain aspect ratio */
 	  }
 	  .free-image2 {
@@ -757,8 +757,8 @@
 
 	  .free-image11 {
 		width: 80px;
-		margin-top: 330px;
-		margin-left: 340px;
+		margin-top: 360px;
+		margin-left: 345px;
 		height: auto; /* Maintain aspect ratio */
 		animation: bounce 3s linear infinite; /* Bounce animation */ 
 
@@ -828,8 +828,8 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -30%);
-		font-size: 1.5rem; /* Make it larger than the heading */
+		transform: translate(-50%, -35%);
+		font-size: 3.5rem; /* Make it larger than the heading */
 		font-weight: bold;
 		color: rgba(162, 151, 151, 0.1);
 		/* Light and faded color for background effect */
@@ -839,7 +839,7 @@
 	  }
 	  .client {
 		position: relative;
-		font-size: 1rem;
+		font-size: 2rem;
 		font-weight: bold;
 		z-index: 2; /* Ensure this is above the background text */
 		color: #aa2135; /* Change this to your desired heading color */

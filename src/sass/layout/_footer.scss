@@ -4,7 +4,7 @@
 .wpo-site-footer {
     background:#fff8f0 ;
     font-family: 'Lato', sans-serif;
-
+    margin-top: 20px;
     position: relative;
     font-size: 15px;
     overflow: hidden;
@@ -295,12 +295,12 @@
         flex-direction: row;
         align-items: flex-start;
         position: relative; /* Allow icons to be adjusted within the container */
-        margin-left: -10px;
+        margin-left: 13px;
         top: 1135px; /* Adjust the vertical position */
     }
 
     .social ul li {
-        margin: 5px; /* Add space between icons */
+        margin: 2px; /* Add space between icons */
         position: relative; /* Enable individual movement for each icon */
     }
     
@@ -312,7 +312,7 @@
     height: 50px;
     border-radius: 50%;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
     transition: transform 0.3s;
 }

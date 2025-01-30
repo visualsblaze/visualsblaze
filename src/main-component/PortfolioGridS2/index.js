@@ -39,6 +39,8 @@ class PortfolioGridS2 extends Component {
 
     getImages = () => {
         const images = [
+            { thumb: project15, full: project16 },
+
             { thumb: project13, full: project14 },
 
             { thumb: project11, full: project12 },
@@ -51,7 +53,6 @@ class PortfolioGridS2 extends Component {
             { thumb: project3, full: project4 },
 
             { thumb: pageTitleImage, full: typographyImage },
-            { thumb: project15, full: project16 },
 
 
 
