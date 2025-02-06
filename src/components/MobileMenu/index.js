@@ -7,7 +7,7 @@ const menus = [
     {
         id: 1,
         title: 'Home',
-        link: '/home',
+        link: '/',
         // submenu: [
         //     // {
         //     //     id: 11,
