@@ -2526,11 +2526,13 @@
   /* Responsive Design for Mobile */
   @media (max-width: 768px) {
     .tools-section {
-        padding: 50px 0;
+        padding-top: 20px;
+        padding-bottom: 100px;
+
         width: 150%; /* Adjust width for responsiveness */
         background-color: rgb(249, 249, 249);
         text-align: center;
-        margin-top: 30px;
+        margin-top: 80px;
         margin-bottom: -80px;
         margin-left: -90px;
         overflow: hidden; /* Avoid horizontal overflow */
@@ -2678,12 +2680,20 @@
   
   
   @media (max-width: 768px) {
-     
+    .quick-fun-fact-section {
+        padding: 50px 0;
+        background-color: #fff;
+        text-align: center;
+        margin-bottom: -130px;
+        margin-top: -40px;
+    
+    }
+      
   .quick-fun-fact-section .section-title {
     font-size: 26px;
     font-weight: bold;
     color: #aa2135;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
   }
   
   .fun-fact-item {
