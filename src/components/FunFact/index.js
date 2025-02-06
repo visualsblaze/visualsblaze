@@ -3,33 +3,33 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
+// FunFactSection Component
 const FunFactSection = (props) => {
-    const boxRefs = useRef([]);
-    const [visibleBoxes, setVisibleBoxes] = useState([]);
-    // Function to handle visibility change when element is in viewport
-  const handleVisibilityChange = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setVisibleBoxes((prev) => [...prev, entry.target]);
-        observer.unobserve(entry.target); // Stop observing once the box is visible
-      }
-    });
+  const boxRefs = useRef([]); // Refs for each box element
+  const observerRef = useRef(null); // To store the IntersectionObserver instance
+  const [visibleBoxes, setVisibleBoxes] = useState([]); // State to track visible boxes
+
+  const handleVisibilityChange = (entries) => {
+      entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+              setVisibleBoxes((prev) => [...prev, entry.target]);
+              observerRef.current?.unobserve(entry.target); // Stop observing once visible
+          }
+      });
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(handleVisibilityChange, {
-      threshold: 0.5, // Trigger when 50% of the element is visible
-    });
-
-    boxRefs.current.forEach((ref) => {
-      observer.observe(ref);
-    });
-
-    return () => {
-      boxRefs.current.forEach((ref) => {
-        observer.unobserve(ref);
+      observerRef.current = new IntersectionObserver(handleVisibilityChange, {
+          threshold: 0.5, // Trigger when 50% of the element is visible
       });
-    };
+
+      boxRefs.current.forEach((ref) => {
+          if (ref) observerRef.current.observe(ref);
+      });
+
+      return () => {
+          observerRef.current?.disconnect();
+      };
   }, []);
 
     return (
