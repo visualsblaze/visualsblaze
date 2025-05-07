@@ -28,8 +28,8 @@ import project17 from '../../images/sfd-offers-cover-image.png';
 import project18 from '../../images/sfd-offers-inner-image-design.jpg';
 import project19 from '../../images/sfd-flyer-cover-image.jpg';
 import project20 from '../../images/sfd-flyer-inner-image.jpg';
-import project21 from '../../images/dental-post-cover-image.jpg';
-import project22 from '../../images/dental-post-inner-image.jpg';
+import project21 from '../../images/dental-post-cover-image.png';
+import project22 from '../../images/dental-post-inner-image.png';
 
 
 
