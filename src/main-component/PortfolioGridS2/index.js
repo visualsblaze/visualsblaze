@@ -31,6 +31,8 @@ import project19 from '../../images/sfd-flyer-cover-image.jpg';
 import project20 from '../../images/sfd-flyer-inner-image.jpg';
 import project21 from '../../images/dental-post-cover-image.png';
 import project22 from '../../images/dental-post-inner-image.png';
+import project23 from '../../images/eid-al-adha-25-cover-image.png';
+import project24 from '../../images/eid-al-adha-inner-image.png';
 
 
 
@@ -46,6 +48,8 @@ class PortfolioGridS2 extends Component {
 
     getImages = () => {
         const images = [
+            { thumb: project23, full: project24 },
+            
             { thumb: project21, full: project22 },
 
             { thumb: project17, full: project18 },
