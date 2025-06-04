@@ -32,6 +32,9 @@ import project21 from '../../images/dental-post-cover-image.png';
 import project22 from '../../images/dental-post-inner-image.png';
 import project23 from '../../images/eid-al-adha-25-cover-image.png';
 import project24 from '../../images/eid-al-adha-inner-image.png';
+import project25 from '../../images/ahc-letterhead-plus-branding-cover-image.png';
+import project26 from '../../images/ahc-letterhead-plus-branding-inner-image.png';
+
 
 
 
@@ -50,10 +53,12 @@ class ProjectSection extends Component {
 
   getImages = () => {
     const images = [
+      { thumb: project25, full: project26 }, 
+
       { thumb: project23, full: project24 },
 
       { thumb: project21, full: project22 },
-
+  
       { thumb: project17, full: project18 },
 
       { thumb: pageTitleImage, full: typographyImage },
