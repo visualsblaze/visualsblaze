@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { collection, addDoc, getDocs } from "firebase/firestore";
-import { db } from "./firebaseConfig";
 import "./AdminUpload.css";
+import { db } from "./firebaseConfig";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  orderBy,
+} from "firebase/firestore";
 
 const AdminUpload = () => {
   const [coverImage, setCoverImage] = useState("");
@@ -17,17 +23,17 @@ const AdminUpload = () => {
     const isAdmin = localStorage.getItem("isAdmin");
     if (!isAdmin) {
       navigate("/signin");
-      return;
+    } else {
+      fetchProjects();
     }
-
-    const fetchProjects = async () => {
-      const querySnapshot = await getDocs(collection(db, "portfolioProjects"));
-      const projects = querySnapshot.docs.map(doc => doc.data());
-      setProjectList(projects);
-    };
-
-    fetchProjects();
   }, [navigate]);
+
+  const fetchProjects = async () => {
+    const q = query(collection(db, "portfolioProjects"), orderBy("timestamp", "desc"));
+    const querySnapshot = await getDocs(q);
+    const projects = querySnapshot.docs.map((doc) => doc.data());
+    setProjectList(projects);
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("isAdmin");
@@ -53,21 +59,26 @@ const AdminUpload = () => {
 
   const saveProject = async () => {
     if (!coverImage || !innerImage) {
-      alert("Please upload both cover and inner images.");
+      alert("Upload both cover and inner images.");
       return;
     }
 
-    const newProject = { thumb: coverImage, full: innerImage };
-
     try {
+      const newProject = {
+        thumb: coverImage,
+        full: innerImage,
+        timestamp: Date.now(),
+      };
+
       await addDoc(collection(db, "portfolioProjects"), newProject);
-      setProjectList([...projectList, newProject]);
+      alert("Project saved to Firestore!");
+
       setCoverImage("");
       setInnerImage("");
-      alert("Project saved successfully!");
+      fetchProjects(); // Refresh list
     } catch (err) {
-      console.error("Error saving project:", err);
-      alert("Failed to save project.");
+      console.error("Error saving to Firestore:", err);
+      alert("Error saving project.");
     }
   };
 
@@ -75,32 +86,49 @@ const AdminUpload = () => {
     <div className="admin-container">
       <div className="bot-header">
         <div className="bot-greeting">
-          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="bot" />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png"
+            alt="bot"
+          />
           <span className="bot-text">👋 Hi Admin!</span>
         </div>
-        <button onClick={handleLogout} className="logout-btn">🚪 Logout</button>
+        <button onClick={handleLogout} className="logout-btn">
+          🚪 Logout
+        </button>
       </div>
 
       <h2 className="admin-title">📁 Admin Upload Panel</h2>
 
       <div className="upload-section">
         <div className="upload-box">
-          <button onClick={() => openWidget(setCoverImage)} className="upload-btn blue">
+          <button
+            onClick={() => openWidget(setCoverImage)}
+            className="upload-btn blue"
+          >
             Upload Cover Image
           </button>
-          {coverImage && <img src={coverImage} alt="Cover" className="preview-img" />}
+          {coverImage && (
+            <img src={coverImage} alt="Cover" className="preview-img" />
+          )}
         </div>
 
         <div className="upload-box">
-          <button onClick={() => openWidget(setInnerImage)} className="upload-btn green">
+          <button
+            onClick={() => openWidget(setInnerImage)}
+            className="upload-btn green"
+          >
             Upload Inner Image
           </button>
-          {innerImage && <img src={innerImage} alt="Inner" className="preview-img" />}
+          {innerImage && (
+            <img src={innerImage} alt="Inner" className="preview-img" />
+          )}
         </div>
       </div>
 
       <div className="button-group">
-        <button onClick={saveProject} className="action-btn primary">✅ Save Project</button>
+        <button onClick={saveProject} className="action-btn primary">
+          ✅ Save Project
+        </button>
       </div>
 
       <hr className="divider" />
@@ -109,8 +137,16 @@ const AdminUpload = () => {
       <div className="projects-grid">
         {projectList.map((item, index) => (
           <div key={index} className="project-card">
-            <img src={item.thumb} alt={`thumb-${index}`} className="project-img" />
-            <img src={item.full} alt={`full-${index}`} className="project-img" />
+            <img
+              src={item.thumb}
+              alt={`thumb-${index}`}
+              className="project-img"
+            />
+            <img
+              src={item.full}
+              alt={`full-${index}`}
+              className="project-img"
+            />
           </div>
         ))}
       </div>
