@@ -7,11 +7,6 @@ import Footer from '../../components/footer';
 import Scrollbar from '../../components/scrollbar';
 import Logo from '../../images/logo-3.png';
 
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { app } from '../../admin/firebaseConfig'; // <-- make sure this is your firebase config export
-
-const db = getFirestore(app);
-
 class PortfolioGridS2 extends Component {
     state = {
         isPopupOpen: false,
@@ -19,15 +14,20 @@ class PortfolioGridS2 extends Component {
         projectImages: []
     };
 
-    async componentDidMount() {
-        try {
-            const imagesSnapshot = await getDocs(collection(db, "portfolioProjects"));
-            const projectImages = imagesSnapshot.docs.map(doc => doc.data());
-            this.setState({ projectImages });
-        } catch (error) {
-            console.error("Error fetching images from Firestore:", error);
-        }
-    }
+    getImages = () => {
+        const savedImages = JSON.parse(localStorage.getItem("portfolioProjects")) || [];
+
+        // Fallback default static projects (optional)
+        const fallback = [
+            {
+                thumb: "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+                full: "https://res.cloudinary.com/demo/image/upload/sample.jpg"
+            }
+        ];
+
+        const images = savedImages.length > 0 ? savedImages : fallback;
+        this.setState({ projectImages: images });
+    };
 
     openPopup = (imageUrl) => {
         this.setState({ isPopupOpen: true, selectedImage: imageUrl });
@@ -45,31 +45,33 @@ class PortfolioGridS2 extends Component {
     };
 
     shareImage = () => {
-        const { selectedImage } = this.state;
         if (navigator.share) {
             navigator.share({
                 title: "Check out this project",
                 text: "Here's a project I liked:",
-                url: selectedImage
+                url: this.state.selectedImage
             }).catch(err => console.error("Error sharing: ", err));
         } else {
-            navigator.clipboard.writeText(selectedImage)
+            navigator.clipboard.writeText(this.state.selectedImage)
                 .then(() => alert("Link copied to clipboard for sharing!"))
                 .catch(err => console.error("Error copying link: ", err));
         }
     };
 
     saveImage = () => {
-        const { selectedImage } = this.state;
         const savedImages = JSON.parse(localStorage.getItem("savedImages")) || [];
-        if (!savedImages.includes(selectedImage)) {
-            savedImages.push(selectedImage);
+        if (!savedImages.includes(this.state.selectedImage)) {
+            savedImages.push(this.state.selectedImage);
             localStorage.setItem("savedImages", JSON.stringify(savedImages));
             alert("Image saved successfully!");
         } else {
             alert("Image already saved.");
         }
     };
+
+    componentDidMount() {
+        this.getImages();
+    }
 
     render() {
         const { isPopupOpen, selectedImage, projectImages } = this.state;
