@@ -5,8 +5,8 @@ import PageTitle from '../../components/pagetitle';
 import SectionTitle from '../../components/SectionTitle';
 import Footer from '../../components/footer';
 import Scrollbar from '../../components/scrollbar';
-
 import Logo from '../../images/logo-3.png';
+
 import pageTitleImage from '../../images/general-offers-cover-image.jpg';
 import typographyImage from '../../images/general-offer-inner-image-design.jpg';
 import typography from '../../images/nd-offer-inner-image-design.jpg';
@@ -37,8 +37,10 @@ import project25 from '../../images/ahc-letterhead-plus-branding-cover-image.png
 import project26 from '../../images/ahc-letterhead-plus-branding-inner-image.png';
 import project27 from '../../images/aggtc-brochure-cover-imagedesign.png';
 import project28 from '../../images/aggtc-brochure-inner-imagedesign.png';
-import project29 from '../../images/dental-post-inner-image1.png';
-import project30 from '../../images/dental-post-cover-image2.png';
+import project29 from '../../images/dental-post-cover-image2.png';
+import project30 from '../../images/dental-post-inner-image1.png';
+import project31 from '../../images/mabar-arab-trading-logo-cover-image.png';
+import project32 from '../../images/mabar-arab-trading-logo-inner-image.png';
 
 class PortfolioGridS2 extends Component {
     state = {
@@ -48,11 +50,9 @@ class PortfolioGridS2 extends Component {
     };
 
     getImages = () => {
-        // Try to get images from localStorage
-        const storedImages = JSON.parse(localStorage.getItem('portfolioImages') || '[]');
-
-        // Fallback hardcoded images
-        const fallbackImages = [
+        // Static images
+        const images = [
+            { thumb: project31, full: project32 },
             { thumb: project29, full: project30 },
             { thumb: project27, full: project28 },
             { thumb: project25, full: project26 },
@@ -71,8 +71,11 @@ class PortfolioGridS2 extends Component {
             { thumb: pageTitleImage, full: typographyImage },
         ];
 
-        // Combine uploaded images first, then fallback
-        this.setState({ projectImages: [...storedImages, ...fallbackImages] });
+        // Uploaded images from localStorage (admin)
+        const uploaded = JSON.parse(localStorage.getItem('uploaded-projects') || '[]');
+        const uploadedImages = uploaded.map(img => ({ thumb: img, full: img }));
+
+        this.setState({ projectImages: [...uploadedImages, ...images] });
     };
 
     openPopup = (imageUrl) => {
@@ -147,17 +150,29 @@ class PortfolioGridS2 extends Component {
                     </div>
                 </div>
 
+                {/* Popup Modal */}
                 {isPopupOpen && (
                     <div
                         className={`popup-modal ${isPopupOpen ? "open" : ""}`}
                         onClick={this.closePopup}
                     >
-                        <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+                        <div
+                            className="popup-content"
+                            onClick={(e) => e.stopPropagation()}
+                        >
                             <div className="popup-fixed-actions">
-                                <button onClick={this.generatePermalink}><FaLink /> Permalink</button>
-                                <button onClick={this.shareImage}><FaShareAlt /> Share</button>
-                                <button onClick={this.saveImage}><FaSave /> Save</button>
-                                <button className="close-btn" onClick={this.closePopup}><FaTimes /> Close</button>
+                                <button onClick={this.generatePermalink}>
+                                    <FaLink /> Permalink
+                                </button>
+                                <button onClick={this.shareImage}>
+                                    <FaShareAlt /> Share
+                                </button>
+                                <button onClick={this.saveImage}>
+                                    <FaSave /> Save
+                                </button>
+                                <button className="close-btn" onClick={this.closePopup}>
+                                    <FaTimes /> Close
+                                </button>
                             </div>
                             <img src={selectedImage} alt="Project Detail" />
                         </div>
