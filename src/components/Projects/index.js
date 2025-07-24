@@ -36,8 +36,10 @@ import project25 from '../../images/ahc-letterhead-plus-branding-cover-image.png
 import project26 from '../../images/ahc-letterhead-plus-branding-inner-image.png';
 import project27 from '../../images/aggtc-brochure-cover-imagedesign.png';
 import project28 from '../../images/aggtc-brochure-inner-imagedesign.png';
-import project29 from '../../images/dental-post-inner-image1.png';
-import project30 from '../../images/dental-post-cover-image2.png';
+import project29 from '../../images/dental-post-cover-image2.png';
+import project30 from '../../images/dental-post-inner-image1.png';
+import project31 from '../../images/mabar-arab-trading-logo-cover-image.png';
+import project32 from '../../images/mabar-arab-trading-logo-inner-image.png';
 
 
 
@@ -59,6 +61,8 @@ class ProjectSection extends Component {
 
   getImages = () => {
     const images = [
+      { thumb: project31, full: project32 }, 
+
       { thumb: project29, full: project30 }, 
 
       { thumb: project27, full: project28 }, 
