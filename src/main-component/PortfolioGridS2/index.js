@@ -6,7 +6,6 @@ import SectionTitle from '../../components/SectionTitle';
 import Footer from '../../components/footer';
 import Scrollbar from '../../components/scrollbar';
 import Logo from '../../images/logo-3.png';
-
 import pageTitleImage from '../../images/general-offers-cover-image.jpg';
 import typographyImage from '../../images/general-offer-inner-image-design.jpg';
 import typography from '../../images/nd-offer-inner-image-design.jpg';
