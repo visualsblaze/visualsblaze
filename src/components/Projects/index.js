@@ -90,7 +90,7 @@ const ProjectSection = () => {
               onClick={() => setIndex(i)}
               aria-label={`View ${p.title}`}
             >
-              <img src={p.thumb} alt={p.title} loading="lazy" />
+              <img src={p.thumb} alt={p.title} loading="eager" decoding="async" />
               <span className="vb-portfolio__overlay">
                 <span className="vb-portfolio__cat">{p.category}</span>
                 <span className="vb-portfolio__title">{p.title}</span>
