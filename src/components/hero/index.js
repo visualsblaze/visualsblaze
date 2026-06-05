@@ -102,7 +102,7 @@ const Hero = () => {
             <button onClick={handleDownload} className="vb-hero__btn vb-hero__btn--solid">
               <FaArrowDown /> Download Profile
             </button>
-            <Link href="/portfolio-grid-s2" className="vb-hero__btn vb-hero__btn--ghost">
+            <Link href="/portfolio" className="vb-hero__btn vb-hero__btn--ghost">
               View Work <FaArrowRight />
             </Link>
           </div>

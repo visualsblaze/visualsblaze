@@ -6,7 +6,7 @@ export const metadata = buildMetadata({
   title: 'Portfolio',
   description:
     'Browse the VisualsBlaze portfolio — branding, graphic design, print and digital projects delivered for clients across industries.',
-  path: '/portfolio-grid-s2',
+  path: '/portfolio',
 });
 
 export default function Page() {
@@ -15,7 +15,7 @@ export default function Page() {
       <JsonLd
         data={breadcrumbLd([
           { name: 'Home', path: '/' },
-          { name: 'Portfolio', path: '/portfolio-grid-s2' },
+          { name: 'Portfolio', path: '/portfolio' },
         ])}
       />
       <PortfolioGridS2 />

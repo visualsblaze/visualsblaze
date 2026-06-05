@@ -16,7 +16,7 @@ const pdfFile = '/images/VISUALS BLAZE PROFILE.pdf';
 const NAV_ITEMS = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
-  { name: 'Portfolio', path: '/portfolio-grid-s2' },
+  { name: 'Portfolio', path: '/portfolio' },
   { name: 'Services', path: '/service' },
   { name: 'Contact', path: '/contact' },
 ];

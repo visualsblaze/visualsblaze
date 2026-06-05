@@ -13,7 +13,7 @@ const Logo = '/images/footer-logo.png';
 const NAV_LINKS = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
-  { name: 'Portfolio', path: '/portfolio-grid-s2' },
+  { name: 'Portfolio', path: '/portfolio' },
   { name: 'Services', path: '/service' },
   { name: 'Contact', path: '/contact' },
 ];

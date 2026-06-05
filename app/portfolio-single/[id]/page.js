@@ -30,7 +30,7 @@ export default async function Page({ params }) {
       <JsonLd
         data={breadcrumbLd([
           { name: 'Home', path: '/' },
-          { name: 'Portfolio', path: '/portfolio-grid-s2' },
+          { name: 'Portfolio', path: '/portfolio' },
           { name: item.cTitle, path: `/portfolio-single/${item.Id}` },
         ])}
       />

@@ -8,7 +8,7 @@ export default function sitemap() {
     { path: '/', priority: 1.0, changeFrequency: 'weekly' },
     { path: '/about', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/service', priority: 0.9, changeFrequency: 'monthly' },
-    { path: '/portfolio-grid-s2', priority: 0.9, changeFrequency: 'weekly' },
+    { path: '/portfolio', priority: 0.9, changeFrequency: 'weekly' },
     { path: '/blog', priority: 0.7, changeFrequency: 'weekly' },
     { path: '/contact', priority: 0.6, changeFrequency: 'yearly' },
   ].map((r) => ({

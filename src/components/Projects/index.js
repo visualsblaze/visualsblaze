@@ -76,7 +76,7 @@ const ProjectSection = () => {
               Work we&apos;re <span>proud of</span>
             </h2>
           </div>
-          <Link href="/portfolio-grid-s2" className="vb-portfolio__all">
+          <Link href="/portfolio" className="vb-portfolio__all">
             View all <FaArrowRight />
           </Link>
         </div>

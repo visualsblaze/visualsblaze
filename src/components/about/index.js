@@ -74,7 +74,7 @@ const About = (props) => {
               know it must be <strong>perfectly designed</strong>. Whether it&apos;s graphics,
               ad layouts, video, animation or packaging, our work drives people to action.
             </p>
-            <Link onClick={ClickHandler} className="vb-about__btn" href="/portfolio-grid-s2">
+            <Link onClick={ClickHandler} className="vb-about__btn" href="/portfolio">
               View Projects <FaArrowRight />
             </Link>
           </div>
