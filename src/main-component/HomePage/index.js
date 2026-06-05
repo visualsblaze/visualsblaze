@@ -1,3 +1,4 @@
+'use client';
 import React, {Fragment} from 'react';
 import Navbar from '../../components/Navbar'
 import Hero from '../../components/hero';
@@ -13,7 +14,7 @@ import Tools from '../../components/about2'
 
 
 
-import Logo from '../../images/logo-3.png'
+const Logo = '/images/logo-3.png'
 
 
 const HomePage =() => {

@@ -1,0 +1,372 @@
+/*------------------------------------------------------------------
+  Modern floating glass-pill navbar (vb-nav)
+-------------------------------------------------------------------*/
+$vb-red: #aa2135;
+$vb-red-light: #ff4856;
+$vb-ink: #11151f;
+$vb-grad: linear-gradient(135deg, #ff4856 0%, #aa2135 100%);
+
+/* Prevent legacy full-width sections from causing horizontal scroll on mobile,
+   which would otherwise push the floating navbar's right edge off-screen. */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.vb-nav-wrap {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* The floating pill — white glass */
+.vb-nav {
+  max-width: 1200px;
+  margin: 18px auto 0;
+  padding: 10px 12px 10px 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-radius: 60px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(17, 21, 31, 0.06);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  box-shadow: 0 16px 44px rgba(17, 21, 31, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Brand */
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+
+    img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      /* Brand wordmark asset is white — darken it for the white pill */
+      filter: brightness(0);
+      transition: height 0.4s ease;
+    }
+
+    span {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      color: $vb-ink;
+    }
+  }
+
+  /* Center nav */
+  &__menu {
+    position: relative;
+    margin: 0 auto;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      color: rgba(17, 21, 31, 0.72);
+      text-decoration: none;
+      border-radius: 40px;
+      transition: color 0.3s ease;
+      white-space: nowrap;
+
+      &:hover,
+      &.is-active {
+        color: #fff;
+      }
+    }
+  }
+
+  /* Sliding indicator pill */
+  &__pill {
+    position: absolute;
+    top: 50%;
+    height: 40px;
+    transform: translateY(-50%);
+    border-radius: 40px;
+    background: $vb-grad;
+    box-shadow: 0 8px 20px rgba(170, 33, 53, 0.4);
+    transition: left 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+      width 0.38s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Right actions */
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  &__burger {
+    display: none;
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(17, 21, 31, 0.06);
+    color: $vb-ink;
+    font-size: 22px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.35s ease, color 0.25s ease;
+
+    &:hover {
+      transform: rotate(90deg);
+      background: $vb-grad;
+      color: #fff;
+    }
+  }
+}
+
+/* Gradient CTA pill */
+.vb-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  background: $vb-grad;
+  box-shadow: 0 10px 24px rgba(170, 33, 53, 0.32);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  svg {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(170, 33, 53, 0.45);
+    color: #fff;
+
+    svg {
+      transform: translateY(2px);
+    }
+  }
+}
+
+/* Overlay the top of the page so the white pill floats over the hero / header. */
+.fixed-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+
+  &.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    animation: vbSlideDown 0.45s ease;
+
+    .vb-nav {
+      margin-top: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 18px 50px rgba(17, 21, 31, 0.16);
+    }
+
+    .vb-nav__brand img {
+      height: 40px;
+    }
+  }
+}
+
+@keyframes vbSlideDown {
+  from { transform: translateY(-120%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ---------------- Mobile drawer ---------------- */
+.vb-drawer__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 10, 18, 0.5);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  z-index: 1199;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.vb-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 330px;
+  max-width: 88vw;
+  background: #0b0d14;
+  z-index: 1200;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(105%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -20px 0 50px rgba(8, 10, 18, 0.4);
+
+  &.is-open {
+    transform: translateX(0);
+
+    nav a {
+      animation: vbDrawerIn 0.5s both;
+      animation-delay: calc(0.08s * var(--i) + 0.15s);
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    img {
+      height: 42px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    button {
+      border: none;
+      background: rgba(255, 255, 255, 0.08);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover { background: $vb-red; }
+    }
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+  }
+
+  nav a {
+    display: flex;
+    align-items: center;
+    padding: 15px 6px;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    transition: color 0.2s ease, padding 0.25s ease;
+
+    &:hover,
+    &.is-active {
+      color: #fff;
+      padding-left: 14px;
+    }
+
+    &.is-active span {
+      background: $vb-grad;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__cta {
+    width: 100%;
+    justify-content: center;
+    margin-top: 24px;
+  }
+
+  &__socials {
+    margin-top: auto;
+    padding-top: 24px;
+    display: flex;
+    gap: 12px;
+
+    a {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.07);
+      font-size: 16px;
+      transition: all 0.25s ease;
+
+      &:hover {
+        background: $vb-grad;
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+@keyframes vbDrawerIn {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .vb-nav {
+    margin: 12px 14px 0;
+    padding: 9px 9px 9px 18px;
+    justify-content: space-between;
+  }
+  .vb-nav__brand { min-width: 0; }
+  .vb-nav__brand img { height: 36px; max-width: 60vw; }
+  .vb-nav__menu { display: none; }
+  .vb-nav__burger { display: inline-flex; }
+  /* Top-bar CTA hidden on mobile — Profile lives inside the drawer */
+  .vb-nav__actions .vb-cta { display: none; }
+  .vb-nav__actions { margin-left: 0; }
+  .fixed-navbar.active .vb-nav { margin-top: 10px; }
+}
+
+@media (max-width: 575px) {
+  .vb-nav__brand img { height: 32px; }
+}

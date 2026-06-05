@@ -481,7 +481,7 @@
 
 
 .wpo-hero-section-2{
-	background: url(../../images/slider/slide.jpg) no-repeat center top / cover;
+	background: url(/images/slider/slide.jpg) no-repeat center top / cover;
 	overflow: hidden;
 	position: relative;
 	height: 1000px;
@@ -970,7 +970,7 @@
 // wpo-hero-section-3
 
 .wpo-hero-section-4{
-	background: url(../../images/slider/slide2.jpg) no-repeat center top / cover;
+	background: url(/images/slider/slide2.jpg) no-repeat center top / cover;
 
 	@media(max-width:991px){
 	 background: $dark-gray;

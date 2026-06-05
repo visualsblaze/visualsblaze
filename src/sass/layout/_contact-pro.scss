@@ -1,0 +1,275 @@
+/*------------------------------------------------------------------
+  Upgraded contact section (vb-contact)
+-------------------------------------------------------------------*/
+$c-red: #aa2135;
+$c-red-light: #ff4856;
+$c-ink: #11151f;
+$c-grad: linear-gradient(135deg, #ff4856 0%, #aa2135 100%);
+
+.vb-contact {
+  position: relative;
+  padding: 110px 0 0;
+  background: #f6f7fb;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  &__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(95px);
+    opacity: 0.16;
+
+    &--1 { width: 440px; height: 440px; top: -130px; right: -120px; background: $c-red-light; }
+    &--2 { width: 360px; height: 360px; bottom: 120px; left: -120px; background: #ffb100; opacity: 0.12; }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 28px 110px;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  &__dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+
+  /* ---------- Info cards ---------- */
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 28px 26px;
+    border-radius: 20px;
+    background: #fff;
+    border: 1px solid rgba(17, 21, 31, 0.06);
+    box-shadow: 0 10px 30px rgba(17, 21, 31, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 46px rgba(170, 33, 53, 0.14);
+    }
+
+    h3 { margin: 0; font-size: 1.05rem; font-weight: 800; color: $c-ink; }
+    p, a {
+      margin: 6px 0 0;
+      display: block;
+      font-size: 0.96rem;
+      color: #6a7180;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover { color: $c-red; }
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    width: 58px;
+    height: 58px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-size: 22px;
+    color: #fff;
+    background: $c-grad;
+    box-shadow: 0 12px 26px rgba(170, 33, 53, 0.28);
+  }
+
+  /* ---------- Main: aside + form ---------- */
+  &__main {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(17, 21, 31, 0.12);
+  }
+
+  &__aside {
+    position: relative;
+    padding: 54px 46px;
+    background: $c-grad;
+    color: #fff;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      bottom: -140px;
+      left: -90px;
+    }
+
+    h2 {
+      position: relative;
+      margin: 20px 0 0;
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      font-weight: 900;
+      line-height: 1.18;
+
+      span { color: #ffe39a; }
+    }
+
+    p {
+      position: relative;
+      margin: 16px 0 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  &__social {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+
+    a {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.16);
+      transition: background 0.25s ease, transform 0.25s ease;
+
+      &:hover { background: #fff; color: $c-red; transform: translateY(-3px); }
+    }
+  }
+
+  &__form {
+    padding: 54px 46px;
+    background: #fff;
+
+    > h3 {
+      margin: 0 0 26px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: $c-ink;
+    }
+
+    /* Restyle the embedded ContactForm markup */
+    .form .row { display: flex; flex-wrap: wrap; margin: 0 -10px; }
+    .form .col-lg-6 { width: 50%; padding: 0 10px; }
+    .form .col-lg-12 { width: 100%; padding: 0 10px; }
+
+    .form-field {
+      margin-bottom: 18px;
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(17, 21, 31, 0.12);
+        background: #f8f9fb;
+        font-size: 0.95rem;
+        color: $c-ink;
+        font-family: inherit;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+        &::placeholder { color: #9aa1ad; }
+
+        &:focus {
+          outline: none;
+          background: #fff;
+          border-color: $c-red-light;
+          box-shadow: 0 0 0 3px rgba(255, 72, 86, 0.12);
+        }
+      }
+
+      textarea { min-height: 130px; resize: vertical; }
+
+      p { margin: 6px 0 0; font-size: 0.8rem; color: $c-red; }
+    }
+
+    .theme-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+      padding: 15px 38px;
+      border: none;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      background: $c-grad;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(170, 33, 53, 0.3);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+      &:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 38px rgba(170, 33, 53, 0.42);
+      }
+
+      &:disabled { opacity: 0.7; cursor: not-allowed; }
+    }
+  }
+
+  /* ---------- Map ---------- */
+  &__map {
+    position: relative;
+    z-index: 1;
+    line-height: 0;
+
+    iframe {
+      width: 100%;
+      height: 460px;
+      border: 0;
+      filter: grayscale(0.2);
+    }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 991px) {
+    padding-top: 80px;
+
+    .vb-contact__main { grid-template-columns: 1fr; }
+    .vb-contact__aside { padding: 40px 34px; }
+    .vb-contact__form { padding: 40px 34px; }
+  }
+
+  @media (max-width: 575px) {
+    .vb-contact__inner { padding: 0 20px 80px; }
+    .vb-contact__form .col-lg-6 { width: 100%; }
+    .vb-contact__aside,
+    .vb-contact__form { padding: 32px 22px; }
+    .vb-contact__map iframe { height: 340px; }
+  }
+}

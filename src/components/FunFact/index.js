@@ -1,154 +1,123 @@
+'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import { FaRegClock, FaGlobeAmericas, FaRegSmile, FaRocket } from 'react-icons/fa';
 
-// FunFactSection Component
-const FunFactSection = (props) => {
-  const boxRefs = useRef([]); // Refs for each box element
-  const observerRef = useRef(null); // To store the IntersectionObserver instance
-  const [visibleBoxes, setVisibleBoxes] = useState([]); // State to track visible boxes
+const STATS = [
+  { value: 5, suffix: '+', label: 'Years of Experience', icon: <FaRegClock /> },
+  { value: 2, suffix: '+', label: 'Countries Served', icon: <FaGlobeAmericas /> },
+  { value: 100, suffix: '%', label: 'Client Satisfaction', icon: <FaRegSmile /> },
+  { value: 100, suffix: '%', label: 'Projects Delivered', icon: <FaRocket /> },
+];
 
-  const handleVisibilityChange = (entries) => {
-      entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-              setVisibleBoxes((prev) => [...prev, entry.target]);
-              observerRef.current?.unobserve(entry.target); // Stop observing once visible
-          }
-      });
-  };
+const CLIENT_LOGOS = [
+  'enstpos logo.png',
+  'alpha healthcare logo.png',
+  'nawni logo.png',
+  'apni dukan wala logo.png',
+  'eboxx nde logo.png',
+  'elde clare logo.png',
+  'glam own logo.png',
+  'hazbi fashion logo.png',
+  'helix logo.png',
+  'international dental logo.png',
+  'pak n pure logo.png',
+  'smile kingdom logo.png',
+  'utam industries logo.png',
+  'rida fatima logo.png',
+  'zayon logo.png',
+];
+
+// Animated count-up that fires once the element scrolls into view.
+const CountUp = ({ end, suffix = '', duration = 1600 }) => {
+  const [val, setVal] = useState(0);
+  const ref = useRef(null);
+  const started = useRef(false);
 
   useEffect(() => {
-      observerRef.current = new IntersectionObserver(handleVisibilityChange, {
-          threshold: 0.5, // Trigger when 50% of the element is visible
-      });
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting && !started.current) {
+            started.current = true;
+            const start = performance.now();
+            const tick = (now) => {
+              const p = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - p, 3);
+              setVal(Math.round(eased * end));
+              if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+            io.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [end, duration]);
 
-      boxRefs.current.forEach((ref) => {
-          if (ref) observerRef.current.observe(ref);
-      });
+  return (
+    <span ref={ref}>
+      {val}
+      {suffix}
+    </span>
+  );
+};
 
-      return () => {
-          observerRef.current?.disconnect();
-      };
-  }, []);
+const FunFact = () => {
+  const marquee = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
-    return (
-     <section className={`wpo-fun-fact-section ${props.fClass}`}>
-      <div className="row">
-        <div className="col col-xs-12">
-          <div className="wpo-fun-fact-grids">
-            {['fun-fact-box', 'fun-fact-box1', 'fun-fact-box2', 'fun-fact-box3'].map((boxClass, index) => (
-              <div
-                key={index}
-                ref={(el) => (boxRefs.current[index] = el)}
-                className={`fun-fact-box ${visibleBoxes.includes(boxRefs.current[index]) ? 'flip-horizontal' : ''} ${boxClass}`}
-              >
-                <div className="icon">
-                  <img
-                    src={`${process.env.PUBLIC_URL}/${boxClass.includes('box1') ? 'map' : boxClass.includes('box2') ? 'happy' : boxClass.includes('box3') ? 'project': 'experience'}-icon.png`}
-                    alt={`${boxClass} Icon`}
-                  />
-                </div>
-                <h3>{index === 0 ? '5+' : index === 1 ? '2+' : '100%'}</h3>
-                <p>
-  {index === 0
-    ? 'Years\nExperience'.split('\n').map((line, i) => (
-        <span key={i}>
-          {line}
-          {i < 1 && <br />}
-        </span>
-      ))
-    : index === 1
-    ? 'Countries\nServed'.split('\n').map((line, i) => (
-        <span key={i}>
-          {line}
-          {i < 1 && <br />}
-        </span>
-      ))
-    : index === 2
-    ? 'Client\nSatisfied'.split('\n').map((line, i) => (
-        <span key={i}>
-          {line}
-          {i < 1 && <br />}
-        </span>
-      ))
-    : 'Project\nDelivered'.split('\n').map((line, i) => (
-        <span key={i}>
-          {line}
-          {i < 1 && <br />}
-        </span>
-      ))}
-</p>
+  return (
+    <>
+      {/* Stats band */}
+      <section className="vb-funfact">
+        <div className="vb-funfact__bg" aria-hidden="true">
+          <span className="vb-funfact__orb vb-funfact__orb--1" />
+          <span className="vb-funfact__orb vb-funfact__orb--2" />
+          <span className="vb-funfact__grid" />
+        </div>
 
+        <div className="vb-funfact__inner">
+          {STATS.map((s) => (
+            <div className="vb-funfact__stat" key={s.label}>
+              <div className="vb-funfact__icon">{s.icon}</div>
+              <h3>
+                <CountUp end={s.value} suffix={s.suffix} />
+              </h3>
+              <p>{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
+      {/* Client logos */}
+      <section className="vb-clients">
+        <div className="vb-clients__inner">
+          <div className="vb-clients__head">
+            <span className="vb-clients__eyebrow">
+              <span className="vb-clients__dot" /> Trusted By
+            </span>
+            <h2>
+              Our Precious <span>Clients</span>
+            </h2>
+          </div>
+        </div>
 
+        <div className="vb-clients__marquee">
+          <div className="vb-clients__track">
+            {marquee.map((logo, i) => (
+              <div className="vb-clients__logo" key={i}>
+                <img src={`/${logo}`} alt="Client logo" />
               </div>
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
-const ClientLogoSlider = () => {
-    const logos = [
-    { src: `${process.env.PUBLIC_URL}/enstpos logo.png`, alt: "Client 1" },
-    { src: `${process.env.PUBLIC_URL}/alpha healthcare logo.png`, alt: "Client 2" },
-    { src: `${process.env.PUBLIC_URL}/nawni logo.png`, alt: "Client 3" },
-    { src: `${process.env.PUBLIC_URL}/apni dukan wala logo.png`, alt: "Client 5" },
-    { src: `${process.env.PUBLIC_URL}/eboxx nde logo.png`, alt: "Client 6" },
-    { src: `${process.env.PUBLIC_URL}/elde clare logo.png`, alt: "Client 7" },
-    { src: `${process.env.PUBLIC_URL}/glam own logo.png`, alt: "Client 8" },
-    { src: `${process.env.PUBLIC_URL}/hazbi fashion logo.png`, alt: "Client 9" },
-    { src: `${process.env.PUBLIC_URL}/helix logo.png`, alt: "Client 10" },
-    { src: `${process.env.PUBLIC_URL}/international dental logo.png`, alt: "Client 11" },
-    { src: `${process.env.PUBLIC_URL}/pak n pure logo.png`, alt: "Client 12" },
-    { src: `${process.env.PUBLIC_URL}/smile kingdom logo.png`, alt: "Client 14" },
-    { src: `${process.env.PUBLIC_URL}/utam industries logo.png`, alt: "Client 15" },
-    { src: `${process.env.PUBLIC_URL}/rida fatima logo.png`, alt: "Client 16" },
-    { src: `${process.env.PUBLIC_URL}/zayon logo.png`, alt: "Client 17" },
-
-
-
-
-    ];
-
-    const sliderSettings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: window.innerWidth <= 768 ? 1 : 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows: true,
-    };
-
-    return (
-        <section className="client-logo-slider">
-            <div className="container">
-            <h2>
-      <span style={{ color: 'white' }}>Our Precious</span>
-      <span style={{ color: '#ffb100' }}> Clients</span>
-    </h2>
-                <Slider {...sliderSettings}>
-                    {logos.map((logo, index) => (
-                        <div key={index} className="logo-slide">
-                            <img src={logo.src} alt={logo.alt} />
-                        </div>
-                    ))}
-                </Slider>
-            </div>
-        </section>
-    );
-};
-
-const App = () => (
-    <>
-        <FunFactSection />
-        <ClientLogoSlider />
-    </>
-);
-
-export default App;
+export default FunFact;

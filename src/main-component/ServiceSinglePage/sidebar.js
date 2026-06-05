@@ -1,6 +1,7 @@
+'use client';
 import React from 'react'
 import Services from '../../api/service';
-import {Link} from  'react-router-dom'
+import Link from 'next/link'
 
 const ServiceSidebar = (props) => {
 
@@ -19,7 +20,7 @@ const ServiceSidebar = (props) => {
                     <h2>All Services</h2>
                     <ul>
                         {Services.map((service, Sitem) => (
-                            <li key={Sitem}><Link onClick={ClickHandler} to={`/service-single/${service.Id}`}>{service.sTitle}</Link></li>
+                            <li key={Sitem}><Link onClick={ClickHandler} href={`/service-single/${service.Id}`}>{service.sTitle}</Link></li>
                         ))}
                     </ul>
                 </div>
@@ -30,7 +31,7 @@ const ServiceSidebar = (props) => {
                         <input type="email" placeholder="Email Address" required/>
                         <button type="submit">Sign Up</button>
                     </form>
-                    <span>By signing up you agree to our <Link to="#">Privecy Policy</Link></span>
+                    <span>By signing up you agree to our <Link href="#">Privecy Policy</Link></span>
                 </div>
                 <div className="wpo-instagram-widget widget">
                     <h2>Instagram Shot</h2>
@@ -43,7 +44,7 @@ const ServiceSidebar = (props) => {
                 <div className="wpo-contact-widget widget">
                     <h2>How We Can <br/> Help You!</h2>
                     <p>labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                    <Link to="/contact">Contact Us</Link>
+                    <Link href="/contact">Contact Us</Link>
                 </div>
             </div>
         </div>

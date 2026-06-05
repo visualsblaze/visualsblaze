@@ -1,4 +1,6 @@
+'use client';
 import React, { Component } from 'react'
+import { toast } from 'react-toastify'
 
 
 class ContactForm extends Component {
@@ -7,10 +9,9 @@ class ContactForm extends Component {
     state = {
         name: '',
         email: '',
-        subject: '',
         lastname: '',
-        events: '',
-        notes: '',
+        message: '',
+        submitting: false,
         error: {}
     }
 
@@ -25,58 +26,51 @@ class ContactForm extends Component {
         })
     }
 
-    subimtHandler = (e) => {
+    subimtHandler = async (e) => {
         e.preventDefault();
 
-        const { name,
-            email,
-            subject,
-            lastname,
-            events,
-            notes, error } = this.state;
+        const { name, email, lastname, message } = this.state;
+        const error = {};
 
-        if (name === '') {
-            error.name = "Please enter your name";
-        }
-        if (email === '') {
-            error.email = "Please enter your email";
-        }
-        if (subject === '') {
-            error.subject = "Please enter your subject";
-        }
-        if (lastname === '') {
-            error.lastname = "Please enter your Lastname";
-        }
-        if (events === '') {
-            error.events = "Select your event list";
-        }
-        if (notes === '') {
-            error.notes = "Please enter your note";
+        if (name === '') error.name = "Please enter your name";
+        if (lastname === '') error.lastname = "Please enter your Lastname";
+        if (email === '') error.email = "Please enter your email";
+        if (message === '') error.message = "Please enter your message";
+
+        if (Object.keys(error).length) {
+            this.setState({ error });
+            return;
         }
 
-
-        if (error) {
-            this.setState({
-                error
-            })
-        }
-        if (error.name === '' && error.email === '' && error.email === '' && error.lastname === '' && error.subject === '' && error.events === '' && error.notes === '') {
-            this.setState({
-                name: '',
-                email: '',
-                subject: '',
-                events: '',
-                notes: '',
-                error: {}
-            })
+        this.setState({ submitting: true, error: {} });
+        try {
+            const res = await fetch('/api/sendAppointment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: `${name} ${lastname}`.trim(),
+                    email,
+                    message,
+                    service: 'Contact form enquiry',
+                }),
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.message || 'Something went wrong');
+            toast.success(data.message || 'Your message has been sent.');
+            this.setState({ name: '', email: '', lastname: '', message: '', error: {} });
+        } catch (err) {
+            toast.error(err.message || 'Failed to send your message.');
+        } finally {
+            this.setState({ submitting: false });
         }
     }
 
     render(){
         const { name,
             email,
-            subject,
+            message,
             lastname,
+            submitting,
             error } = this.state;
 
         return(
@@ -100,27 +94,17 @@ class ContactForm extends Component {
                             <p>{error.email ? error.email : ''}</p>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-md-6 col-12">
-                        <div className="form-field">
-                            {/* <select className="form-control" onChange={this.changeHandler} value={subject} type="text" name="subject">
-                                <option >Subject</option>
-                                <option>Family Law</option>
-                                <option>Personal Injury</option>
-                                <option>Criminal Law</option>
-                                <option>Education Law</option>
-                                <option>Business Law</option>
-                            </select> */}
-                            <p>{error.subject ? error.subject : ''}</p>
-                        </div>
-                    </div>
                     <div className="col-lg-12">
                         <div className="form-field">
-                            <textarea name="message" placeholder="Message"></textarea>
+                            <textarea value={message} onChange={this.changeHandler} name="message" placeholder="Message"></textarea>
+                            <p>{error.message ? error.message : ''}</p>
                         </div>
                     </div>
                     <div className="col-lg-12">
                         <div className="form-submit">
-                            <button type="submit" className="theme-btn">Send Message</button>
+                            <button type="submit" className="theme-btn" disabled={submitting}>
+                                {submitting ? 'Sending...' : 'Send Message'}
+                            </button>
                         </div>
                     </div>
                 </div>

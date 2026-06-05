@@ -1,71 +1,88 @@
+'use client';
 import React from 'react';
-import brandingImage from '../../images/branding design.png';
-import motionDesignImage from '../../images/motion design.png';
-import creativeDesignImage from '../../images/creative design.png';
-import videoEditingImage from '../../images/video editing.png';
-import uiUxImage from '../../images/mobile & web design.png';
+import Link from 'next/link';
+import {
+  FaFingerprint,
+  FaFilm,
+  FaRegLightbulb,
+  FaVideo,
+  FaMobileAlt,
+  FaArrowRight,
+} from 'react-icons/fa';
+
+const TOOLS = [
+  {
+    icon: <FaFingerprint />,
+    title: 'Branding Design',
+    desc: 'Unique logos, colour palettes and visual identities that leave a lasting impression.',
+  },
+  {
+    icon: <FaFilm />,
+    title: 'Motion Design',
+    desc: 'Dynamic animations and engaging visuals that bring your story to life.',
+  },
+  {
+    icon: <FaRegLightbulb />,
+    title: 'Creative Design',
+    desc: 'From illustrations to custom graphics, designs that inspire and stand out.',
+  },
+  {
+    icon: <FaVideo />,
+    title: 'Video Editing',
+    desc: 'Raw footage transformed into compelling, polished videos with real impact.',
+  },
+  {
+    icon: <FaMobileAlt />,
+    title: 'Mobile & Web UI/UX',
+    desc: 'Seamless, intuitive experiences for apps and websites that captivate users.',
+  },
+];
 
 const About2 = () => {
-    return (
-        <section className="wpo-about-section-s2">
-            <div className="container">
-                <div className="title-section">
-                    <h2 className="section-titles">Services</h2>
-                    <p className="subtitles">
-                    The way we do things in our  <br />line of work
-                    </p>
+  const ClickHandler = () => window.scrollTo(10, 0);
 
-                </div>
-                <div className="services-grid">
-                    <div className="service-card service-card1">
-                        <div className="service-image">
-                            <img src={brandingImage} alt="Branding Design" />
-                        </div>
-                        <h3 className="service-title">Branding Design</h3>
-                        <p className="service-description">
-                        Elevate your brand with unique logos, color palettes, and visual identities that leave a lasting impression.
-                        </p>
-                    </div>
-                    <div className="service-card service-card2">
-                        <div className="service-image">
-                            <img src={motionDesignImage} alt="Motion Design" />
-                        </div>
-                        <h3 className="service-title">Motion Design</h3>
-                        <p className="service-description">
-                        Bring your story to life with dynamic animations and engaging visuals that move audiences.
-                        </p>
-                    </div>
-                    <div className="service-card service-card3">
-                        <div className="service-image">
-                            <img src={creativeDesignImage} alt="Creative Design" />
-                        </div>
-                        <h3 className="service-title">Creative Design</h3>
-                        <p className="service-description">
-                        From illustrations to custom graphics, we deliver designs that inspire and stand out. Let’s craft something extraordinary together!
-                        </p>
-                    </div>
-                    <div className="service-card service-card4">
-                        <div className="service-image">
-                            <img src={videoEditingImage} alt="Video Editing" />
-                        </div>
-                        <h3 className="service-title">Video Editing</h3>
-                        <p className="service-description">
-                        Transform raw footage into compelling, polished videos that tell your story with impact
-                        </p>
-                    </div>
-                    <div className="service-card service-card5">
-                        <div className="service-image">
-                            <img src={uiUxImage} alt="Mobile & Web UI/UX Design" />
-                        </div>
-                        <h3 className="service-title">Mobile & Web UI/UX Design</h3>
-                        <p className="service-description">
-                        Design seamless and intuitive user experiences for your apps and websites that captivate and engage.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section className="vb-tools">
+      <div className="vb-tools__bg" aria-hidden="true">
+        <span className="vb-tools__glow" />
+      </div>
+
+      <div className="vb-tools__inner">
+        <div className="vb-tools__head">
+          <span className="vb-tools__eyebrow">
+            <span className="vb-tools__dot" /> What We Do
+          </span>
+          <h2>
+            The way we do things in <span>our line of work</span>
+          </h2>
+          <p>
+            Five core craft areas, one obsession — making your brand impossible to
+            ignore.
+          </p>
+        </div>
+
+        <div className="vb-tools__grid">
+          {TOOLS.map((t, i) => (
+            <article className="vb-tools__card" key={t.title}>
+              <span className="vb-tools__num">{String(i + 1).padStart(2, '0')}</span>
+              <div className="vb-tools__icon">{t.icon}</div>
+              <h3>{t.title}</h3>
+              <p>{t.desc}</p>
+            </article>
+          ))}
+
+          {/* CTA tile */}
+          <article className="vb-tools__card vb-tools__card--cta">
+            <h3>Ready to start a project?</h3>
+            <p>Tell us what you have in mind and let&apos;s create something remarkable.</p>
+            <Link href="/contact" onClick={ClickHandler} className="vb-tools__cta-btn">
+              Get in touch <FaArrowRight />
+            </Link>
+          </article>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default About2;

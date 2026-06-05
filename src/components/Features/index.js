@@ -1,104 +1,97 @@
-import React from 'react'
-import SectionTitle from '../SectionTitle'
+'use client';
+import React from 'react';
+import { FaLightbulb, FaCalculator, FaPencilRuler, FaRocket } from 'react-icons/fa';
 
-import fIcon1 from '../../images/work/creating-a-concept-icon.png'
-import fIcon2 from '../../images/work/budget-planning-icon.png'
-import fIcon3 from '../../images/work/design-process-icon.png'
-import fIcon4 from '../../images/work/building-your-dream-icon.png'
-import fIcon5 from '../../images/mission-icons.png'
-import fIcon6 from '../../images/vision-icons.png'
+const missionImg = '/images/mission-icons.png';
+const visionImg = '/images/vision-icons.png';
 
+const MISSION_VISION = [
+  {
+    id: 'mission',
+    label: 'Our Mission',
+    image: missionImg,
+    description:
+      'To harness the transformative power of visual communication so businesses connect authentically with their audience — pushing creative boundaries with innovative, impactful design that elevates brands and inspires meaningful engagement.',
+  },
+  {
+    id: 'vision',
+    label: 'Our Vision',
+    image: visionImg,
+    description:
+      'To be a catalyst for positive change, empowering brands to tell their stories with clarity, creativity and purpose. Through collaboration, diversity and staying ahead of design trends, we shape a vibrant, visually compelling future for our clients.',
+  },
+];
 
+const STEPS = [
+  {
+    icon: <FaLightbulb />,
+    title: 'Creating a Concept',
+    desc: 'We dig into your brand, goals and audience to shape a clear creative direction.',
+  },
+  {
+    icon: <FaCalculator />,
+    title: 'Budget Planning',
+    desc: 'A transparent plan and timeline, so you always know exactly what to expect.',
+  },
+  {
+    icon: <FaPencilRuler />,
+    title: 'Design Process',
+    desc: 'Ideas come to life through iterative design, feedback and careful refinement.',
+  },
+  {
+    icon: <FaRocket />,
+    title: 'Building Your Dream',
+    desc: 'We deliver polished, ready-to-launch work that makes your brand truly shine.',
+  },
+];
 
 const Features = (props) => {
-    const missionVision = [
-        {
-            id: 'mission',
-            title: 'MISSION',
-            image: fIcon5, // Replace with your mission image
-            description: 'Our mission at our graphic design agency is to harness the transformative power of visual communication to help businesses connect authentically with their audience. We strive to push creative boundaries, delivering innovative and impactful design solutions that not only elevate brands but also inspire meaningful engagement.'
-        },
-        {
-            id: 'vision',
-            title: 'VISION',
-            image: fIcon6, // Replace with your vision image
-            description: 'Our vision is to be a catalyst for positive change, empowering brands to tell their stories with clarity, creativity, and purpose. By fostering collaboration, embracing diversity, and staying at the forefront of design trends and technologies, we aim to shape a vibrant and visually compelling future for our clients and their audiences.'
-        }
-    ];
-     const featres = [
-         {
-            fIcon:fIcon1,
-            title:'Creating a Concept',
-         },
-         {
-            fIcon:fIcon2,
-            title:'Budget Planning',   
-         },
-         {
-            fIcon:fIcon3,
-            title:'Design Process',    
-         },
-         {
-            fIcon:fIcon4,
-            title:'Building Your Dream',    
-         },
-         
-     ]
+  return (
+    <section className={`vb-features ${props.wClass || ''}`}>
+      <div className="vb-features__bg" aria-hidden="true">
+        <span className="vb-features__glow" />
+      </div>
 
-
-    return(
-        <section className={`wpo-work-section section-padding ${props.wClass}`}>
-        <div className="container">
-        <div className="row">
-    {missionVision.map((item) => (
-          <div className="col col-lg-6 col-md-12" key={item.id}>
-        <div className="mission-vision-item" key={item.id}>
-            <div
-                className="mission-vision-icon yellow-line "
-                data-title={item.title}
-            >
-                <h2>{item.title}</h2>
-                <img className='flip-horizontal' src={item.image} alt={item.title} />
-            </div>
-            <div className="mission-vision-content">
-                <p>
-                    <span className="highlight">
-                        {item.description.split(" ").slice(0, 2).join(" ")}
-                    </span>{" "}
-                    {item.description.split(" ").slice(2).join(" ")}
-                </p>
-            </div>
-        </div>
+      <div className="vb-features__inner">
+        {/* Mission & Vision */}
+        <div className="vb-features__mv">
+          {MISSION_VISION.map((item) => (
+            <article className={`vb-features__mv-card vb-features__mv-card--${item.id}`} key={item.id}>
+              <div className="vb-features__mv-icon">
+                <img src={item.image} alt={item.label} />
+              </div>
+              <div className="vb-features__mv-body">
+                <span className="vb-features__badge">{item.label}</span>
+                <p>{item.description}</p>
+              </div>
+            </article>
+          ))}
         </div>
 
-    ))}
-</div>
-            </div>
-            <div className="container">
-                <SectionTitle subTitle={'Working Process'} MainTitle={'How We Do Our Work Plan'} vTitle={'Work'}/>
-                <div className="wpo-work-wrap">
-                    <div className="row">
-                        {featres.map((featres, fitem) => (
-                            <div className="col col-lg-3 col-md-6 col-12" key={fitem}> 
-                                <div className="wpo-work-iem">
-                                    <div className="wpo-work-icon-wrap">
-                                        <div className="wpo-work-icon flip-horizontal">
-                                            <img src={featres.fIcon} className='wp-icon' alt=""/>
-                                        </div>
-                                       
-                                    </div>
-                                    <div className="wpo-work-text flip-horizontal">
-                                    <h4 style={{ textTransform: 'uppercase' }}>{featres.title}</h4>
+        {/* Working process */}
+        <div className="vb-features__head">
+          <span className="vb-features__eyebrow">
+            <span className="vb-features__dot" /> Working Process
+          </span>
+          <h2>
+            How we turn ideas into <span>impact</span>
+          </h2>
+          <p>A simple, transparent process that takes you from first spark to launch.</p>
+        </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+        <div className="vb-features__steps">
+          {STEPS.map((s, i) => (
+            <div className="vb-features__step" key={s.title}>
+              <span className="vb-features__step-num">{String(i + 1).padStart(2, '0')}</span>
+              <div className="vb-features__step-icon">{s.icon}</div>
+              <h4>{s.title}</h4>
+              <p>{s.desc}</p>
             </div>
-        </section>
-    )
-}
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Features;

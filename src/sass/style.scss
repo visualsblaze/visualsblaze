@@ -102,5 +102,18 @@ Version:        1.0.0
 
 @import "page/_error-404";
 
+// Upgraded, professional navbar, hero & footer (override legacy styles)
+@import "layout/navbar-pro";
+@import "layout/hero-pro";
+@import "layout/tools-pro";
+@import "layout/features-pro";
+@import "layout/funfact-pro";
+@import "layout/portfolio-pro";
+@import "layout/socialproof-pro";
+@import "layout/services-pro";
+@import "layout/about-pro";
+@import "layout/contact-pro";
+@import "layout/footer-pro";
+
 
 

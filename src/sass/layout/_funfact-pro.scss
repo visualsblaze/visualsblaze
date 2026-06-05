@@ -1,0 +1,233 @@
+/*------------------------------------------------------------------
+  Upgraded stats band + client marquee (vb-funfact / vb-clients)
+-------------------------------------------------------------------*/
+$ff-red: #aa2135;
+$ff-red-light: #ff4856;
+$ff-ink: #11151f;
+$ff-grad: linear-gradient(135deg, #ff4856 0%, #aa2135 100%);
+
+/* ---------------- Stats band ---------------- */
+.vb-funfact {
+  position: relative;
+  padding: 70px 0;
+  background:
+    radial-gradient(700px 380px at 90% -20%, #ff5e6b 0%, transparent 60%),
+    linear-gradient(135deg, #ff4856 0%, #aa2135 70%, #8d172a 100%);
+  overflow: hidden;
+  isolation: isolate;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  &__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.4;
+
+    &--1 {
+      width: 340px;
+      height: 340px;
+      top: -120px;
+      left: -60px;
+      background: radial-gradient(circle, #ff8a94, transparent 70%);
+    }
+    &--2 {
+      width: 300px;
+      height: 300px;
+      bottom: -120px;
+      right: -40px;
+      background: radial-gradient(circle, #ffce5c, transparent 70%);
+      opacity: 0.25;
+    }
+  }
+
+  &__grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+    background-size: 26px 26px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 78%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 78%);
+    opacity: 0.4;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  &__stat {
+    text-align: center;
+    padding: 30px 18px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, background 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    h3 {
+      margin: 14px 0 4px;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1;
+      color: #fff;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.16);
+  }
+}
+
+/* ---------------- Client marquee ---------------- */
+.vb-clients {
+  padding: 80px 0;
+  background: #0e1320;
+  overflow: hidden;
+
+  &__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  &__head {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h2 {
+      margin: 16px 0 0;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      font-weight: 900;
+      color: #fff;
+
+      span {
+        background: $ff-grad;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  /* edge fade so logos slide in/out smoothly */
+  &__marquee {
+    position: relative;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  &__track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: 30px;
+    animation: vbMarquee 38s linear infinite;
+  }
+
+  &__marquee:hover &__track {
+    animation-play-state: paused;
+  }
+
+  &__logo {
+    flex: 0 0 auto;
+    width: 180px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 26px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.3s ease, border-color 0.3s ease;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      opacity: 0.7;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.18);
+
+      img {
+        opacity: 1;
+        transform: scale(1.06);
+      }
+    }
+  }
+}
+
+@keyframes vbMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 767px) {
+  .vb-funfact__inner { grid-template-columns: repeat(2, 1fr); }
+  .vb-funfact { padding: 56px 0; }
+  .vb-clients { padding: 60px 0; }
+  .vb-clients__logo { width: 140px; height: 80px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vb-clients__track { animation: none; }
+}

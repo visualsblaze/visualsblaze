@@ -1,251 +1,151 @@
+'use client';
 import React from 'react';
-import abimg from '../../images/about.jpg';
-import { Link } from 'react-router-dom';
-import photoshope from "../../images/photoshop img.png";
-import premiere from "../../images/premiere img.png";
-import xd from "../../images/xd img.png";
-import effects from "../../images/after effects img.png";
-import indesign from "../../images/indesign img.png";
-import media from "../../images/media encoder img.png";
-import figma from "../../images/figma img.png";
-import illus from "../../images/illustrator img.png";
-import choose from "../../images/choose-us-img.png";
-import gball from "../../images/golden ball img.png";
-import wball from "../../images/white ball img.png";
-import fact1 from "../../images/revenue img.png";
-import fact2 from "../../images/consumers img.png";
-import fact3 from "../../images/majority img.png";
-import fact4 from "../../images/managers img.png";
+import Link from 'next/link';
+import {
+  FaArrowRight,
+  FaPenNib,
+  FaLightbulb,
+  FaRocket,
+  FaHandshake,
+} from 'react-icons/fa';
 
+const abimg = '/images/about.jpg';
 
+const TOOLS = [
+  { src: '/images/photoshop img.png', name: 'Photoshop' },
+  { src: '/images/illustrator img.png', name: 'Illustrator' },
+  { src: '/images/after effects img.png', name: 'After Effects' },
+  { src: '/images/premiere img.png', name: 'Premiere Pro' },
+  { src: '/images/media encoder img.png', name: 'Media Encoder' },
+  { src: '/images/indesign img.png', name: 'InDesign' },
+  { src: '/images/xd img.png', name: 'Adobe XD' },
+  { src: '/images/figma img.png', name: 'Figma' },
+];
 
+const STATS = [
+  { value: '+23%', label: 'Revenue boost from consistent brand presentation.', source: 'Lucidpress' },
+  { value: '+86%', label: 'Of consumers pay a premium for brands they recognise and trust.', source: 'SuperOffice' },
+  { value: '77%', label: 'Of B2B marketing leaders say branding is key to growth.', source: 'Circle Research' },
+  { value: '70%', label: 'Of brand managers value audience-building over direct sales.', source: 'OnBrand' },
+];
 
-
-
-
-
-
+const REASONS = [
+  { icon: <FaPenNib />, title: 'Craft & Detail', desc: 'Every pixel has a purpose — we obsess over the details so your brand looks flawless.' },
+  { icon: <FaLightbulb />, title: 'Creative Strategy', desc: 'Design that does more than look good — it communicates clearly and drives action.' },
+  { icon: <FaRocket />, title: 'Fast Turnaround', desc: 'A streamlined process that delivers stunning work without the wait.' },
+  { icon: <FaHandshake />, title: 'True Partnership', desc: "We're invested in your success — a strategic partner, not just a service provider." },
+];
 
 const About = (props) => {
-    const ClickHandler = () => {
-        window.scrollTo(10, 0);
-    }
+  const ClickHandler = () => window.scrollTo(10, 0);
 
-    return (
-        <section className={`wpo-about-section ${props.abClass}`}>
-            <div className="container">
-                {/* About Us Section */}
-                <div className="row align-items-center">
-                    <div className="col-lg-6">
-                        <div className="about-img">
-                            <img src={abimg} alt="" />
-                            <div className="shape-1"></div>
-                            <div className="shape-2"></div>
-                            <span className="ab-btn">5 Years Experience</span>
-                        </div>
-                    </div>
-                    <div className="col-lg-6">
-                        <div className="about-content">
-                            <div className="section-title">
-                            <span className='about-us'>ABOUT US</span>
+  return (
+    <section className={`vb-about ${props.abClass || ''}`}>
+      <div className="vb-about__bg" aria-hidden="true">
+        <span className="vb-about__glow vb-about__glow--1" />
+        <span className="vb-about__glow vb-about__glow--2" />
+      </div>
 
-                                <h2 className='wea'>We are more than just a
-                                    <span> digital agency.</span>
-                                </h2>
-                                <div className="transparent-text">About</div>
-                            </div>
-                            <div className="welcome-container">
-                                <p>
-                                    Welcome to the vibrant world of graphic design, where creativity knows no bounds and imagination is our playground.
-                                    We're here to weave visuals that tell stories, evoke emotions, and captivate audiences. 
-                                    Let’s embark on a journey where every pixel holds a purpose, and every stroke of the brush paints a masterpiece.
-                                    Together, let’s bring your visions to life through the power of design.
-                                </p>
-                                <br />
-                                <p>
-                                    Although we are unsure of what will ultimately <span style={{ color: '#aa2135' }}>save the world</span>, we do know that it must be{' '}
-                                    <span style={{ color: '#aa2135' }}>perfectly designed</span>. Whether it is graphics, ads layout, 
-                                    video making, animation, or packing design, our works drive people to action.
-                                </p>
-                                <br />
-                                
-                            </div>
-                            <Link onClick={ClickHandler} className="theme-btn-s2" to="/portfolio-grid-s2" style={{ marginLeft: '-200px' }}>
-  View Projects
-</Link>
-                    <br/>
+      <div className="vb-about__inner">
+        {/* Intro */}
+        <div className="vb-about__intro">
+          <div className="vb-about__media">
+            <img src={abimg} alt="About Visuals Blaze" />
+            <span className="vb-about__badge">
+              <strong>5+</strong> Years Experience
+            </span>
+          </div>
 
-                        </div>
-                    </div>
-                </div>
-
-   {/* Why Choose Us Section */}
-<section className="why-choose-us-section">
-    <div className="container">
-        <div className="row align-items-center">
-            <div className="col-lg-6">
-                {/* Image Section */}
-                <div className="why-choose-us-image">
-                    <img src={choose} alt="Why Choose Us Graphic" />
-                </div>
-            </div>
-            <div className="col-lg-6">
-                {/* Text Section */}
-                <div className="why-choose-us-text">
-                <h2 className="choose-titlemobile"> Why Choose Us</h2>
-
-                    <p>
-                    When it comes to graphic design, choosing the right partner can make all the difference in the success of your brand. At our studio, we offer more than just design services, we provide a comprehensive solution tailored to your unique needs. Our team is comprised of skilled professionals who are passionate about creativity and innovation. We understand that effective graphic design goes beyond aesthetics; it's about communicating your message clearly and engaging your audience on a deeper level. With our expertise in both traditional and digital design techniques, we can bring your vision to life across various platforms and mediums. What sets us apart is our commitment to excellence, attention to detail, and dedication to exceeding your expectations. When you choose us for your graphic design needs, you're not just getting a service provider, you're gaining a strategic partner invested in your success.
-
-                    </p>
-
-                    <br/>
-                    <br/>
-
-                    <h2 className="choose-title"> Why Choose Us</h2>
-
-                  
-                </div>
-            </div>
+          <div className="vb-about__copy">
+            <span className="vb-about__eyebrow">
+              <span className="vb-about__dot" /> About Us
+            </span>
+            <h2>
+              We are more than just a <span>digital agency.</span>
+            </h2>
+            <p>
+              Welcome to the vibrant world of graphic design, where creativity knows no
+              bounds and imagination is our playground. We weave visuals that tell stories,
+              evoke emotions and captivate audiences — where every pixel holds a purpose and
+              every stroke paints a masterpiece.
+            </p>
+            <p>
+              We may not know what will ultimately <strong>save the world</strong>, but we do
+              know it must be <strong>perfectly designed</strong>. Whether it&apos;s graphics,
+              ad layouts, video, animation or packaging, our work drives people to action.
+            </p>
+            <Link onClick={ClickHandler} className="vb-about__btn" href="/portfolio-grid-s2">
+              View Projects <FaArrowRight />
+            </Link>
+          </div>
         </div>
-    </div>
-</section>
-<section className="tools-section">
-  <div className="container">
-    <h2 className="section-title">Expertise in Modern</h2>
-    <p className="tools-description">Graphic Design Applications</p>
-    <br/>
 
-    <div className="tools-list">
-      <div className="tool-item">
-        <img className="tool-icon" src={photoshope} alt="XD" />
-        <img className="ball white-ball" src={wball} alt="White Ball" />
-        <img className="ball gold-ball" src={gball} alt="Gold Ball" />
+        {/* Why choose us */}
+        <div className="vb-about__why">
+          <div className="vb-about__why-head">
+            <span className="vb-about__eyebrow">
+              <span className="vb-about__dot" /> Why Choose Us
+            </span>
+            <h3>
+              A partner invested in your <span>success</span>
+            </h3>
+            <p>
+              When it comes to graphic design, the right partner makes all the difference. We
+              offer more than design services — a complete solution tailored to your unique
+              needs, blending traditional and digital techniques to bring your vision to life.
+            </p>
+          </div>
+
+          <div className="vb-about__reasons">
+            {REASONS.map((r) => (
+              <article className="vb-about__reason" key={r.title}>
+                <div className="vb-about__reason-icon">{r.icon}</div>
+                <h4>{r.title}</h4>
+                <p>{r.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* Tools / expertise */}
+        <div className="vb-about__tools">
+          <div className="vb-about__tools-head">
+            <h3>
+              Expertise in <span>modern</span> design applications
+            </h3>
+            <p>The industry-standard toolkit we use to craft every project.</p>
+          </div>
+          <div className="vb-about__tools-grid">
+            {TOOLS.map((t) => (
+              <div className="vb-about__tool" key={t.name}>
+                <img src={t.src} alt={t.name} />
+                <span>{t.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Fun facts */}
+        <div className="vb-about__facts">
+          <div className="vb-about__facts-head">
+            <span className="vb-about__eyebrow vb-about__eyebrow--light">
+              <span className="vb-about__dot" /> Quick Fun Facts
+            </span>
+            <h3>Why great design pays off</h3>
+          </div>
+          <div className="vb-about__facts-grid">
+            {STATS.map((s) => (
+              <div className="vb-about__fact" key={s.source}>
+                <strong>{s.value}</strong>
+                <p>{s.label}</p>
+                <span className="vb-about__fact-source">Source: {s.source}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="tool-item">
-        <img className="tool-icon" src={illus} alt="After Effects" />
-        <img className="ball white-ball-second" src={wball} alt="White Ball" />
-        <img className="ball gold-ball-second" src={gball} alt="Gold Ball" />
-      </div>
-      <div className="tool-item">
-        <img className="tool-icon" src={effects} alt="Figma" />
-        <img className="ball white-ball" src={wball} alt="White Ball" />
-        <img className="ball gold-ball" src={gball} alt="Gold Ball" />
-      </div>
-      <div className="tool-item">
-        <img className="tool-icon" src={premiere} alt="Illustrator" />
-        <img className="ball white-ball-second" src={wball} alt="White Ball" />
-        <img className="ball gold-ball-second" src={gball} alt="Gold Ball" />
-      </div>
-      
-      <div className="tool-item">
-        <img className="tool-icon" src={media} alt="Illustrator" />
-        <img className="ball white-ball" src={wball} alt="White Ball" />
-        <img className="ball gold-ball" src={gball} alt="Gold Ball" />
-      </div><div className="tool-item">
-        <img className="tool-icon" src={indesign} alt="Illustrator" />
-        <img className="ball white-ball-second" src={wball} alt="White Ball" />
-        <img className="ball gold-ball-second" src={gball} alt="Gold Ball" />
-      </div><div className="tool-item">
-        <img className="tool-icon" src={xd} alt="Illustrator" />
-        <img className="ball white-ball" src={wball} alt="White Ball" />
-        <img className="ball gold-ball" src={gball} alt="Gold Ball" />
-      </div><div className="tool-item">
-        <img className="tool-icon" src={figma} alt="Illustrator" />
-        <img className="ball white-ball-second" src={wball} alt="White Ball" />
-        <img className="ball gold-ball-second" src={gball} alt="Gold Ball" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<section className="quick-fun-fact-section">
-  <div className="container">
-    <h2 className="section-titls"><span className="quick-funs">Quick Fun</span> <br />
-    <span className="facts">Fact</span></h2>
-    <div className="row">
-      <div className="col-lg-6">
-      <div className="fun-fact-item">
-  <div className="fact-content">
-    <img src={fact1} alt="Fact Icon" className="fact-image" />
-    <p className="fact-text">
-  <h3 >+23%</h3>
-
-      The typical revenue boost linked to consistently maintaining a brand's presentation.
-      <br />
-      <span className="fact-source">Source: Lucidpress</span>
-    </p>
-  </div>
-  </div>
-
- 
-
-      </div>
-      <div className="col-lg-6">
-      <div className="fun-fact-item">
-  <div className="fact-content">
-    <img src={fact2} alt="Fact Icon" className="fact-image" />
-    <p className="fact-text">
-  <h3 >+86%</h3>
-
-  most consumers are willing to pay a 
-premium for brands they recognize and 
-trust, prioritizing a superior customer 
-experience over both price and product 
-quality.
-      <span className="fact-source">Source: Superoff ice.com</span>
-    </p>
-  </div>
-
-</div>
-
-      </div>
-      <div className="col-lg-6">
-      <div className="fun-fact-item">
-  <div className="fact-content">
-    <img src={fact3} alt="Fact Icon" className="fact-image" />
-    <p className="fact-text">
-  <h3 >77%</h3>
-
-  the majority of B2B marketing leaders 
-emphasize the importance of branding 
-for achieving growth.
-      <br />
-      <span className="fact-source">Source: Circle Research</span>
-    </p>
-  </div>
-
-</div>
-
-      </div>
-      <div className="col-lg-6">
-      <div className="fun-fact-item">
-  <div className="fact-content">
-    <img src={fact4} alt="Fact Icon" className="fact-image" />
-
-    <p className="fact-text">
-  <h3 >OVER 70%</h3>
-
-  brand managers worldwide emphasize 
-that cultivating an audience holds 
-greater long-term value than immediate 
-direct sales.
-      <br />
-      <span className="fact-source">Source: Onbrand.me</span>
-    </p>
-  </div>
-</div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-               
-            </div>
-        </section>
-    )
-}
+    </section>
+  );
+};
 
 export default About;

@@ -1,20 +1,23 @@
+'use client';
 import React, { Fragment } from 'react';
 import Navbar from '../../components/Navbar'
 import PageTitle from '../../components/pagetitle'
 import Scrollbar from '../../components/scrollbar'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'next/navigation'
 import Portfolio from '../../api/portfolio';
 import Service from '../../api/service';
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import Benefits from './benefits'
 import ServiceSidebar from './sidebar'
 import Footer from '../../components/footer'
-import Logo from '../../images/logo-3.png'
+const Logo = '/images/logo-3.png'
 
 const PortfolioSinglePage = (props) => {
     const { id } = useParams()
 
     const portfolioDetails = Portfolio.find(item => item.Id === id)
+
+    if (!portfolioDetails) return null;
 
     const ClickHandler = () => {
         window.scrollTo(10, 0);
@@ -81,7 +84,7 @@ const PortfolioSinglePage = (props) => {
                                                         </div>
                                                     </div>
                                                     <div className="wpo-related-text">
-                                                        <h2><Link onClick={ClickHandler} to={`/service-single/${service.Id}`}>{service.sTitle}</Link></h2>
+                                                        <h2><Link onClick={ClickHandler} href={`/service-single/${service.Id}`}>{service.sTitle}</Link></h2>
                                                         <p>{service.des2}</p>
                                                     </div>
                                                 </div>

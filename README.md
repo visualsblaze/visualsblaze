@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# VisualsBlaze
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Marketing site for VisualsBlaze, a creative design & branding agency. Built with
+**Next.js 15 (App Router)** and server-rendered for SEO.
 
-## Available Scripts
+## Tech stack
 
-In the project directory, you can run:
+- Next.js 15 (App Router) + React 18
+- Sass / Bootstrap (CDN) for styling
+- react-slick, reactstrap, react-icons, react-toastify
+- Nodemailer (contact/appointment API route)
 
-### `npm start`
+## Getting started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install            # uses legacy-peer-deps (see .npmrc) for MUI v4
+npm run dev            # http://localhost:3000
+npm run build          # production build (static + SSG)
+npm start              # serve the production build
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Environment variables
 
-### `npm test`
+Create `.env.local` (already gitignored):
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+EMAIL_USER=your-gmail-address
+EMAIL_PASS=your-gmail-app-password   # Gmail App Password, not your login password
+OWNER_EMAIL=where-enquiries-are-sent
+NEXT_PUBLIC_SITE_URL=https://visualsblaze.com
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
 
-### `npm run build`
+## Project structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `app/` — App Router routes. Each `page.js` is a Server Component that exports SEO
+  `metadata` (and `generateMetadata`/`generateStaticParams` for dynamic routes) and
+  renders the page body.
+  - `app/sitemap.js`, `app/robots.js` — generated `/sitemap.xml` and `/robots.txt`.
+  - `app/api/sendAppointment/route.js` — contact/appointment email handler (Nodemailer).
+- `src/main-component/*` — page bodies (client components).
+- `src/components/*` — shared UI (header, footer, hero, sliders, forms, …).
+- `src/api/*.js` — local content data (portfolio, services, blog) consumed by pages
+  and by SEO metadata/sitemap.
+- `src/lib/seo.js`, `src/lib/jsonld.js` — metadata builder + JSON-LD structured data.
+- `public/images/*` — all image assets (referenced by absolute `/images/...` paths).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## SEO
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Per-page unique `<title>`, meta description, canonical URL, Open Graph & Twitter cards.
+- JSON-LD: Organization + WebSite (home), Service (service detail), BlogPosting (blog
+  detail), BreadcrumbList (interior pages).
+- `/sitemap.xml` and `/robots.txt` generated from route + content data.
+- Single Google Analytics tag wired via `next/script`.
 
-### `npm run eject`
+## Scope
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This repo contains only the live public marketing site. The original CRA template's
+unused pages (Firebase admin panel, auth pages, and the alternate homepage/portfolio/blog
+layout variants) and their orphaned assets have been removed.

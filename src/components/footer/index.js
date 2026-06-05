@@ -1,142 +1,97 @@
-import React from 'react'
-import {Link}  from 'react-router-dom'
-import Logo from '../../images/footer-logo.png'
-import Services from '../../api/service';
-import Project from '../../api/project';
-import { FaFacebook, FaLinkedin, FaInstagram, FaWhatsapp, FaArrowDown } from "react-icons/fa";
+'use client';
+import React from 'react';
+import Link from 'next/link';
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+  FaWhatsapp,
+} from 'react-icons/fa';
 
+const Logo = '/images/footer-logo.png';
 
+const NAV_LINKS = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Portfolio', path: '/portfolio-grid-s2' },
+  { name: 'Services', path: '/service' },
+  { name: 'Contact', path: '/contact' },
+];
 
-const Footer = (props) =>{
+const SOCIALS = [
+  { icon: <FaWhatsapp />, href: 'https://w.app/OT5BzR', label: 'WhatsApp' },
+  {
+    icon: <FaLinkedinIn />,
+    href: 'https://www.linkedin.com/in/husnain-manzoor-910581120?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+    label: 'LinkedIn',
+  },
+  {
+    icon: <FaFacebookF />,
+    href: 'https://www.facebook.com/people/Visuals-Blaze/61557573718174/?mibextid=LQQJ4d',
+    label: 'Facebook',
+  },
+  {
+    icon: <FaInstagram />,
+    href: 'https://www.instagram.com/visualsblaze/profilecard/?igsh=dDVkcGhkZTA1dnhy',
+    label: 'Instagram',
+  },
+];
 
-    const ClickHandler = () =>{
-        window.scrollTo(10, 0);
-     }
+const Footer = () => {
+  const year = '2026';
 
-  return(
-    <footer className="wpo-site-footer">
-        <div className="wpo-upper-footer">
-            <div className="container">
-                <div className="row">
-                    
-                    <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
-                    <img src={Logo} alt="logo" className="logo" />
+  return (
+    <footer className="vb-foot">
+      <span className="vb-foot__watermark" aria-hidden="true">
+        BLAZE
+      </span>
 
-                        <div className="widget about-widget">
-                            <div className="logo widget-title">
-                            </div>
-                            <p className='p-text'>BLAZE FOR THE PEOPLE WHO <br/> 
-                            WANT MORE </p>
-                            <p className='follow' style={{ color: '#aa2135' }}>Follow us on<br/></p>
+      <div className="vb-foot__inner">
+        <img src={Logo} alt="VisualsBlaze" className="vb-foot__logo" />
 
-                            <div className="social">
-        <ul>
-          <li>
-            <Link to="https://w.app/OT5BzR">
-              <FaWhatsapp />
+        <p className="vb-foot__tagline">
+          Blaze for the people who want more.
+        </p>
+
+        <nav className="vb-foot__nav" aria-label="Footer">
+          {NAV_LINKS.map((l) => (
+            <Link key={l.path} href={l.path}>
+              {l.name}
             </Link>
-          </li>
-          <li>
-            <Link to="https://www.linkedin.com/in/husnain-manzoor-910581120?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-              <FaLinkedin />
-            </Link>
-          </li>
-          <li>
-            <Link to="https://www.facebook.com/people/Visuals-Blaze/61557573718174/?mibextid=LQQJ4d">
-              <FaFacebook />
-            </Link>
-          </li>
-          <li>
-            <Link to="https://www.instagram.com/visualsblaze/profilecard/?igsh=dDVkcGhkZTA1dnhy">
-              <FaInstagram />
-            </Link>
-          </li>
-        </ul>
+          ))}
+        </nav>
+
+        <div className="vb-foot__contact">
+          <a href="mailto:visualsblaze@gmail.com">visualsblaze@gmail.com</a>
+          <span className="vb-foot__dot" />
+          <a href="tel:+966508875968">+966 50 887 5968</a>
+          <span className="vb-foot__dot" />
+          <span>Jeddah, KSA</span>
+        </div>
+
+        <div className="vb-foot__social">
+          {SOCIALS.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={s.label}
+            >
+              {s.icon}
+            </a>
+          ))}
+        </div>
+
+        <div className="vb-foot__divider" />
+
+        <div className="vb-foot__bottom">
+          <p>© {year} Visuals Blaze. All rights reserved.</p>
+          <p>Designed &amp; Developed by Hamza Manzoor</p>
+        </div>
       </div>
-                        </div>
-                    </div>
-                    
-                    <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div className="widget link-widget">
-                            <div className="widget-title">
-                                <h3>Quicks Links </h3>
-                            </div>
-                            <ul>
-                            <li><Link onClick={ClickHandler} to="/">Home</Link></li>
-
-                            <li><Link onClick={ClickHandler} to="/about">About</Link></li>
-                                            <li><Link onClick={ClickHandler} to="/portfolio-grid-s2">Portfolio</Link></li>
-                                            <li><Link onClick={ClickHandler} to="/service">Get Service</Link></li>
-                                            <li><Link onClick={ClickHandler} to="/contact">Contact</Link></li>
-
-                                
-                               
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div className="widget link-widget">
-                            <div className="widget-title">
-                                <h3>Services </h3>
-                            </div>
-                            <ul>
-                             
-                                {Services.slice(1, 15).map((service, Sitem) => (
-                                    <li key={Sitem}> {service.sTitle}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
-    <div className="widget wpo-service-link-widget">
-        <div className="widget-title">
-            <h3>Contact Details</h3>
-        </div>
-        <div className="contact-ft">
-            <ul>
-                <p>Al-Andalus District, Jeddah KSA</p>
-                <li><i className="fi flaticon-phone-call"></i>+966 50 887 5968</li>
-                <li><i className="fi flaticon-email"></i>visualsblaze@gmail.com</li>
-            </ul>
-        </div>
-    </div>
-    {/* Logo Section (Visible on Mobile) */}
-    <div className="footer-logo-mobile">
-        <img src={Logo} alt="Footer Logo" className="logo-mobile" />
-        <p style={{ color: '#333333' }}>BLAZE FOR THE PEOPLE WHO <br/> 
-        WANT MORE </p>
-        <p style={{ color: '#aa2135', fontWeight: 'bold' }}>Follow us on</p>
-       
-    </div>
-</div>
-
-
-                    {/* <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div className="widget instagram">
-                            <div className="widget-title">
-                                <h3>Projects</h3>
-                            </div>
-                            <ul className="d-flex"> 
-                                {Project.slice(0, 6).map((project, Pitem) => (
-                                    <li key={Pitem}><Link onClick={ClickHandler} to={`/project-single/${project.Id}`}><img src={project.pImg} alt="" /></Link></li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div> */}
-                </div>
-            </div>
-        </div>
-        <div className="wpo-lower-footer">
-            <div className="container">
-                <div className="row">
-                    <div className="col col-xs-12">
-                        <p className="copyright" style={{ color: '#ffffff' }}> © Visuals Blaze | Designed and Developed By Hamza Manzoor.All Rights Reserved</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </footer>
-  )
-} 
+  );
+};
 
 export default Footer;

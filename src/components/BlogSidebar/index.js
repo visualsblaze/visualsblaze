@@ -1,9 +1,10 @@
+'use client';
 import React from 'react';
-import {Link} from 'react-router-dom'
+import Link from 'next/link'
 import Services from '../../api/service';
 import blogs from '../../api/blogs'
 import Projects from '../../api/project';
-import about from '../../images/blog/about-widget.jpg'
+const about = '/images/blog/about-widget.jpg'
 
 
 const BlogSidebar = (props) => {
@@ -27,10 +28,10 @@ const BlogSidebar = (props) => {
                     <p>Hi! beautiful people. I`m an authtor of this blog. Read our post - stay with us</p>
                     <div className="social">
                         <ul className="clearfix">
-                            <li><Link onClick={ClickHandler} to="/blog-single/1"><i className="ti-facebook"></i></Link></li>
-                            <li><Link onClick={ClickHandler} to="/blog-single/1"><i className="ti-twitter-alt"></i></Link></li>
-                            <li><Link onClick={ClickHandler} to="/blog-single/1"><i className="ti-linkedin"></i></Link></li>
-                            <li><Link onClick={ClickHandler} to="/blog-single/1"><i className="ti-pinterest"></i></Link></li>
+                            <li><Link onClick={ClickHandler} href="/blog-single/1"><i className="ti-facebook"></i></Link></li>
+                            <li><Link onClick={ClickHandler} href="/blog-single/1"><i className="ti-twitter-alt"></i></Link></li>
+                            <li><Link onClick={ClickHandler} href="/blog-single/1"><i className="ti-linkedin"></i></Link></li>
+                            <li><Link onClick={ClickHandler} href="/blog-single/1"><i className="ti-pinterest"></i></Link></li>
                         </ul>
                     </div>
                     <div className="aw-shape">
@@ -48,7 +49,7 @@ const BlogSidebar = (props) => {
                     <h3>Categories</h3>
                     <ul>
                         {Services.map((service, Sitem) => (
-                            <li key={Sitem}><Link onClick={ClickHandler} to={`/service-single/${service.Id}`}>{service.sTitle} <span>{service.Id}</span></Link></li>
+                            <li key={Sitem}><Link onClick={ClickHandler} href={`/service-single/${service.Id}`}>{service.sTitle} <span>{service.Id}</span></Link></li>
                         ))}
                     </ul>
                 </div>
@@ -61,7 +62,7 @@ const BlogSidebar = (props) => {
                                     <img src={blog.screens} alt=""/>
                                 </div>
                                 <div className="details">
-                                    <h4><Link onClick={ClickHandler} to={`/blog-single/${blog.id}`}>{blog.title}</Link></h4>
+                                    <h4><Link onClick={ClickHandler} href={`/blog-single/${blog.id}`}>{blog.title}</Link></h4>
                                     <span className="date">19 Jun 2021 </span>
                                 </div>
                             </div>
@@ -74,29 +75,29 @@ const BlogSidebar = (props) => {
                     </div>
                     <ul className="d-flex">
                         {Projects.map((project, prj) => (
-                            <li key={prj}><Link onClick={ClickHandler} to={`/project-single/${project.Id}`}><img src={project.pImg} alt=""/></Link></li>
+                            <li key={prj}><Link onClick={ClickHandler} href={`/project-single/${project.Id}`}><img src={project.pImg} alt=""/></Link></li>
                         ))}
                     </ul>
                 </div>
                 <div className="widget tag-widget">
                     <h3>Tags</h3>
                     <ul>
-                        <li><Link onClick={ClickHandler} to="/blog-single/1">Wordpress</Link></li>
-                        <li><Link onClick={ClickHandler} to="/blog-single/1">HTML</Link></li>
-                        <li><Link onClick={ClickHandler} to="/blog-single/1">CSS</Link></li>
-                        <li><Link onClick={ClickHandler} to="/blog-single/1">Graphic Design</Link></li>
-                        <li><Link onClick={ClickHandler} to="/blog-single/1">Theme Develop</Link></li>
-                        <li><Link onClick={ClickHandler} to="/blog-single/1">PDS Template</Link></li>
-                        <li><Link onClick={ClickHandler} to="/blog-single/1">Video</Link></li>
-                        <li><Link onClick={ClickHandler} to="/blog-single/1">Audio</Link></li>
-                        <li><Link onClick={ClickHandler} to="/blog-single/1">Plugin</Link></li>
-                        <li><Link onClick={ClickHandler} to="/blog-single/1">Photography</Link></li>
+                        <li><Link onClick={ClickHandler} href="/blog-single/1">Wordpress</Link></li>
+                        <li><Link onClick={ClickHandler} href="/blog-single/1">HTML</Link></li>
+                        <li><Link onClick={ClickHandler} href="/blog-single/1">CSS</Link></li>
+                        <li><Link onClick={ClickHandler} href="/blog-single/1">Graphic Design</Link></li>
+                        <li><Link onClick={ClickHandler} href="/blog-single/1">Theme Develop</Link></li>
+                        <li><Link onClick={ClickHandler} href="/blog-single/1">PDS Template</Link></li>
+                        <li><Link onClick={ClickHandler} href="/blog-single/1">Video</Link></li>
+                        <li><Link onClick={ClickHandler} href="/blog-single/1">Audio</Link></li>
+                        <li><Link onClick={ClickHandler} href="/blog-single/1">Plugin</Link></li>
+                        <li><Link onClick={ClickHandler} href="/blog-single/1">Photography</Link></li>
                     </ul>
                 </div>
                 <div className="wpo-contact-widget widget">
                         <h2>How We Can <br/> Help You!</h2>
                         <p>labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                        <Link onClick={ClickHandler} to="/contact">Contact Us</Link>
+                        <Link onClick={ClickHandler} href="/contact">Contact Us</Link>
                 </div>
             </div>
         </div>

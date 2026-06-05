@@ -1,131 +1,215 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import MobileMenu from '../../components/MobileMenu'
-import { FaFacebook, FaLinkedin, FaInstagram, FaBehance, FaArrowDown } from "react-icons/fa";
+'use client';
+import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+  FaWhatsapp,
+  FaArrowDown,
+} from 'react-icons/fa';
+import { FiMenu, FiX } from 'react-icons/fi';
 
-import pdfFile from "../../images/VISUALS BLAZE PROFILE.pdf";
+const pdfFile = '/images/VISUALS BLAZE PROFILE.pdf';
 
-export default class Header extends Component {
-    
+const NAV_ITEMS = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Portfolio', path: '/portfolio-grid-s2' },
+  { name: 'Services', path: '/service' },
+  { name: 'Contact', path: '/contact' },
+];
 
-    state = {
-        isSearchShow: false,
+const SOCIALS = [
+  { icon: <FaWhatsapp />, href: 'https://w.app/OT5BzR', label: 'WhatsApp' },
+  {
+    icon: <FaLinkedinIn />,
+    href: 'https://www.linkedin.com/in/husnain-manzoor-910581120?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+    label: 'LinkedIn',
+  },
+  {
+    icon: <FaFacebookF />,
+    href: 'https://www.facebook.com/people/Visuals-Blaze/61557573718174/?mibextid=LQQJ4d',
+    label: 'Facebook',
+  },
+  {
+    icon: <FaInstagram />,
+    href: 'https://www.instagram.com/visualsblaze/profilecard/?igsh=dDVkcGhkZTA1dnhy',
+    label: 'Instagram',
+  },
+];
+
+export default function Header(props) {
+  const { Logo } = props;
+  const pathname = usePathname();
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // Sliding pill indicator behind the active / hovered nav item.
+  const linkRefs = useRef([]);
+  const [pill, setPill] = useState({ left: 0, width: 0, opacity: 0 });
+
+  const isActive = (path) =>
+    path === '/' ? pathname === '/' : pathname.startsWith(path);
+
+  const activeIndex = NAV_ITEMS.findIndex((i) => isActive(i.path));
+
+  const movePillTo = (idx) => {
+    const el = linkRefs.current[idx];
+    if (el) setPill({ left: el.offsetLeft, width: el.offsetWidth, opacity: 1 });
+  };
+
+  const resetPill = () => {
+    if (activeIndex >= 0) movePillTo(activeIndex);
+    else setPill((p) => ({ ...p, opacity: 0 }));
+  };
+
+  // Position the pill on load, route change and resize. Reposition again once
+  // web fonts finish loading, since they change the link widths (avoids a
+  // misaligned indicator on first paint).
+  useEffect(() => {
+    resetPill();
+    const onResize = () => resetPill();
+    window.addEventListener('resize', onResize);
+    const t = setTimeout(resetPill, 300);
+    if (typeof document !== 'undefined' && document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(resetPill);
     }
+    return () => {
+      window.removeEventListener('resize', onResize);
+      clearTimeout(t);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
-    searchHandler = () => {
-        this.setState({
-            isSearchShow: !this.state.isSearchShow
-        })
-    }
+  // Lock body scroll while the mobile drawer is open.
+  useEffect(() => {
+    document.body.style.overflow = drawerOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [drawerOpen]);
 
+  const closeDrawer = () => setDrawerOpen(false);
 
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = pdfFile;
+    link.download = 'visualsblaze-profile.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
-    render() {
-        const { isSearchShow } = this.state;
+  return (
+    <header className="vb-nav-wrap">
+      <div className="vb-nav">
+        {/* Brand */}
+        <Link href="/" className="vb-nav__brand" onClick={closeDrawer}>
+          {Logo ? <img src={Logo} alt="VisualsBlaze" /> : <span>VisualsBlaze</span>}
+        </Link>
 
-        const SubmitHandler = (e) => {
-            e.preventDefault()
-        }
+        {/* Center nav with sliding indicator */}
+        <nav className="vb-nav__menu" aria-label="Primary" onMouseLeave={resetPill}>
+          <span
+            className="vb-nav__pill"
+            style={{ left: pill.left, width: pill.width, opacity: pill.opacity }}
+            aria-hidden="true"
+          />
+          <ul>
+            {NAV_ITEMS.map((item, idx) => (
+              <li key={item.path}>
+                <Link
+                  href={item.path}
+                  ref={(el) => (linkRefs.current[idx] = el)}
+                  onMouseEnter={() => movePillTo(idx)}
+                  className={isActive(item.path) ? 'is-active' : ''}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-        const ClickHandler = () => {
-            window.scrollTo(10, 0);
-        }
-        const handleDownload = () => {
-            const link = document.createElement('a');
-            link.href = pdfFile; // Webpack will resolve the correct path
-            link.download = "visualsblaze.pdf";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          };
-          
-        return (
-            <header id="header" className={this.props.topbarNone}>
-                <div className={`wpo-site-header ${this.props.hclass}`}>
-                    <nav className="navigation navbar navbar-expand-lg navbar-light">
-                        <div className="container-fluid">
-                            <div className="row align-items-center">
-                                <div className="col-lg-3 col-md-3 col-3 d-lg-none dl-block">
-                                    <div className="mobail-menu">
-                                        <MobileMenu />
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-md-6 col-6">
-                                    <div className="navbar-header">
-                                        <Link onClick={ClickHandler} className="navbar-brand" to="/"><img src={this.props.Logo}
-                                            alt="" /></Link>
-                                    </div>
-                                </div>
-                                <div className="col-lg-6 col-md-1 col-1">
-                                    <div id="navbar" className="collapse navbar-collapse navigation-holder">
-                                        <button className="menu-close"><i className="ti-close"></i></button>
-                                        <ul className="nav navbar-nav mb-2 mb-lg-0">
-                                            <li className="menu-item-has-children">
-                                                <Link onClick={ClickHandler} to="/">Home</Link>
-                                                {/* <ul className="sub-menu">
-                                                    <li><Link onClick={ClickHandler} to="/home">Home style 1</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/home2">Home style 2</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/home3">Home style 3</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/home4">Home style 4</Link></li>
-                                                </ul> */}
-                                            </li>
-                                            <li><Link onClick={ClickHandler} to="/about">About</Link></li>
-                                            <li><Link onClick={ClickHandler} to="/portfolio-grid-s2">Portfolio</Link></li>
-                                            <li><Link onClick={ClickHandler} to="/service">Get Service</Link></li>
+        {/* Right actions */}
+        <div className="vb-nav__actions">
+          <button
+            type="button"
+            onClick={handleDownload}
+            className="vb-cta"
+          >
+            <span>Profile</span>
+            <FaArrowDown />
+          </button>
 
-                                             {/* <li className="menu-item-has-children"> */}
-                                                {/* <Link onClick={ClickHandler} to="/portfolio-grid">Portfolio</Link> */}
-                                                {/* <ul className="sub-menu"> */}
-                                                    {/* <li><Link onClick={ClickHandler} to="/portfolio-grid">Portfolio Grid</Link></li> */}
-                                                    {/* <li><Link onClick={ClickHandler} to="/portfolio-grid-s3">Portfolio Grid S3</Link></li> */}
-                                                    {/* <li><Link onClick={ClickHandler} to="/portfolio-slide">Portfolio Slide</Link></li> */}
-                                                {/* </ul> */}
-                                            {/* </li>  */}
-                                            <li className="menu-item-has-children">
-                                                 {/* <Link onClick={ClickHandler} to="/service">Pages</Link>  */}
-                                                 <ul className="sub-menu">
-                                                    {/* <li><Link onClick={ClickHandler} to="/service-single/1">Service Single</Link></li> */}
-                                                    {/* <li><Link onClick={ClickHandler} to="/project-single/1">Project Single</Link></li> */}
-                                                    {/* <li><Link onClick={ClickHandler} to="/404">Error 404</Link></li> */}
-                                                    {/* <li><Link onClick={ClickHandler} to="/login">Login</Link></li> */}
-                                                    {/* <li><Link onClick={ClickHandler} to="/register">Register</Link></li> */}
-                                                </ul> 
-                                            </li>
-                                            <li>
-                                                {/* <Link onClick={ClickHandler} to="/blog">Blog</Link> */}
-                                                {/* <ul className="sub-menu">
-                                                    <li><Link onClick={ClickHandler} to="/blog">Blog right sidebar</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/blog-left-sidebar">Blog left sidebar</Link></li>
-                                                    <li><Link onClick={ClickHandler} to="/blog-fullwidth">Blog fullwidth</Link></li>
-                                                    <li className="menu-item-has-children">
-                                                        <Link onClick={ClickHandler} to="/">Blog details</Link>
-                                                        <ul className="sub-menu">
-                                                            <li><Link onClick={ClickHandler} to="/blog-single/1">Blog details right sidebar</Link>
-                                                            </li>
-                                                            <li><Link onClick={ClickHandler} to="/blog-single-left-sidebar/1">Blog details left
-                                                                sidebar</Link></li>
-                                                            <li><Link onClick={ClickHandler} to="/blog-single-fullwidth/1">Blog details
-                                                                fullwidth</Link></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul> */}
-                                            </li>
-                                            <li><Link onClick={ClickHandler} to="/contact">Contact</Link></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-2 col-2">
-                                        {/* Freely Positioned Download Button */}
-                                        <button onClick={handleDownload} className="button download-btn">
-                                                    <FaArrowDown className="download-icon" /> PROFILE
-                                                    </button>
-                                                
-                                        </div>
-                                </div>
-                        </div>
-                    </nav>
-                </div>
-            </header>
-        )
-    }
+          <button
+            type="button"
+            className="vb-nav__burger"
+            aria-label="Toggle menu"
+            aria-expanded={drawerOpen}
+            onClick={() => setDrawerOpen((o) => !o)}
+          >
+            {drawerOpen ? <FiX /> : <FiMenu />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile drawer + overlay */}
+      <div
+        className={`vb-drawer__overlay ${drawerOpen ? 'is-open' : ''}`}
+        onClick={closeDrawer}
+      />
+      <aside className={`vb-drawer ${drawerOpen ? 'is-open' : ''}`} aria-hidden={!drawerOpen}>
+        <div className="vb-drawer__head">
+          {Logo ? <img src={Logo} alt="VisualsBlaze" /> : <span>VisualsBlaze</span>}
+          <button type="button" aria-label="Close menu" onClick={closeDrawer}>
+            <FiX />
+          </button>
+        </div>
+
+        <nav aria-label="Mobile">
+          <ul>
+            {NAV_ITEMS.map((item, idx) => (
+              <li key={item.path} style={{ '--i': idx }}>
+                <Link
+                  href={item.path}
+                  onClick={closeDrawer}
+                  className={isActive(item.path) ? 'is-active' : ''}
+                >
+                  <span>{item.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <button
+          type="button"
+          onClick={() => {
+            handleDownload();
+            closeDrawer();
+          }}
+          className="vb-cta vb-drawer__cta"
+        >
+          <span>Download Profile</span>
+          <FaArrowDown />
+        </button>
+
+        <div className="vb-drawer__socials">
+          {SOCIALS.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={s.label}
+            >
+              {s.icon}
+            </a>
+          ))}
+        </div>
+      </aside>
+    </header>
+  );
 }

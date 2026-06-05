@@ -1,12 +1,12 @@
-import pimg1 from '../images/project/img-6.jpg'
-import pimg2 from '../images/project/img-7.jpg'
-import pimg3 from '../images/project/img-8.jpg'
-import pimg4 from '../images/project/img-9.jpg'
-import pimg5 from '../images/project/img-10.jpg'
-import pimg6 from '../images/project/img-11.jpg'
+const pimg1 = '/images/project/img-6.jpg'
+const pimg2 = '/images/project/img-7.jpg'
+const pimg3 = '/images/project/img-8.jpg'
+const pimg4 = '/images/project/img-9.jpg'
+const pimg5 = '/images/project/img-10.jpg'
+const pimg6 = '/images/project/img-11.jpg'
 
-import sSingleimg1 from '../images/project-single/2.jpg'
-import sSingleimg2 from '../images/project-single/3.jpg'
+const sSingleimg1 = '/images/project-single/2.jpg'
+const sSingleimg2 = '/images/project-single/3.jpg'
 
 
 const Project = [

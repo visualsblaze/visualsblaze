@@ -1,0 +1,521 @@
+/*------------------------------------------------------------------
+  Advanced hero (vb-hero)
+-------------------------------------------------------------------*/
+$h-red: #aa2135;
+$h-red-light: #ff4856;
+$h-gold: #ffd24a;
+
+.vb-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 150px 0 90px;
+  overflow: hidden;
+  background:
+    radial-gradient(1100px 700px at 85% -10%, #ff5e6b 0%, transparent 55%),
+    radial-gradient(900px 600px at 0% 110%, #c01b2f 0%, transparent 55%),
+    linear-gradient(135deg, #ff4856 0%, #aa2135 60%, #8d172a 100%);
+  color: #fff;
+  isolation: isolate;
+
+  /* ---------- Background decorations ---------- */
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  &__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.55;
+    will-change: transform;
+
+    &--1 {
+      width: 420px;
+      height: 420px;
+      top: -120px;
+      right: 8%;
+      background: radial-gradient(circle, #ff8a94, transparent 70%);
+      animation: vbFloat 9s ease-in-out infinite;
+    }
+    &--2 {
+      width: 360px;
+      height: 360px;
+      bottom: -120px;
+      left: -60px;
+      background: radial-gradient(circle, #ffce5c, transparent 70%);
+      opacity: 0.32;
+      animation: vbFloat 11s ease-in-out infinite reverse;
+    }
+  }
+
+  &__grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+    background-size: 26px 26px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+    opacity: 0.5;
+  }
+
+  &__watermark {
+    position: absolute;
+    bottom: -4vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 26vw;
+    font-weight: 900;
+    letter-spacing: 1vw;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.06);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ---------- Layout ---------- */
+  &__inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    align-items: center;
+    gap: 30px;
+
+    /* Reserve a left gutter for the vertical social rail on desktop */
+    @media (min-width: 992px) {
+      padding-left: 92px;
+    }
+  }
+
+  /* ---------- Copy ---------- */
+  &__content > * {
+    opacity: 0;
+    animation: vbFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  &__eyebrow { animation-delay: 0.05s; }
+  &__title { animation-delay: 0.15s; }
+  &__role { animation-delay: 0.25s; }
+  &__desc { animation-delay: 0.35s; }
+  &__actions { animation-delay: 0.45s; }
+  &__stats { animation-delay: 0.55s; }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 18px;
+    border-radius: 50px;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(6px);
+  }
+
+  &__pulse {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: $h-gold;
+    box-shadow: 0 0 0 0 rgba(255, 210, 74, 0.7);
+    animation: vbPulse 2s infinite;
+  }
+
+  &__title {
+    margin: 22px 0 0;
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.04;
+    letter-spacing: -1px;
+
+    .vb-hero__name {
+      display: block;
+      margin-top: 6px;
+      background: linear-gradient(100deg, #ffe39a 0%, #ffffff 45%, #ffd24a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__role {
+    margin: 20px 0 0;
+    font-size: clamp(1rem, 1.7vw, 1.3rem);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  &__desc {
+    margin: 16px 0 0;
+    max-width: 480px;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 34px;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease,
+      color 0.25s ease;
+
+    svg { font-size: 13px; }
+
+    &--solid {
+      color: $h-red;
+      background: #fff;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+
+      &:hover {
+        transform: translateY(-3px);
+        color: $h-red;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+      }
+    }
+
+    &--ghost {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.55);
+
+      &:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.12);
+        border-color: #fff;
+
+        svg { transform: translateX(3px); }
+      }
+
+      svg { transition: transform 0.25s ease; }
+    }
+  }
+
+  &__stats {
+    display: flex;
+    gap: 14px;
+    margin-top: 44px;
+    flex-wrap: wrap;
+  }
+
+  &__stat {
+    flex: 1 1 0;
+    min-width: 96px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+
+    strong {
+      display: block;
+      font-size: 1.9rem;
+      font-weight: 900;
+      line-height: 1;
+      color: #fff;
+    }
+
+    span {
+      display: block;
+      margin-top: 7px;
+      font-size: 12.5px;
+      line-height: 1.3;
+      color: rgba(255, 255, 255, 0.72);
+      white-space: pre-line;
+    }
+  }
+
+  /* ---------- Portrait ---------- */
+  &__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: vbZoomIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+  }
+
+  &__portrait {
+    position: relative;
+    width: min(560px, 100%);
+    aspect-ratio: 1 / 1.18;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom center;
+      filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.45));
+      animation: vbFloatY 6s ease-in-out infinite;
+    }
+  }
+
+  &__ring {
+    position: absolute;
+    z-index: 0;
+    inset: 6% 8% 4% 8%;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, #ffd24a, #ff8a94, #fff, #ffd24a);
+    filter: blur(2px);
+    opacity: 0.85;
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 5px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 5px));
+    animation: vbSpin 14s linear infinite;
+  }
+
+  &__blob {
+    position: absolute;
+    z-index: 1;
+    inset: 12% 14% 8% 14%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.05) 60%, transparent 70%);
+    backdrop-filter: blur(2px);
+  }
+
+  &__badge {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    color: $h-red;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.25);
+    animation: vbFloatY 5s ease-in-out infinite;
+
+    strong {
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    span {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.25;
+      max-width: 90px;
+      color: #2a2f3a;
+    }
+    svg { color: $h-gold; font-size: 18px; }
+
+    &--exp {
+      top: 10%;
+      left: -6%;
+      animation-delay: 0.5s;
+    }
+    &--rating {
+      bottom: 14%;
+      right: -8%;
+      span { color: #2a2f3a; max-width: 110px; }
+      animation-delay: 1.2s;
+    }
+  }
+
+  /* ---------- Social rail ---------- */
+  &__social {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    a {
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 15px;
+      transition: all 0.25s ease;
+
+      &:hover {
+        background: #fff;
+        color: $h-red;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  &__social-label {
+    writing-mode: vertical-rl;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__social-line {
+    width: 1px;
+    height: 34px;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  /* ---------- Scroll cue ---------- */
+  &__scroll {
+    position: absolute;
+    right: 40px;
+    bottom: 36px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.8);
+
+    small {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__mouse {
+    width: 26px;
+    height: 42px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    padding-top: 7px;
+
+    span {
+      width: 4px;
+      height: 8px;
+      border-radius: 4px;
+      background: #fff;
+      animation: vbScroll 1.6s ease-in-out infinite;
+    }
+  }
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes vbFadeUp {
+  from { opacity: 0; transform: translateY(34px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes vbZoomIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes vbFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -26px); }
+}
+@keyframes vbFloatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes vbSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes vbPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 210, 74, 0.7); }
+  70% { box-shadow: 0 0 0 12px rgba(255, 210, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 210, 74, 0); }
+}
+@keyframes vbScroll {
+  0% { opacity: 0; transform: translateY(-4px); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(10px); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .vb-hero__badge--exp { left: 0; }
+  .vb-hero__badge--rating { right: 0; }
+}
+
+@media (max-width: 991px) {
+  .vb-hero {
+    padding: 130px 0 80px;
+    text-align: center;
+  }
+  .vb-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .vb-hero__visual { order: -1; }
+  .vb-hero__desc { margin-left: auto; margin-right: auto; }
+  .vb-hero__actions,
+  .vb-hero__stats { justify-content: center; }
+  .vb-hero__eyebrow { justify-content: center; }
+  .vb-hero__social { display: none; }
+  .vb-hero__scroll { display: none; }
+  .vb-hero__portrait { width: min(460px, 86%); }
+}
+
+@media (max-width: 575px) {
+  .vb-hero {
+    padding: 120px 0 70px;
+  }
+  .vb-hero__inner { padding: 0 20px; }
+  .vb-hero__stats {
+    gap: 10px;
+  }
+  .vb-hero__stat {
+    padding: 12px 12px;
+    strong { font-size: 1.5rem; }
+  }
+  .vb-hero__btn {
+    padding: 13px 22px;
+    font-size: 14px;
+  }
+  .vb-hero__portrait { width: 84%; }
+  .vb-hero__badge {
+    padding: 8px 11px;
+    strong { font-size: 1.15rem; }
+    span { font-size: 10px; max-width: 78px; }
+  }
+  /* Keep badges well inside the portrait bounds so they never clip */
+  .vb-hero__badge--exp { left: 6%; top: 5%; }
+  .vb-hero__badge--rating { right: 6%; bottom: 9%; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .vb-hero *,
+  .vb-hero *::before,
+  .vb-hero *::after {
+    animation: none !important;
+  }
+  .vb-hero__content > *,
+  .vb-hero__visual { opacity: 1 !important; }
+}
